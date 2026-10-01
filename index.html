@@ -1,0 +1,286 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Heartsong Inspiration — a gentle song for every heart</title><meta name="description" content="Heartsong Inspiration: daily affirmations and original watercolor art. Meet Soretha, Janie, Kyran, Zaire, Harmony and the Heartsong dolls."><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<style>
+#musicBtn{position:fixed;right:22px;bottom:22px;z-index:50;display:flex;align-items:center;gap:10px;min-height:52px;padding:0 20px 0 16px;border-radius:999px;border:1.5px solid var(--gold);background:rgba(13,18,48,.85);backdrop-filter:blur(8px);color:var(--gold);font:800 14px/1 var(--sans);letter-spacing:.08em;cursor:pointer;box-shadow:0 0 30px rgba(232,198,122,.25),0 12px 30px rgba(0,0,0,.5);transition:background .25s,color .25s,transform .25s}
+#musicBtn:hover{background:var(--gold);color:var(--night);transform:translateY(-2px)}
+#musicBtn svg{width:22px;height:22px;fill:currentColor}
+#musicBtn.on svg{animation:sway 1.6s ease-in-out infinite}
+#musicBtn .bars{display:none;gap:3px;align-items:flex-end;height:16px}
+#musicBtn.on .bars{display:flex}
+#musicBtn .bars i{width:3px;background:currentColor;border-radius:2px;animation:eq 1s ease-in-out infinite}
+#musicBtn .bars i:nth-child(2){animation-delay:.2s}#musicBtn .bars i:nth-child(3){animation-delay:.4s}#musicBtn .bars i:nth-child(4){animation-delay:.1s}
+@keyframes eq{0%,100%{height:4px}50%{height:16px}}
+@keyframes sway{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+@media (max-width:600px){#musicBtn{right:14px;bottom:14px}#musicBtn span.lbl{display:none}}
+</style>
+</head><body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Alex+Brush&family=Mulish:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: a single night sky that scrolls; gold is the only accent, cream frames hold the watercolors */
+:root{--night:#0d1230;--night2:#141c44;--line:#2e3a70;--gold:#e8c67a;--gold2:#f7e2ad;--cream:#f6f0e2;--ink:#1d2340;--text:#f3eee3;--soft:#cfd4e6;
+--display:'Alex Brush',cursive;--serif:'Playfair Display',Georgia,serif;--sans:'Mulish',system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{background:var(--night);color:var(--text)}
+body{font-family:var(--sans);font-size:17px;line-height:1.6;overflow-x:hidden}
+a{color:var(--gold);text-decoration:none}a:hover{color:var(--gold2)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+#sky{position:fixed;inset:0;pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding-inline:clamp(16px,5vw,64px)}
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:24px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:42px;color:var(--gold)}
+.links{display:flex;gap:24px;flex-wrap:wrap;font-size:13px;font-weight:800;letter-spacing:.14em}
+.links a{color:var(--text)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.35em;color:var(--gold);text-transform:uppercase}
+.hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:56px;align-items:center;padding-block:48px 100px}
+.write{font-family:var(--display);font-size:clamp(80px,12vw,150px);line-height:1.1;color:var(--gold);padding-right:.2em;animation:write 2.6s cubic-bezier(.6,0,.3,1) .5s both,glow 5s ease-in-out 3.1s infinite}
+.sub{font-family:var(--serif);font-size:clamp(18px,2.4vw,26px);letter-spacing:.55em;margin-top:6px}
+.tag{font-family:var(--serif);font-style:italic;font-size:clamp(22px,3vw,34px);color:#dfe3f3;margin:18px 0 0}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;min-height:52px;padding:0 30px;border-radius:999px;font-weight:800;font-size:16px;border:1.5px solid var(--gold);color:var(--gold);background:none;font-family:inherit;cursor:pointer;transition:background .25s,color .25s,transform .25s}
+.btn.solid{background:var(--gold);color:var(--night);border-color:var(--gold)}
+.btn:hover{background:var(--gold2);color:var(--night);transform:translateY(-2px)}
+.arch{padding:16px;background:var(--cream);border-radius:260px 260px 20px 20px;box-shadow:0 0 0 2px var(--gold),0 0 80px rgba(232,198,122,.35),0 30px 60px rgba(0,0,0,.5);animation:floaty 7s ease-in-out infinite;max-width:480px;justify-self:center;width:100%}
+.arch img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:38% 30%;border-radius:244px 244px 12px 12px}
+section{padding-block:90px}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,56px);line-height:1.1;margin:10px 0 0;text-wrap:balance}
+.script{font-family:var(--display);color:var(--gold);font-size:1.4em;font-weight:400}
+.wish{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:64px;align-items:center}
+.step{font-weight:700;letter-spacing:.06em;color:#dfe3f3;margin-top:22px;display:block}
+.field{width:100%;max-width:420px;height:56px;padding:0 22px;border-radius:999px;border:1px solid #4a5688;background:var(--night2);color:var(--text);font:inherit;font-size:18px;margin-top:10px}
+.stars{display:flex;gap:14px;margin-top:10px;flex-wrap:wrap}
+.star-btn{background:none;border:0;padding:6px;cursor:pointer;transition:transform .25s,filter .25s;border-radius:50%}
+.star-btn:hover,.star-btn.on{transform:scale(1.2) rotate(12deg);filter:drop-shadow(0 0 12px var(--gold2))}
+.star-btn svg path{fill:rgba(232,198,122,.12);stroke:var(--gold);stroke-width:1.2;transition:fill .3s}
+.star-btn.on svg path{fill:var(--gold2)}
+.phone{width:320px;max-width:100%;padding:13px;border-radius:46px;background:#05081a;box-shadow:0 0 0 2px var(--line),0 0 80px rgba(232,198,122,.25),0 30px 60px rgba(0,0,0,.6);justify-self:center}
+.screen{position:relative;aspect-ratio:9/19.5;border-radius:34px;overflow:hidden;background:var(--night2)}
+.screen>img.bg{position:absolute;inset:0 0 auto 0;width:100%;height:62%;object-fit:cover;object-position:38% 25%}
+.screen .fade{position:absolute;inset:auto 0 0 0;height:55%;background:linear-gradient(180deg,rgba(13,18,48,0),var(--night) 28%)}
+.screen .msg{position:absolute;left:22px;right:22px;bottom:68px;text-align:center;display:flex;flex-direction:column;gap:10px}
+.screen .msg q{font-family:var(--serif);font-size:21px;line-height:1.35;color:#f8f3e8;quotes:none}
+.screen .sig{position:absolute;inset:auto 0 22px 0;text-align:center;font-family:var(--display);font-size:25px;color:var(--gold)}
+.pop{animation:pop .7s ease-out both}
+#wall{display:block;width:100%;max-width:320px;border-radius:24px;margin-top:16px}
+.note{font-size:14px;color:var(--soft);margin-top:10px}
+.band{background:rgba(20,28,68,.85);border-block:1px solid var(--line);text-align:center}
+.band blockquote{font-family:var(--serif);font-size:clamp(28px,4.2vw,46px);line-height:1.3;margin:28px auto 0;max-width:24ch;min-height:4.2em;transition:opacity .5s}
+.dots{display:flex;gap:10px;justify-content:center;margin-top:18px}
+.dots span{height:8px;width:8px;border-radius:4px;background:#4a5688;transition:all .4s}
+.dots span.on{width:28px;background:var(--gold)}
+.banner{position:relative;border-radius:24px;overflow:hidden;box-shadow:0 0 0 2px var(--gold),0 0 90px rgba(232,198,122,.25)}
+.banner img{display:block;width:100%;height:clamp(320px,48vw,600px);object-fit:cover;object-position:50% 30%}
+.banner .side{position:absolute;inset:0 0 0 auto;width:min(520px,60%);padding:clamp(20px,5vw,60px);display:flex;flex-direction:column;justify-content:center;gap:14px;background:linear-gradient(90deg,rgba(13,18,48,0),rgba(13,18,48,.88) 30%,rgba(13,18,48,.96))}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:40px}
+.grid3.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:820px}
+.frame{padding:14px;background:var(--cream);border-radius:6px;box-shadow:0 0 0 1px #b8995a,0 16px 40px rgba(0,0,0,.45);transition:transform .35s,box-shadow .35s;color:var(--ink)}
+.frame:hover{transform:translateY(-8px);box-shadow:0 22px 50px rgba(0,0,0,.55),0 0 0 1px var(--gold)}
+.frame img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
+.frame.tall img{aspect-ratio:4/5}
+.frame figcaption{font-family:var(--serif);font-size:19px;padding:12px 4px 2px}
+.threewrap{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:40px;align-items:center;margin-top:40px}
+.threewrap video{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;box-shadow:0 0 0 2px var(--gold),0 0 60px rgba(232,198,122,.25)}
+.gridc{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:18px;margin-top:36px}
+.frame.mini{padding:10px}.frame.mini figcaption{font-size:16px;padding:8px 2px 0}
+.flip{position:relative;aspect-ratio:1/1}.flip img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.flip img.b{animation:flipfade 6s ease-in-out infinite}
+@keyframes flipfade{0%,40%{opacity:0}50%,90%{opacity:1}100%{opacity:0}}
+.flip.three img.b,.flip.three img.c{opacity:0;animation:fade3 9s ease-in-out infinite}.flip.three img.c{animation-delay:3s}.flip.three img.b{animation-delay:6s}
+@keyframes fade3{0%{opacity:0}8%,33%{opacity:1}41%,100%{opacity:0}}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:40px}
+.janie{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:64px;align-items:center;background:var(--cream);color:var(--ink);border-radius:24px;padding:clamp(24px,5vw,72px);box-shadow:0 0 0 2px var(--gold)}
+.janie video{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;box-shadow:0 0 0 1px #b8995a}
+.janie p{font-family:var(--serif);font-size:22px;line-height:1.65;max-width:34ch}
+.join{text-align:center}
+.join form{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+footer{position:relative;z-index:1;background:#080b20;border-top:1px solid var(--line);padding-block:32px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;color:var(--soft);font-size:15px}
+.sr{position:absolute;left:-9999px}
+@keyframes write{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes glow{0%,100%{text-shadow:0 0 18px rgba(232,198,122,.35)}50%{text-shadow:0 0 30px rgba(232,198,122,.7),0 0 70px rgba(232,198,122,.3)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.06);opacity:1}100%{transform:scale(1)}}
+@media (max-width:860px){.hero,.wish,.janie,.threewrap{grid-template-columns:minmax(0,1fr)}.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3,.grid3.two{grid-template-columns:minmax(0,1fr)}.links{display:none}.banner .side{width:100%;background:linear-gradient(180deg,rgba(13,18,48,0) 30%,rgba(13,18,48,.95))}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="wrap">
+<nav><span class="brand">Heartsong</span><div class="links"><a href="#wish">MAKE A WISH</a><a href="#soretha">MEET SORETHA</a><a href="#dolls">THE DOLLS</a><a href="#janie">MEET JANIE</a><a href="#join">JOIN</a></div></nav>
+<header class="hero">
+<div>
+<div class="eyebrow">Daily affirmations • Original art</div>
+<div class="write">Heartsong</div>
+<div class="sub">INSPIRATION</div>
+<p class="tag">a gentle song for every heart</p>
+<div class="btns"><a class="btn solid" href="#wish">Make a wish</a><a class="btn" href="#dolls">Meet the dolls</a></div>
+</div>
+<div class="arch"><img src="media/01-e840c30b.jpg" alt="Isabella in a green dress, holding a glowing lantern in a field at night" style="object-position:50% 35%"></div>
+</header>
+
+<section id="wish" class="wish">
+<div>
+<div class="eyebrow">Make a wish</div>
+<h2>A kind word,<br><span class="script">written just for you</span></h2>
+<label class="step" for="nm">1. Tell us your first name</label>
+<input class="field" id="nm" type="text" placeholder="Your first name" autocomplete="given-name">
+<span class="step">2. Touch a star and make a wish</span>
+<div class="stars" id="stars"></div>
+<span class="step">3. Keep it with you</span>
+<div class="btns" style="margin-top:10px"><button class="btn solid" id="save" type="button">Make my phone wallpaper</button></div>
+<p class="note" id="saveNote"></p>
+<img id="wall" alt="Your Heartsong phone wallpaper" hidden>
+</div>
+<div class="phone"><div class="screen">
+<img class="bg" id="phoneImg" src="media/02-40e8ae7d.jpg" alt="">
+<div class="fade"></div>
+<div class="msg" id="msg"><div class="eyebrow" style="font-size:10px">Touch a star</div><q style="font-style:italic;color:var(--soft)">Your wish will appear here</q></div>
+<div class="sig">Heartsong Inspiration</div>
+</div></div>
+</section>
+</div>
+
+<section class="band" id="affirm"><div class="wrap">
+<div class="eyebrow">A kind word for you</div>
+<div class="dots" id="dots"></div>
+<blockquote id="quote"></blockquote>
+<div class="eyebrow" style="margin-top:14px">Soretha Eldridge</div>
+<div class="btns" style="justify-content:center"><button class="btn solid" id="next" type="button">Another kind word</button></div>
+</div></section>
+
+<div class="wrap">
+<section id="soretha">
+<div class="banner"><img src="media/02-40e8ae7d.jpg" alt="Soretha in her starry blue dress, looking up at the night sky">
+<div class="side"><div class="eyebrow">Meet Soretha</div><div style="font-family:var(--display);font-size:clamp(56px,8vw,88px);line-height:1;color:var(--gold)">Soretha</div><p style="margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(22px,3vw,32px)">I carry a light made to shine.</p></div></div>
+<div class="eyebrow" style="margin-top:56px">In Soretha's words</div><h2>Affirmation Cards</h2>
+<div class="grid3 two">
+<figure class="frame" style="margin:0"><img src="media/03-5663104b.jpg" alt="Card: They did not break me. They only underestimated what a woman can carry — and still rise, still carrying it."></figure>
+<figure class="frame" style="margin:0"><img src="media/04-18af6875.jpg" alt="Card: My scars were never flaws. They are the quiet places where I refused to give up on myself."></figure>
+</div>
+</section>
+
+<section id="dolls">
+<div class="eyebrow">The Heartsong Dolls</div><h2>Meet the <span class="script">family</span></h2>
+<div class="grid4">
+<figure class="frame tall" style="margin:0"><img src="media/05-4eb96a85.jpg" alt="Harmony dancing in a yellow flowered dress with music notes"><figcaption>Harmony</figcaption></figure>
+<figure class="frame tall" style="margin:0"><img src="media/06-320579a6.jpg" alt="Janie in overalls and a red bow, sitting among ladybug mushrooms"><figcaption>Janie</figcaption></figure>
+<figure class="frame tall" style="margin:0"><img src="media/07-6c4738c1.jpg" alt="Kyran in a yellow shirt and overalls among sunflowers and bumblebees"><figcaption>Kyran</figcaption></figure>
+<figure class="frame tall" style="margin:0"><img src="media/08-2ad7e3d3.jpg" alt="Zaire with dragonfly wings standing by a pond"><figcaption>Zaire</figcaption></figure>
+</div>
+</section>
+<section id="collection">
+<div class="eyebrow">The whole collection</div><h2>More Heartsong <span class="script">friends</span></h2>
+<div class="gridc"><figure class="frame mini" style="margin:0"><div class="flip"><img src="media/09-a6576201.jpg" alt="Harmony dancing in her flowered dress"><img class="b" src="media/10-6f4c30d2.jpg" alt="Harmony with a yellow flower in her hair"></div><figcaption>Harmony</figcaption></figure>
+<figure class="frame mini" style="margin:0"><img src="media/11-8d34ef84.jpg" alt="Imani" loading="lazy"><figcaption>Imani</figcaption></figure>
+<figure class="frame mini" style="margin:0"><img src="media/12-315e2785.jpg" alt="Dream" loading="lazy"><figcaption>Dream</figcaption></figure>
+<figure class="frame mini" style="margin:0"><div class="flip"><img src="media/13-3530e412.jpg" alt="Kyran with butterflies, arms raised"><img class="b" src="media/14-404b653b.jpg" alt="Kyran flying a kite"></div><figcaption>Kyran</figcaption></figure>
+<figure class="frame mini" style="margin:0"><img src="media/15-3fe4f030.jpg" alt="Zaire" loading="lazy"><figcaption>Zaire</figcaption></figure>
+<figure class="frame mini" style="margin:0"><img src="media/16-5782eb12.jpg" alt="Sailing" loading="lazy"><figcaption>Sailing</figcaption></figure>
+<figure class="frame mini" style="margin:0"><img src="media/17-c5dbf20c.jpg" alt="Daisy Girl" loading="lazy"><figcaption>Daisy Girl</figcaption></figure>
+<figure class="frame mini" style="margin:0"><img src="media/18-96fe15bc.jpg" alt="Dancing in Stars" loading="lazy"><figcaption>Dancing in Stars</figcaption></figure>
+<figure class="frame mini" style="margin:0"><img src="media/19-6f6c0e9a.jpg" alt="Music Girl" loading="lazy"><figcaption>Music Girl</figcaption></figure>
+<figure class="frame mini" style="margin:0"><img src="media/20-431a0770.jpg" alt="Funny Jump" loading="lazy"><figcaption>Funny Jump</figcaption></figure>
+<figure class="frame mini" style="margin:0"><img src="media/21-ae2676b4.jpg" alt="Ariana" loading="lazy"><figcaption>Ariana</figcaption></figure>
+<figure class="frame mini" style="margin:0"><img src="media/22-15219633.jpg" alt="A Heartsong girl in watercolor" loading="lazy"></figure>
+<figure class="frame mini" style="margin:0"><div class="flip"><img src="media/23-be01dd5d.jpg" alt="Heartsong girl twirling in a pink dress"><img class="b" src="media/24-59a531f1.jpg" alt="The same girl dancing among butterflies"></div></figure>
+<figure class="frame mini" style="margin:0"><div class="flip"><img src="media/25-f0d91b60.jpg" alt="Heartsong girl in a teal dress holding a daisy"><img class="b" src="media/26-64245ad8.jpg" alt="The same girl with a blue bow among daisies"></div></figure>
+<figure class="frame mini" style="margin:0"><div class="flip"><img src="media/27-95bcbb47.jpg" alt="Heartsong girl with braided buns holding flowers"><img class="b" src="media/28-5ebe0c23.jpg" alt="The same girl holding a gift"></div></figure>
+<figure class="frame mini" style="margin:0"><div class="flip"><img src="media/29-70bd0ffa.jpg" alt="Heartsong girl in a lavender dress with a flower"><img class="b" src="media/30-796f3f82.jpg" alt="The same girl holding a bouquet"></div></figure>
+<figure class="frame mini" style="margin:0"><img src="media/31-31dbdecc.jpg" alt="A Heartsong girl in watercolor" loading="lazy"></figure>
+<figure class="frame mini" style="margin:0"><img src="media/32-5efaeaff.jpg" alt="A Heartsong girl in watercolor" loading="lazy"></figure>
+<figure class="frame mini" style="margin:0"><div class="flip three"><img src="media/33-792174d9.jpg" alt="Heartsong girl building sandcastles at the beach"><img class="b" src="media/34-6de77f28.jpg" alt="The same girl on an autumn day"><img class="c" src="media/35-85ab9f0b.jpg" alt="The same girl on a snowy day"></div></figure></div>
+</section>
+
+<section id="three"><div class="threewrap">
+<video src="media/36-9f63b813.mp4" poster="media/37-a8dd77ba.jpg" autoplay muted loop playsinline aria-label="Animated watercolor of Janie, Kyran and Zaire"></video>
+<div><div class="eyebrow">Meet The Three</div><h2>Janie, Kyran <span class="script">&amp;</span> Zaire</h2><p style="font-family:var(--serif);font-size:21px;color:#dfe3f3;max-width:30ch">Autumn leaves, sunflowers and a dragonfly by the pond. Three friends, one little adventure.</p></div>
+</div></section>
+
+<section id="janie"><div class="janie">
+<video src="media/38-a9dbd0bd.mp4" poster="media/39-f29d2466.jpg" autoplay muted loop playsinline aria-label="Animated watercolor of Janie with her ladybug friends"></video>
+<div><div class="eyebrow" style="color:#9a7a35">Meet Janie</div>
+<h2 style="color:var(--ink)">This is Janie.<br><span class="script" style="color:#9a7a35">I made her.</span></h2>
+<p>She's six, she has a ladybug for a friend, and she's not in a hurry about anything.</p><p>I hope she makes somebody smile today.</p></div>
+</div></section>
+
+<section class="join" id="join">
+<div style="font-family:var(--display);font-size:clamp(48px,7vw,80px);color:var(--gold);animation:glow 5s ease-in-out infinite">a kind word, every morning</div>
+<p style="color:#dfe3f3;margin:0">One affirmation in your inbox each day. Nothing else, ever.</p>
+<form id="joinForm"><label class="sr" for="em">Email address</label><input class="field" id="em" type="email" placeholder="Your email address" required style="margin:0"><button class="btn solid" type="submit">Sign me up</button></form>
+<p class="note" id="joinNote">Preview only: sign-ups will be connected when the site goes live.</p>
+</section>
+</div>
+<footer><div class="wrap"><span style="font-family:var(--display);font-size:30px;color:var(--gold)">Heartsong Inspiration</span><span>shine@heartsonginspiration.com</span><span>© 2026 Heartsong Inspiration</span></div></footer>
+
+<script>
+(function(){
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const cv=document.getElementById('sky'),g=cv.getContext('2d');let W,H,stars=[],shoot=null,t0=performance.now(),trail=[];
+function size(){W=cv.width=innerWidth*devicePixelRatio;H=cv.height=innerHeight*devicePixelRatio;cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';stars=[];for(let i=0;i<Math.round(innerWidth*innerHeight/9000);i++)stars.push({x:Math.random()*W,y:Math.random()*H,r:(0.6+Math.random()*1.5)*devicePixelRatio,p:Math.random()*6.28,s:.5+Math.random()*1.5,d:Math.random()*2.4});}
+size();addEventListener('resize',size);
+function frame(now){const t=(now-t0)/1000;g.clearRect(0,0,W,H);
+for(const s of stars){const on=reduce?1:Math.min(1,Math.max(0,(t-s.d)/1));const a=on*(.35+.65*(0.5+0.5*Math.sin(s.p+t*s.s)));g.globalAlpha=a;g.fillStyle='#f7e2ad';g.shadowColor='#f7e2ad';g.shadowBlur=6*devicePixelRatio;g.beginPath();g.arc(s.x,s.y,s.r,0,6.28);g.fill();}
+if(!reduce){if(!shoot&&Math.random()<0.006&&t>3)shoot={x:W*(0.5+Math.random()*0.5),y:H*Math.random()*0.4,l:0};
+if(shoot){shoot.l+=0.018;const len=180*devicePixelRatio,x=shoot.x-shoot.l*700*devicePixelRatio,y=shoot.y+shoot.l*380*devicePixelRatio;const gr=g.createLinearGradient(x,y,x+len,y-len*.54);gr.addColorStop(0,'rgba(247,226,173,1)');gr.addColorStop(1,'rgba(247,226,173,0)');g.globalAlpha=1-shoot.l;g.strokeStyle=gr;g.lineWidth=2*devicePixelRatio;g.beginPath();g.moveTo(x,y);g.lineTo(x+len,y-len*.54);g.stroke();if(shoot.l>=1)shoot=null;}
+for(let i=trail.length-1;i>=0;i--){const p=trail[i];p.a-=0.025;p.y+=0.4*devicePixelRatio;if(p.a<=0){trail.splice(i,1);continue;}g.globalAlpha=p.a;g.fillStyle='#f7e2ad';g.beginPath();g.arc(p.x,p.y,p.r,0,6.28);g.fill();}}
+g.globalAlpha=1;g.shadowBlur=0;requestAnimationFrame(frame);}
+requestAnimationFrame(frame);
+function spark(x,y,n){for(let i=0;i<n;i++)trail.push({x:(x+(Math.random()-.5)*14)*devicePixelRatio,y:(y+(Math.random()-.5)*14)*devicePixelRatio,r:(0.8+Math.random()*1.6)*devicePixelRatio,a:1});}
+addEventListener('pointermove',e=>{if(e.pointerType==='mouse')spark(e.clientX,e.clientY,1);});
+addEventListener('pointerdown',e=>spark(e.clientX,e.clientY,14));
+
+const Q=['I carry a light made to shine.','They did not break me. They only underestimated what a woman can carry — and still rise, still carrying it.','My scars were never flaws. They are the quiet places where I refused to give up on myself.','You are not going to believe who you become.','I still have your laugh. I still have your handwriting. We made it.','Intelligence without compassion is just cleverness. I’d rather be the kind of smart that shows up, listens, and helps someone rebuild.','Everything I’ve survived taught me one thing: healing was never meant to be done alone. So I spend my days making sure no family in my community has to. That isn’t charity — it’s simply how we’re meant to treat one another.','People ask why I keep going. It’s simple — I know what it feels like to need someone when no one comes. So now I try to be the someone who comes.'];
+let qi=0;const qel=document.getElementById('quote'),dots=document.getElementById('dots');Q.forEach(()=>dots.appendChild(document.createElement('span')));
+function showQ(){qel.style.opacity=0;setTimeout(()=>{qel.textContent='“'+Q[qi]+'”';qel.style.opacity=1;},250);[...dots.children].forEach((d,k)=>d.classList.toggle('on',k===qi));}
+showQ();document.getElementById('next').onclick=()=>{qi=(qi+1)%Q.length;showQ();};setInterval(()=>{qi=(qi+1)%Q.length;showQ();},8000);
+
+const WISH=[['you carry a light made to shine.','You carry a light made to shine.'],['you are not going to believe who you become.','You are not going to believe who you become.'],['your scars were never flaws. They are the quiet places where you refused to give up on yourself.','Your scars were never flaws. They are the quiet places where you refused to give up on yourself.'],['they did not break you. Gentle is still strong, and you are still rising.','They did not break you. Gentle is still strong, and you are still rising.'],['you are allowed to take your time. Simple is enough for today.','You are allowed to take your time. Simple is enough for today.']];
+let wi=-1;const nm=document.getElementById('nm'),msg=document.getElementById('msg'),box=document.getElementById('stars');
+const path='M12 2.5l2.9 6.1 6.6.8-4.9 4.5 1.3 6.6L12 17.2l-5.9 3.3 1.3-6.6-4.9-4.5 6.6-.8z';
+WISH.forEach((w,k)=>{const b=document.createElement('button');b.type='button';b.className='star-btn';b.setAttribute('aria-label','Wish star '+(k+1));b.style.marginTop=[0,14,4,18,6][k]+'px';b.innerHTML='<svg width="46" height="46" viewBox="0 0 24 24" aria-hidden="true"><path d="'+path+'"/></svg>';b.onclick=e=>{wi=k;[...box.children].forEach((c,j)=>c.classList.toggle('on',j===k));const r=b.getBoundingClientRect();spark(r.left+r.width/2,r.top+r.height/2,30);render();};box.appendChild(b);});
+function text(){const n=nm.value.trim();return wi<0?'':(n?n+', '+WISH[wi][0]:WISH[wi][1]);}
+function render(){if(wi<0)return;msg.innerHTML='';msg.classList.remove('pop');void msg.offsetWidth;msg.classList.add('pop');const e=document.createElement('div');e.className='eyebrow';e.style.fontSize='10px';e.textContent='A gentle reminder';const q=document.createElement('q');q.textContent=text();msg.append(e,q);}
+nm.addEventListener('input',render);
+document.getElementById('save').onclick=()=>{const note=document.getElementById('saveNote');if(wi<0){note.textContent='Touch a star first, then make your wallpaper.';return;}
+const c=document.createElement('canvas');c.width=1080;c.height=2340;const x=c.getContext('2d');x.fillStyle='#0d1230';x.fillRect(0,0,1080,2340);
+const portrait=document.getElementById('phoneImg');const h=1500,sw=portrait.naturalWidth,sh=Math.min(portrait.naturalHeight,sw*h/1080);x.drawImage(portrait,0,0,sw,sh,0,0,1080,h);
+const gr=x.createLinearGradient(0,1050,0,1600);gr.addColorStop(0,'rgba(13,18,48,0)');gr.addColorStop(1,'#0d1230');x.fillStyle=gr;x.fillRect(0,1050,1080,560);
+x.textAlign='center';x.fillStyle='#e8c67a';x.font='800 34px Mulish, sans-serif';x.fillText('A  GENTLE  REMINDER',540,1650);
+x.fillStyle='#f8f3e8';x.font='64px "Playfair Display", Georgia, serif';let line='',y=1770;text().split(' ').forEach(w=>{const t=line?line+' '+w:w;if(x.measureText(t).width>900){x.fillText(line,540,y);line=w;y+=88;}else line=t;});x.fillText(line,540,y);
+x.fillStyle='#e8c67a';x.font='88px "Alex Brush", cursive';x.fillText('Heartsong Inspiration',540,2210);
+const img=document.getElementById('wall');img.src=c.toDataURL('image/png');img.hidden=false;note.textContent='Here it is. Press and hold the picture (or right-click it) and choose Save image.';};
+document.getElementById('joinForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('joinNote').textContent='Thank you! This is a preview, so nothing was sent yet.';});
+})();
+</script>
+
+
+<button id="musicBtn" aria-pressed="false" title="Play magical music"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg><span class="lbl">PLAY MUSIC</span><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
+<script>
+(function(){
+var btn=document.getElementById('musicBtn'),ctx,master,rev,timer,padOsc=[],on=false;
+function makeReverb(c){var len=c.sampleRate*3.2,buf=c.createBuffer(2,len,c.sampleRate);for(var ch=0;ch<2;ch++){var d=buf.getChannelData(ch);for(var i=0;i<len;i++){d[i]=(Math.random()*2-1)*Math.pow(1-i/len,2.6);}}var cv=c.createConvolver();cv.buffer=buf;return cv;}
+function start(){
+  if(!ctx){ctx=new (window.AudioContext||window.webkitAudioContext)();master=ctx.createGain();master.gain.value=0;master.connect(ctx.destination);
+    rev=makeReverb(ctx);var wet=ctx.createGain();wet.gain.value=.55;rev.connect(wet);wet.connect(master);}
+  if(ctx.state==='suspended')ctx.resume();
+  master.gain.cancelScheduledValues(ctx.currentTime);master.gain.setTargetAtTime(.5,ctx.currentTime,1.2);
+  /* starry pad */
+  var lp=ctx.createFilter?null:null;
+  [130.81,196.0,261.63].forEach(function(f,i){var o=ctx.createOscillator(),g=ctx.createGain(),fl=ctx.createBiquadFilter();o.type='triangle';o.frequency.value=f;o.detune.value=(i-1)*6;fl.type='lowpass';fl.frequency.value=420;g.gain.value=.045;o.connect(fl);fl.connect(g);g.connect(master);g.connect(rev);o.start();padOsc.push(o);
+    var lfo=ctx.createOscillator(),lg=ctx.createGain();lfo.frequency.value=.07+i*.03;lg.gain.value=.02;lfo.connect(lg);lg.connect(g.gain);lfo.start();padOsc.push(lfo);});
+  /* music-box bells, C major pentatonic */
+  var scale=[523.25,587.33,659.25,783.99,880.0,1046.5,1174.66,1318.51,1567.98,1760.0,2093.0];var step=0;
+  function bell(freq,t,vol){var g=ctx.createGain();g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+2.6);g.connect(master);g.connect(rev);
+    [[1,1],[2.76,.28],[5.4,.1]].forEach(function(h){var o=ctx.createOscillator();o.type='sine';o.frequency.value=freq*h[0];var hg=ctx.createGain();hg.gain.value=h[1];o.connect(hg);hg.connect(g);o.start(t);o.stop(t+2.8);});}
+  function tick(){if(!on)return;var t=ctx.currentTime+.05;var n=Math.random();
+    if(n<.78){var idx=Math.max(0,Math.min(scale.length-1,step+Math.round((Math.random()-.5)*4)));step=idx;bell(scale[idx],t,.16+Math.random()*.08);
+      if(Math.random()<.3)bell(scale[Math.max(0,idx-3)],t+.02,.09);}
+    if(Math.random()<.12)bell(scale[scale.length-1]*(Math.random()<.5?1:1.5),t+.15,.05);
+    timer=setTimeout(tick,330+Math.random()*260);}
+  on=true;tick();
+}
+function stop(){on=false;clearTimeout(timer);if(!ctx)return;master.gain.cancelScheduledValues(ctx.currentTime);master.gain.setTargetAtTime(0,ctx.currentTime,.6);
+  setTimeout(function(){padOsc.forEach(function(o){try{o.stop()}catch(e){}});padOsc=[];},2500);}
+btn.addEventListener('click',function(){if(on){stop();btn.classList.remove('on');btn.setAttribute('aria-pressed','false');btn.querySelector('.lbl').textContent='PLAY MUSIC';btn.title='Play magical music';}
+  else{start();btn.classList.add('on');btn.setAttribute('aria-pressed','true');btn.querySelector('.lbl').textContent='MUSIC ON';btn.title='Pause music';}});
+document.addEventListener('visibilitychange',function(){if(ctx){if(document.hidden&&on)ctx.suspend();else if(on)ctx.resume();}});
+})();
+</script>
+</body></html>
