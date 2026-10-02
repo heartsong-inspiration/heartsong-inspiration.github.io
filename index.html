@@ -292,4 +292,18 @@ btn.addEventListener('click',function(){if(on){stop();btn.classList.remove('on')
 document.addEventListener('visibilitychange',function(){if(ctx){if(document.hidden&&on)ctx.suspend();else if(on)ctx.resume();}});
 })();
 </script>
+<script>
+(function(){
+  var vids=[].slice.call(document.querySelectorAll('video[autoplay]'));
+  function nudge(v){ if(v.paused){ v.muted=true; var p=v.play(); if(p&&p.catch) p.catch(function(){}); } }
+  function nudgeAll(){ vids.forEach(nudge); }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) nudge(e.target); }); },{threshold:0.2});
+    vids.forEach(function(v){ io.observe(v); });
+  }
+  ['pointerdown','touchstart','keydown','scroll'].forEach(function(ev){ window.addEventListener(ev,nudgeAll,{passive:true}); });
+  document.addEventListener('visibilitychange',function(){ if(!document.hidden) nudgeAll(); });
+  window.addEventListener('load',nudgeAll); window.addEventListener('pageshow',nudgeAll);
+})();
+</script>
 </body></html>
