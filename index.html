@@ -1,309 +1,590 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Heartsong Inspiration — a gentle song for every heart</title><meta name="description" content="Heartsong Inspiration: daily affirmations and original watercolor art. Meet Soretha, Janie, Kyran, Zaire, Harmony and the Heartsong dolls."><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Heartsong Inspiration: a gentle song for every heart. Daily affirmations, original art and stories by Soretha Eldridge.">
+<meta property="og:title" content="Heartsong Inspiration">
+<meta property="og:description" content="A gentle song for every heart. Daily affirmations, original art and soft encouragement.">
+<meta property="og:image" content="https://heartsonginspiration.com/img/card-soretha.jpg">
+<meta name="copyright" content="© 2026 Soretha Eldridge, Heartsong Inspiration">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Heartsong Inspiration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Nunito+Sans:wght@400;600;700&display=swap">
 <style>
-#musicBtn{position:fixed;right:22px;bottom:22px;z-index:50;display:flex;align-items:center;gap:10px;min-height:52px;padding:0 20px 0 16px;border-radius:999px;border:1.5px solid var(--gold);background:rgba(13,18,48,.85);backdrop-filter:blur(8px);color:var(--gold);font:800 14px/1 var(--sans);letter-spacing:.08em;cursor:pointer;box-shadow:0 0 30px rgba(232,198,122,.25),0 12px 30px rgba(0,0,0,.5);transition:background .25s,color .25s,transform .25s}
-#musicBtn:hover{background:var(--gold);color:var(--night);transform:translateY(-2px)}
-#musicBtn svg{width:22px;height:22px;fill:currentColor}
-#musicBtn.on svg{animation:sway 1.6s ease-in-out infinite}
-#musicBtn .bars{display:none;gap:3px;align-items:flex-end;height:16px}
-#musicBtn.on .bars{display:flex}
-#musicBtn .bars i{width:3px;background:currentColor;border-radius:2px;animation:eq 1s ease-in-out infinite}
-#musicBtn .bars i:nth-child(2){animation-delay:.2s}#musicBtn .bars i:nth-child(3){animation-delay:.4s}#musicBtn .bars i:nth-child(4){animation-delay:.1s}
-@keyframes eq{0%,100%{height:4px}50%{height:16px}}
-@keyframes sway{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
-@media (max-width:600px){#musicBtn{right:14px;bottom:14px}#musicBtn span.lbl{display:none}}
-</style>
-</head><body>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Alex+Brush&family=Mulish:wght@400;600;700;800&display=swap">
-<style>
-/* Layout: a single night sky that scrolls; gold is the only accent, cream frames hold the watercolors */
-:root{--night:#0d1230;--night2:#141c44;--line:#2e3a70;--gold:#e8c67a;--gold2:#f7e2ad;--cream:#f6f0e2;--ink:#1d2340;--text:#f3eee3;--soft:#cfd4e6;
---display:'Alex Brush',cursive;--serif:'Playfair Display',Georgia,serif;--sans:'Mulish',system-ui,sans-serif;color-scheme:dark}
+/* Layout: champagne "keepsake box" — gold script masthead, sticky ribbon nav, one page per tab, soft sparkle ground. Single warm look by choice. */
+:root{
+  --champagne:#f6eef3;
+  --cream:#fffafd;
+  --gold:#a8648f;
+  --gold-deep:#7a3f6c;
+  --gold-light:#ecd3e4;
+  --cocoa:#3a2234;
+  --cocoa-soft:#6b5266;
+  --rose:#c45c5c;
+  --line:#ead7e3;
+  --f-script:"Allura","Brush Script MT",cursive;
+  --f-head:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --f-body:"Nunito Sans","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+}
 *{box-sizing:border-box}
-html,body{background:var(--night);color:var(--text)}
-body{font-family:var(--sans);font-size:17px;line-height:1.6;overflow-x:hidden}
-a{color:var(--gold);text-decoration:none}a:hover{color:var(--gold2)}
-:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
-#sky{position:fixed;inset:0;pointer-events:none;z-index:0}
-.wrap{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding-inline:clamp(16px,5vw,64px)}
-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:24px;flex-wrap:wrap}
-.brand{font-family:var(--display);font-size:42px;color:var(--gold)}
-.links{display:flex;gap:24px;flex-wrap:wrap;font-size:13px;font-weight:800;letter-spacing:.14em}
-.links a{color:var(--text)}
-.eyebrow{font-size:12px;font-weight:800;letter-spacing:.35em;color:var(--gold);text-transform:uppercase}
-.hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:56px;align-items:center;padding-block:48px 100px}
-.write{font-family:var(--display);font-size:clamp(80px,12vw,150px);line-height:1.1;color:var(--gold);padding-right:.2em;animation:write 2.6s cubic-bezier(.6,0,.3,1) .5s both,glow 5s ease-in-out 3.1s infinite}
-.sub{font-family:var(--serif);font-size:clamp(18px,2.4vw,26px);letter-spacing:.55em;margin-top:6px}
-.tag{font-family:var(--serif);font-style:italic;font-size:clamp(22px,3vw,34px);color:#dfe3f3;margin:18px 0 0}
-.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
-.btn{display:inline-flex;align-items:center;min-height:52px;padding:0 30px;border-radius:999px;font-weight:800;font-size:16px;border:1.5px solid var(--gold);color:var(--gold);background:none;font-family:inherit;cursor:pointer;transition:background .25s,color .25s,transform .25s}
-.btn.solid{background:var(--gold);color:var(--night);border-color:var(--gold)}
-.btn:hover{background:var(--gold2);color:var(--night);transform:translateY(-2px)}
-.arch{padding:16px;background:var(--cream);border-radius:260px 260px 20px 20px;box-shadow:0 0 0 2px var(--gold),0 0 80px rgba(232,198,122,.35),0 30px 60px rgba(0,0,0,.5);animation:floaty 7s ease-in-out infinite;max-width:480px;justify-self:center;width:100%}
-.arch img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:38% 30%;border-radius:244px 244px 12px 12px}
-section{padding-block:90px}
-h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,56px);line-height:1.1;margin:10px 0 0;text-wrap:balance}
-.script{font-family:var(--display);color:var(--gold);font-size:1.4em;font-weight:400}
-.wish{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:64px;align-items:center}
-.step{font-weight:700;letter-spacing:.06em;color:#dfe3f3;margin-top:22px;display:block}
-.field{width:100%;max-width:420px;height:56px;padding:0 22px;border-radius:999px;border:1px solid #4a5688;background:var(--night2);color:var(--text);font:inherit;font-size:18px;margin-top:10px}
-.stars{display:flex;gap:14px;margin-top:10px;flex-wrap:wrap}
-.star-btn{background:none;border:0;padding:6px;cursor:pointer;transition:transform .25s,filter .25s;border-radius:50%}
-.star-btn:hover,.star-btn.on{transform:scale(1.2) rotate(12deg);filter:drop-shadow(0 0 12px var(--gold2))}
-.star-btn svg path{fill:rgba(232,198,122,.12);stroke:var(--gold);stroke-width:1.2;transition:fill .3s}
-.star-btn.on svg path{fill:var(--gold2)}
-.phone{width:320px;max-width:100%;padding:13px;border-radius:46px;background:#05081a;box-shadow:0 0 0 2px var(--line),0 0 80px rgba(232,198,122,.25),0 30px 60px rgba(0,0,0,.6);justify-self:center}
-.screen{position:relative;aspect-ratio:9/19.5;border-radius:34px;overflow:hidden;background:var(--night2)}
-.screen>img.bg{position:absolute;inset:0 0 auto 0;width:100%;height:62%;object-fit:cover;object-position:38% 25%}
-.screen .fade{position:absolute;inset:auto 0 0 0;height:55%;background:linear-gradient(180deg,rgba(13,18,48,0),var(--night) 28%)}
-.screen .msg{position:absolute;left:22px;right:22px;bottom:68px;text-align:center;display:flex;flex-direction:column;gap:10px}
-.screen .msg q{font-family:var(--serif);font-size:21px;line-height:1.35;color:#f8f3e8;quotes:none}
-.screen .sig{position:absolute;inset:auto 0 22px 0;text-align:center;font-family:var(--display);font-size:25px;color:var(--gold)}
-.pop{animation:pop .7s ease-out both}
-#wall{display:block;width:100%;max-width:320px;border-radius:24px;margin-top:16px}
-.note{font-size:14px;color:var(--soft);margin-top:10px}
-.band{background:rgba(20,28,68,.85);border-block:1px solid var(--line);text-align:center}
-.band blockquote{font-family:var(--serif);font-size:clamp(28px,4.2vw,46px);line-height:1.3;margin:28px auto 0;max-width:24ch;min-height:4.2em;transition:opacity .5s}
-.dots{display:flex;gap:10px;justify-content:center;margin-top:18px}
-.dots span{height:8px;width:8px;border-radius:4px;background:#4a5688;transition:all .4s}
-.dots span.on{width:28px;background:var(--gold)}
-.banner{position:relative;border-radius:24px;overflow:hidden;box-shadow:0 0 0 2px var(--gold),0 0 90px rgba(232,198,122,.25)}
-.banner img{display:block;width:100%;height:clamp(320px,48vw,600px);object-fit:cover;object-position:50% 30%}
-.banner .side{position:absolute;inset:0 0 0 auto;width:min(520px,60%);padding:clamp(20px,5vw,60px);display:flex;flex-direction:column;justify-content:center;gap:14px;background:linear-gradient(90deg,rgba(13,18,48,0),rgba(13,18,48,.88) 30%,rgba(13,18,48,.96))}
-.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:40px}
-.grid3.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:820px}
-.frame{padding:14px;background:var(--cream);border-radius:6px;box-shadow:0 0 0 1px #b8995a,0 16px 40px rgba(0,0,0,.45);transition:transform .35s,box-shadow .35s;color:var(--ink)}
-.frame:hover{transform:translateY(-8px);box-shadow:0 22px 50px rgba(0,0,0,.55),0 0 0 1px var(--gold)}
-.frame img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
-.frame.tall img{aspect-ratio:4/5}
-.frame figcaption{font-family:var(--serif);font-size:19px;padding:12px 4px 2px}
-.threewrap{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:40px;align-items:center;margin-top:40px}
-.threewrap video{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;box-shadow:0 0 0 2px var(--gold),0 0 60px rgba(232,198,122,.25)}
-.gridc{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:18px;margin-top:36px}
-.frame.mini{padding:10px}.frame.mini figcaption{font-size:16px;padding:8px 2px 0}
-.flip{position:relative;aspect-ratio:1/1}.flip img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.flip img.b{animation:flipfade 6s ease-in-out infinite}
-@keyframes flipfade{0%,40%{opacity:0}50%,90%{opacity:1}100%{opacity:0}}
-.flip.three img.b,.flip.three img.c{opacity:0;animation:fade3 9s ease-in-out infinite}.flip.three img.c{animation-delay:3s}.flip.three img.b{animation-delay:6s}
-@keyframes fade3{0%{opacity:0}8%,33%{opacity:1}41%,100%{opacity:0}}
-.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:40px}
-.janie{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:64px;align-items:center;background:var(--cream);color:var(--ink);border-radius:24px;padding:clamp(24px,5vw,72px);box-shadow:0 0 0 2px var(--gold)}
-.janie video{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;box-shadow:0 0 0 1px #b8995a}
-.janie p{font-family:var(--serif);font-size:22px;line-height:1.65;max-width:34ch}
-.join{text-align:center}
-.join form{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
-footer{position:relative;z-index:1;background:#080b20;border-top:1px solid var(--line);padding-block:32px}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;color:var(--soft);font-size:15px}
-.sr{position:absolute;left:-9999px}
-@keyframes write{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
-@keyframes glow{0%,100%{text-shadow:0 0 18px rgba(232,198,122,.35)}50%{text-shadow:0 0 30px rgba(232,198,122,.7),0 0 70px rgba(232,198,122,.3)}}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-@keyframes pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.06);opacity:1}100%{transform:scale(1)}}
-@media (max-width:860px){.hero,.wish,.janie,.threewrap{grid-template-columns:minmax(0,1fr)}.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3,.grid3.two{grid-template-columns:minmax(0,1fr)}.links{display:none}.banner .side{width:100%;background:linear-gradient(180deg,rgba(13,18,48,0) 30%,rgba(13,18,48,.95))}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-</style>
+html{scroll-behavior:smooth}
+body{
+  background:var(--champagne);
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(196,160,200,.55) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 78% 8%, rgba(196,160,200,.6) 0 1.2px, transparent 2px),
+    radial-gradient(circle at 55% 62%, rgba(196,160,200,.5) 0 1.4px, transparent 2px),
+    radial-gradient(circle at 30% 85%, rgba(196,160,200,.5) 0 1.2px, transparent 2px);
+  background-size:220px 220px, 300px 300px, 260px 260px, 340px 340px;
+  color:var(--cocoa);
+  font-family:var(--f-body);
+  font-size:16px;
+  line-height:1.65;
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--cream)}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--gold-deep)}
+:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--f-head);color:var(--cocoa);text-wrap:balance;line-height:1.15;margin:0}
+h2{font-size:clamp(1.9rem,4vw,2.6rem);font-weight:700}
+h3{font-size:1.45rem;font-weight:700}
+p{margin:0}
+.eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);font-weight:700}
+.script{font-family:var(--f-script);font-weight:400;
+  background:linear-gradient(180deg,#c98bb5 0%,#9b5a86 45%,#6e3a62 80%,#b07aa0 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 1px 1px rgba(80,30,70,.18))}
 
-<canvas id="sky" aria-hidden="true"></canvas>
-<div class="wrap">
-<nav><span class="brand">Heartsong</span><div class="links"><a href="#wish">MAKE A WISH</a><a href="#soretha">MEET SORETHA</a><a href="#dolls">THE DOLLS</a><a href="#janie">MEET JANIE</a><a href="#ariana">MEET ARIANA</a><a href="#join">JOIN</a></div></nav>
-<header class="hero">
-<div>
-<div class="eyebrow">Daily affirmations • Original art</div>
-<div class="write">Heartsong</div>
-<div class="sub">INSPIRATION</div>
-<p class="tag">a gentle song for every heart</p>
-<div class="btns"><a class="btn solid" href="#wish">Make a wish</a><a class="btn" href="#dolls">Meet the dolls</a></div>
-</div>
-<div class="arch"><img src="media/01-e840c30b.jpg" alt="Isabella in a green dress, holding a glowing lantern in a field at night" style="object-position:50% 35%"></div>
+/* Header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--cream);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand .mark{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e3b9d4,#8a4a78 70%);display:grid;place-items:center;color:var(--cream);font-family:var(--f-script);font-size:1.6rem;box-shadow:0 0 0 2px var(--cream),0 0 0 3px var(--gold)}
+.brand .name{font-family:var(--f-script);font-size:1.9rem;color:var(--gold-deep);line-height:1}
+.navscroll{overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--line)}
+.navscroll::-webkit-scrollbar{display:none}
+nav.tabs{display:flex;gap:4px;padding-block:6px;white-space:nowrap}
+nav.tabs a{font-family:var(--f-head);font-weight:600;font-size:1.08rem;text-decoration:none;color:var(--cocoa-soft);padding:6px 14px;border-radius:999px}
+nav.tabs a:hover{color:var(--cocoa);background:rgba(196,160,200,.35)}
+nav.tabs a[aria-current="page"]{background:var(--cocoa);color:var(--gold-light)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-body);font-weight:700;font-size:.95rem;border:0;cursor:pointer;text-decoration:none;padding:12px 22px;border-radius:999px;background:linear-gradient(180deg,#b06d98,#7f4270);color:#fffafd;box-shadow:0 2px 0 var(--gold-deep)}
+.btn:hover{filter:brightness(1.05)}
+.btn.ghost{background:transparent;color:var(--gold-deep);box-shadow:inset 0 0 0 1.5px var(--gold)}
+.small-btn{padding:8px 16px;font-size:.88rem}
+
+main section.page{padding-block:40px 64px}
+.stack{display:flex;flex-direction:column;gap:40px}
+.intro{display:flex;flex-direction:column;gap:10px;max-width:640px}
+.intro p{color:var(--cocoa-soft)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:24px}
+.hero h1 .script{display:block;font-size:clamp(3.6rem,10vw,6.4rem);line-height:1.05}
+.hero h1 .sub{display:block;font-family:var(--f-head);font-size:clamp(1.3rem,2.6vw,1.7rem);font-weight:600;color:var(--cocoa-soft);margin-top:6px}
+.hero p.lead{font-size:1.1rem;max-width:520px;margin-top:18px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.hero-art img{display:block;width:100%;max-width:420px;height:auto;margin:0 auto;border-radius:18px;box-shadow:0 0 0 8px var(--cream),0 0 0 9px var(--gold-light),0 24px 50px rgba(58,34,52,.22)}
+.medallion{position:relative;aspect-ratio:1;max-width:400px;width:100%;margin:0 auto;border-radius:50%;
+  background:radial-gradient(circle at 50% 40%,#22305a 0%,#141c38 70%);
+  box-shadow:0 0 0 10px var(--cream),0 0 0 13px var(--gold),0 24px 50px rgba(59,38,24,.25);overflow:hidden}
+.medallion canvas{width:100%;height:100%;display:block}
+.medallion .caption{position:absolute;left:0;right:0;bottom:18%;text-align:center;color:#f6e3b4;font-family:var(--f-script);font-size:2.4rem;text-shadow:0 2px 6px rgba(0,0,0,.4)}
+.medallion .caption small{display:block;font-family:var(--f-body);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:#e8dcc2}
+
+/* Affirmation card */
+.affirm{background:var(--cream);border:1px solid var(--line);border-radius:22px;padding:32px clamp(20px,4vw,48px);text-align:center;position:relative;box-shadow:0 10px 30px rgba(59,38,24,.07)}
+.affirm .date{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-weight:700}
+.affirm blockquote{font-family:var(--f-head);font-style:italic;font-weight:500;font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.3;margin:14px auto 22px;max-width:30ch;color:var(--cocoa)}
+.affirm .row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.note{font-size:.85rem;color:var(--cocoa-soft);min-height:1.4em;margin-top:10px}
+
+/* Dolls */
+.grid{display:grid;gap:22px}
+.grid.dolls{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.doll{background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}
+.portrait{width:100%;max-width:100%;height:auto;aspect-ratio:480/636;object-fit:cover;border-radius:14px;box-shadow:0 0 0 4px var(--cream),0 0 0 5px var(--gold-light),0 10px 22px rgba(58,34,52,.14);background:var(--gold-light)}
+.doll .says{font-family:var(--f-head);font-style:italic;font-size:1.12rem;color:var(--gold-deep)}
+.doll .tag{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);font-weight:700}
+.doll p{font-size:.95rem;color:var(--cocoa-soft)}
+.doll .star{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--cocoa);color:var(--gold-light);padding:3px 10px;border-radius:999px}
+
+/* Gallery */
+.grid.gallery{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.frame{background:var(--cream);padding:12px 12px 14px;border-radius:6px;box-shadow:0 0 0 1px var(--line),0 12px 24px rgba(59,38,24,.08);display:flex;flex-direction:column;gap:10px}
+.frame .art{width:100%;height:auto;object-fit:cover;display:block;aspect-ratio:4/5;max-width:100%;border-radius:3px;display:grid;place-items:center;position:relative;overflow:hidden}
+.frame .art span{font-family:var(--f-script);font-size:2.6rem;color:rgba(255,250,242,.92);text-shadow:0 2px 6px rgba(0,0,0,.25)}
+.frame h3{font-size:1.15rem}
+.frame p{font-size:.85rem;color:var(--cocoa-soft)}
+
+/* Stories */
+.grid.stories{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+details.story{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+details.story summary{cursor:pointer;list-style:none;display:flex;flex-direction:column;gap:6px}
+details.story summary::-webkit-details-marker{display:none}
+details.story summary .more{font-size:.85rem;font-weight:700;color:var(--gold-deep)}
+details.story[open] summary .more{display:none}
+details.story .body{margin-top:14px;display:flex;flex-direction:column;gap:12px;max-width:62ch}
+details.story .body p:last-child{font-family:var(--f-head);font-style:italic;font-size:1.15rem;color:var(--gold-deep)}
+
+/* Shop */
+.grid.shop{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.product{background:var(--cream);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.product .art{aspect-ratio:3/2;max-width:100%;display:grid;place-items:center;font-family:var(--f-script);font-size:2.4rem;color:#fffaf2;text-shadow:0 2px 5px rgba(0,0,0,.25)}
+.product .info{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.product .info p{font-size:.92rem;color:var(--cocoa-soft);flex:1}
+.pill{align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:rgba(196,160,200,.5);color:var(--gold-deep)}
+
+/* About */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+.about .copy{display:flex;flex-direction:column;gap:16px;max-width:62ch;min-width:0}
+.about .copy p{font-size:1.04rem}
+.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.value{border-top:2px solid var(--gold);padding-top:12px}
+.value h3{font-size:1.2rem}
+.value p{font-size:.92rem;color:var(--cocoa-soft)}
+.signature{font-family:var(--f-script);font-size:2.6rem;color:var(--gold-deep);line-height:1}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.panel{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.panel .addr{font-family:var(--f-head);font-size:1.35rem;font-weight:700;word-break:break-all;user-select:all}
+.panel p{color:var(--cocoa-soft);font-size:.95rem}
+
+/* Ribbon + footer */
+.ribbon{background:var(--cocoa);color:var(--gold-light);border-radius:22px;padding:34px clamp(20px,4vw,44px);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.ribbon h2{color:var(--cream)}
+.ribbon p{color:#dcc6d6;max-width:52ch}
+.ribbon .btn.ghost{color:var(--gold-light);box-shadow:inset 0 0 0 1.5px var(--gold-light)}
+footer.site{border-top:1px solid var(--line);background:var(--cream)}
+footer .inner{padding-block:28px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;font-size:.88rem;color:var(--cocoa-soft)}
+.rights{font-size:.85rem;font-weight:700;color:var(--gold-deep)}
+img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
+footer .inner span:nth-child(3){max-width:60ch}
+footer .name{font-family:var(--f-script);font-size:1.8rem;color:var(--gold-deep)}
+.split{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px}
+
+@media (max-width:760px){
+  .hero,.about{grid-template-columns:1fr}
+  .hero{gap:28px}
+  .medallion{max-width:300px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="#home" data-go="home"><span class="mark" aria-hidden="true">H</span><span class="name">Heartsong Inspiration</span></a>
+    <a class="btn small-btn ghost" href="#contact" data-go="contact">Say hello</a>
+  </div>
+  <div class="navscroll">
+    <nav class="tabs wrap" aria-label="Site">
+      <a href="#home" data-go="home">Home</a>
+      <a href="#dolls" data-go="dolls">Meet the Dolls</a>
+      <a href="#affirmations" data-go="affirmations">Affirmations</a>
+      <a href="#gallery" data-go="gallery">Gallery</a>
+      <a href="#stories" data-go="stories">Stories</a>
+      <a href="#shop" data-go="shop">Shop</a>
+      <a href="#about" data-go="about">Our Story</a>
+      <a href="#contact" data-go="contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<section id="wish" class="wish">
-<div>
-<div class="eyebrow">Make a wish</div>
-<h2>A kind word,<br><span class="script">written just for you</span></h2>
-<label class="step" for="nm">1. Tell us your first name</label>
-<input class="field" id="nm" type="text" placeholder="Your first name" autocomplete="given-name">
-<span class="step">2. Touch a star and make a wish</span>
-<div class="stars" id="stars"></div>
-<span class="step">3. Keep it with you</span>
-<div class="btns" style="margin-top:10px"><button class="btn solid" id="save" type="button">Make my phone wallpaper</button></div>
-<p class="note" id="saveNote"></p>
-<img id="wall" alt="Your Heartsong phone wallpaper" hidden>
-</div>
-<div class="phone"><div class="screen">
-<img class="bg" id="phoneImg" src="media/02-40e8ae7d.jpg" alt="">
-<div class="fade"></div>
-<div class="msg" id="msg"><div class="eyebrow" style="font-size:10px">Touch a star</div><q style="font-style:italic;color:var(--soft)">Your wish will appear here</q></div>
-<div class="sig">Heartsong Inspiration</div>
-</div></div>
-</section>
-</div>
+<main>
+<!-- HOME -->
+<section class="page" id="page-home" data-page="home">
+  <div class="wrap stack">
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Daily affirmations · Original art · Soft encouragement</p>
+        <h1><span class="script">Heartsong</span><span class="sub">Inspiration · a gentle song for every heart</span></h1>
+        <p class="lead">Welcome to our world of brown-skinned dolls, starlit dreams, and words that lift you up. Every doll has a name, every name has a story, and every story ends in light.</p>
+        <div class="ctas">
+          <a class="btn" href="#dolls" data-go="dolls">Meet the Dolls</a>
+          <a class="btn ghost" href="#affirmations" data-go="affirmations">Today's Affirmation</a>
+        </div>
+      </div>
+      <figure class="hero-art" style="margin:0">
+        <img src="img/card-soretha.jpg" alt="Soretha in her starry blue dress, with the words I carry a light that was made to shine" width="640" height="800">
+      </figure>
+    </div>
 
-<section class="band" id="affirm"><div class="wrap">
-<div class="eyebrow">A kind word for you</div>
-<div class="dots" id="dots"></div>
-<blockquote id="quote"></blockquote>
-<div class="eyebrow" style="margin-top:14px">Soretha Eldridge</div>
-<div class="btns" style="justify-content:center"><button class="btn solid" id="next" type="button">Another kind word</button></div>
-</div></section>
+    <div class="affirm">
+      <p class="date" id="home-date">Today</p>
+      <blockquote id="home-affirm">I am loved, I am chosen, and my light is needed here.</blockquote>
+      <div class="row">
+        <button class="btn small-btn" type="button" id="home-copy">Copy to share</button>
+        <a class="btn small-btn ghost" href="#affirmations" data-go="affirmations">More affirmations</a>
+      </div>
+      <p class="note" id="home-note" aria-live="polite"></p>
+    </div>
 
-<div class="wrap">
-<section id="soretha">
-<div class="banner"><img src="media/02-40e8ae7d.jpg" alt="Soretha in her starry blue dress, looking up at the night sky">
-<div class="side"><div class="eyebrow">Meet Soretha</div><div style="font-family:var(--display);font-size:clamp(56px,8vw,88px);line-height:1;color:var(--gold)">Soretha</div><p style="margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(22px,3vw,32px)">I carry a light made to shine.</p></div></div>
-<div class="eyebrow" style="margin-top:56px">In Soretha's words</div><h2>Affirmation Cards</h2>
-<div class="grid3 two">
-<figure class="frame" style="margin:0"><img src="media/03-5663104b.jpg" alt="Card: They did not break me. They only underestimated what a woman can carry — and still rise, still carrying it."></figure>
-<figure class="frame" style="margin:0"><img src="media/04-18af6875.jpg" alt="Card: My scars were never flaws. They are the quiet places where I refused to give up on myself."></figure>
-</div>
-</section>
+    <div class="stack" style="gap:20px">
+      <div class="split">
+        <div class="intro"><p class="eyebrow">The Heartsong family</p><h2>Meet our main characters</h2></div>
+      </div>
+      <div class="grid dolls" id="home-dolls"></div>
+    </div>
 
-<section id="dolls">
-<div class="eyebrow">The Heartsong Dolls</div><h2>Meet the <span class="script">family</span></h2>
-<div class="grid4">
-<figure class="frame tall" style="margin:0"><img src="media/05-4eb96a85.jpg" alt="Harmony dancing in a yellow flowered dress with music notes"><figcaption>Harmony</figcaption></figure>
-<figure class="frame tall" style="margin:0"><img src="media/06-320579a6.jpg" alt="Janie in overalls and a red bow, sitting among ladybug mushrooms"><figcaption>Janie</figcaption></figure>
-<figure class="frame tall" style="margin:0"><img src="media/07-6c4738c1.jpg" alt="Kyran in a yellow shirt and overalls among sunflowers and bumblebees"><figcaption>Kyran</figcaption></figure>
-<figure class="frame tall" style="margin:0"><img src="media/08-2ad7e3d3.jpg" alt="Zaire with dragonfly wings standing by a pond"><figcaption>Zaire</figcaption></figure>
-</div>
-</section>
-<section id="collection">
-<div class="eyebrow">The whole collection</div><h2>More Heartsong <span class="script">friends</span></h2>
-<div class="gridc"><figure class="frame mini" style="margin:0"><div class="flip"><img src="media/09-a6576201.jpg" alt="Harmony dancing in her flowered dress"><img class="b" src="media/10-6f4c30d2.jpg" alt="Harmony with a yellow flower in her hair"></div><figcaption>Harmony</figcaption></figure>
-<figure class="frame mini" style="margin:0"><img src="media/11-8d34ef84.jpg" alt="Imani" loading="lazy"><figcaption>Imani</figcaption></figure>
-<figure class="frame mini" style="margin:0"><img src="media/12-315e2785.jpg" alt="Dream" loading="lazy"><figcaption>Dream</figcaption></figure>
-<figure class="frame mini" style="margin:0"><div class="flip"><img src="media/13-3530e412.jpg" alt="Kyran with butterflies, arms raised"><img class="b" src="media/14-404b653b.jpg" alt="Kyran flying a kite"></div><figcaption>Kyran</figcaption></figure>
-<figure class="frame mini" style="margin:0"><img src="media/15-3fe4f030.jpg" alt="Zaire" loading="lazy"><figcaption>Zaire</figcaption></figure>
-<figure class="frame mini" style="margin:0"><img src="media/16-5782eb12.jpg" alt="Sailing" loading="lazy"><figcaption>Sailing</figcaption></figure>
-<figure class="frame mini" style="margin:0"><img src="media/17-c5dbf20c.jpg" alt="Daisy Girl" loading="lazy"><figcaption>Daisy Girl</figcaption></figure>
-<figure class="frame mini" style="margin:0"><img src="media/18-96fe15bc.jpg" alt="Dancing in Stars" loading="lazy"><figcaption>Dancing in Stars</figcaption></figure>
-<figure class="frame mini" style="margin:0"><img src="media/19-6f6c0e9a.jpg" alt="Music Girl" loading="lazy"><figcaption>Music Girl</figcaption></figure>
-<figure class="frame mini" style="margin:0"><img src="media/20-431a0770.jpg" alt="Funny Jump" loading="lazy"><figcaption>Funny Jump</figcaption></figure>
-<figure class="frame mini" style="margin:0"><img src="media/ariana-fullbody.jpg" alt="Ariana running through a meadow of flowers" loading="lazy"><figcaption>Ariana</figcaption></figure>
-<figure class="frame mini" style="margin:0"><img src="media/22-15219633.jpg" alt="A Heartsong girl in watercolor" loading="lazy"></figure>
-<figure class="frame mini" style="margin:0"><div class="flip"><img src="media/23-be01dd5d.jpg" alt="Heartsong girl twirling in a pink dress"><img class="b" src="media/24-59a531f1.jpg" alt="The same girl dancing among butterflies"></div></figure>
-<figure class="frame mini" style="margin:0"><div class="flip"><img src="media/25-f0d91b60.jpg" alt="Heartsong girl in a teal dress holding a daisy"><img class="b" src="media/26-64245ad8.jpg" alt="The same girl with a blue bow among daisies"></div></figure>
-<figure class="frame mini" style="margin:0"><div class="flip"><img src="media/27-95bcbb47.jpg" alt="Heartsong girl with braided buns holding flowers"><img class="b" src="media/28-5ebe0c23.jpg" alt="The same girl holding a gift"></div></figure>
-<figure class="frame mini" style="margin:0"><div class="flip"><img src="media/29-70bd0ffa.jpg" alt="Heartsong girl in a lavender dress with a flower"><img class="b" src="media/30-796f3f82.jpg" alt="The same girl holding a bouquet"></div></figure>
-<figure class="frame mini" style="margin:0"><img src="media/31-31dbdecc.jpg" alt="A Heartsong girl in watercolor" loading="lazy"></figure>
-<figure class="frame mini" style="margin:0"><img src="media/32-5efaeaff.jpg" alt="A Heartsong girl in watercolor" loading="lazy"></figure>
-<figure class="frame mini" style="margin:0"><div class="flip three"><img src="media/33-792174d9.jpg" alt="Heartsong girl building sandcastles at the beach"><img class="b" src="media/34-6de77f28.jpg" alt="The same girl on an autumn day"><img class="c" src="media/35-85ab9f0b.jpg" alt="The same girl on a snowy day"></div></figure></div>
+    <div class="ribbon">
+      <div class="stack" style="gap:8px">
+        <h2>Join the Heartsong circle</h2>
+        <p>New dolls, new stories, and a fresh affirmation every morning on Facebook and Instagram.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <a class="btn" href="https://www.facebook.com/profile.php?id=61595026280214" target="_blank" rel="noopener">Follow on Facebook</a>
+        <a class="btn ghost" href="#contact" data-go="contact">Email us</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="three"><div class="threewrap">
-<video src="media/36-9f63b813.mp4" poster="media/37-a8dd77ba.jpg" autoplay muted loop playsinline aria-label="Animated watercolor of Janie, Kyran and Zaire"></video>
-<div><div class="eyebrow">Meet The Three</div><h2>Janie, Kyran <span class="script">&amp;</span> Zaire</h2><p style="font-family:var(--serif);font-size:21px;color:#dfe3f3;max-width:30ch">Autumn leaves, sunflowers and a dragonfly by the pond. Three friends, one little adventure.</p></div>
-</div></section>
-
-<section id="ariana"><div class="threewrap">
-<video src="media/ariana-running.mp4" poster="media/ariana-fullbody.jpg" autoplay muted loop playsinline aria-label="Animated watercolor of Ariana running through a meadow after a blue butterfly"></video>
-<div><div class="eyebrow">Meet Ariana</div><h2>Ariana, <span class="script">who was too much</span></h2>
-<p style="font-family:var(--serif);font-size:19px;line-height:1.6;color:#dfe3f3;max-width:38ch">She was told she was too much before she was old enough to know what the word meant. So she learned to be less. She laughed behind her hand. She walked when she wanted to run. She folded her arms across her chest and kept them there, because a girl with her arms folded takes up less room.</p>
-<p style="font-family:var(--serif);font-size:19px;line-height:1.6;color:#dfe3f3;max-width:38ch">The blue butterflies in her meadow never let her near. She thought it was because she was still too much. Then one afternoon she gave up, lay back in the grass, and let her arms fall open. The first butterfly landed on her wrist.</p>
-<p style="font-family:var(--serif);font-size:19px;line-height:1.6;color:#dfe3f3;max-width:38ch">They had never flown away because she was too much. They had flown away because she was closed. <em style="color:var(--gold)">Nothing can land on folded arms.</em></p>
-</div>
-</div></section>
-
-<section id="janie"><div class="janie">
-<video src="media/38-a9dbd0bd.mp4" poster="media/39-f29d2466.jpg" autoplay muted loop playsinline aria-label="Animated watercolor of Janie with her ladybug friends"></video>
-<div><div class="eyebrow" style="color:#9a7a35">Meet Janie</div>
-<h2 style="color:var(--ink)">This is Janie.<br><span class="script" style="color:#9a7a35">I made her.</span></h2>
-<p>She's six, she has a ladybug for a friend, and she's not in a hurry about anything.</p><p>I hope she makes somebody smile today.</p></div>
-</div></section>
-
-<section class="join" id="join">
-<div style="font-family:var(--display);font-size:clamp(48px,7vw,80px);color:var(--gold);animation:glow 5s ease-in-out infinite">a kind word, every morning</div>
-<p style="color:#dfe3f3;margin:0">One affirmation in your inbox each day. Nothing else, ever.</p>
-<form id="joinForm"><label class="sr" for="em">Email address</label><input class="field" id="em" type="email" placeholder="Your email address" required style="margin:0"><button class="btn solid" type="submit">Sign me up</button></form>
-<p class="note" id="joinNote">Preview only: sign-ups will be connected when the site goes live.</p>
+<!-- DOLLS -->
+<section class="page" id="page-dolls" data-page="dolls" hidden>
+  <div class="wrap stack">
+    <div class="intro">
+      <p class="eyebrow">Meet the Dolls</p>
+      <h2>Every doll has a name and a story</h2>
+      <p>Each Heartsong doll carries a feeling we all know: hope, courage, wonder, belonging. Find the one who speaks to your heart today.</p>
+      <p class="rights">Every Heartsong character was created by Soretha Eldridge. © Soretha Eldridge · Heartsong Inspiration. All rights reserved.</p>
+    </div>
+    <div class="grid dolls" id="all-dolls"></div>
+  </div>
 </section>
-</div>
-<footer><div class="wrap"><span style="font-family:var(--display);font-size:30px;color:var(--gold)">Heartsong Inspiration</span><span>shine@heartsonginspiration.com</span><span>© 2026 Heartsong Inspiration</span></div></footer>
+
+<!-- AFFIRMATIONS -->
+<section class="page" id="page-affirmations" data-page="affirmations" hidden>
+  <div class="wrap stack">
+    <div class="intro">
+      <p class="eyebrow">Daily Affirmations</p>
+      <h2>Words to carry with you</h2>
+      <p>A new affirmation greets you each day. Say it out loud, write it on your mirror, or send it to someone who needs it.</p>
+    </div>
+    <div class="affirm">
+      <p class="date" id="aff-date">Today</p>
+      <blockquote id="aff-text"></blockquote>
+      <div class="row">
+        <button class="btn small-btn" type="button" id="aff-copy">Copy to share</button>
+        <button class="btn small-btn ghost" type="button" id="aff-next">Show me another</button>
+      </div>
+      <p class="note" id="aff-note" aria-live="polite"></p>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))" id="aff-themes"></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="page" id="page-gallery" data-page="gallery" hidden>
+  <div class="wrap stack">
+    <div class="intro">
+      <p class="eyebrow">Original Art Gallery</p>
+      <h2>Moments from the Heartsong world</h2>
+      <p>Original Heartsong artwork, painted with love. Each piece is one of a kind and may become a print, a card, or a page in one of our books.</p>
+      <p class="rights">© Soretha Eldridge · Heartsong Inspiration. Every image and character on this site belongs to Soretha Eldridge. Please do not copy or reuse.</p>
+    </div>
+    <div class="grid gallery" id="gallery"></div>
+  </div>
+</section>
+
+<!-- STORIES -->
+<section class="page" id="page-stories" data-page="stories" hidden>
+  <div class="wrap stack">
+    <div class="intro">
+      <p class="eyebrow">Heartsong Stories</p>
+      <h2>Tender stories with beautiful endings</h2>
+      <p>Short stories for little ones and grown-ups alike. Some will tug at your heart. Every one of them ends in light.</p>
+    </div>
+    <div class="grid stories" id="stories"></div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section class="page" id="page-shop" data-page="shop" hidden>
+  <div class="wrap stack">
+    <div class="intro">
+      <p class="eyebrow">The Heartsong Shop</p>
+      <h2>Bring a little Heartsong home</h2>
+      <p>Our first collection is being prepared now. Email us to be the first to know when each item is ready.</p>
+    </div>
+    <div class="grid shop" id="shop"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="page" id="page-about" data-page="about" hidden>
+  <div class="wrap stack">
+    <div class="about">
+      <div class="medallion" style="max-width:340px" aria-hidden="true"><canvas id="stars2"></canvas><div class="caption">Heartsong<small>Est. 2026</small></div></div>
+      <div class="copy">
+        <p class="eyebrow">Our Story</p>
+        <h2>Why Heartsong began</h2>
+        <p>Heartsong Inspiration began with a simple belief: every child deserves to see someone who looks like them on the page, wrapped in beauty, wonder, and love.</p>
+        <p>Our dolls are brown-skinned girls and boys with curls, braids, bows, and bright eyes. They chase fireflies, hold lanterns in the dark, and look up at the stars. Through them we share the words we wish every heart could hear each morning: you are worthy, you are wanted, and your song matters.</p>
+        <p>Heartsong is a family endeavor, rooted in Cleveland, Ohio, and in a lifetime of rising above hard places. Every affirmation is written with care, and every image is made to remind you that joy belongs to you too.</p>
+        <p class="signature">With love, Soretha</p>
+        <p class="rights">Heartsong Inspiration and every Heartsong doll, illustration, story and affirmation are the original work of Soretha Eldridge. © 2026 Soretha Eldridge. All rights reserved.</p>
+      </div>
+    </div>
+    <div class="values">
+      <div class="value"><h3>Representation</h3><p>Children of color shown as they are: beautiful, brilliant, and beloved.</p></div>
+      <div class="value"><h3>Encouragement</h3><p>A daily word to steady the heart and lift the chin.</p></div>
+      <div class="value"><h3>Original art</h3><p>Every Heartsong doll and scene is our own creation.</p></div>
+      <div class="value"><h3>Hope</h3><p>Hard things may come in our stories, and light always wins.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="page" id="page-contact" data-page="contact" hidden>
+  <div class="wrap stack">
+    <div class="intro">
+      <p class="eyebrow">Contact</p>
+      <h2>We would love to hear from you</h2>
+      <p>For orders, collaborations, school and church events, or simply to tell us which doll you love most, write to us.</p>
+    </div>
+    <div class="contact">
+      <div class="panel">
+        <p class="eyebrow">Email</p>
+        <p class="addr" id="email">shine@heartsonginspiration.com</p>
+        <button class="btn small-btn" type="button" id="email-copy" style="align-self:flex-start">Copy email address</button>
+        <p class="note" id="email-note" aria-live="polite"></p>
+      </div>
+      <div class="panel">
+        <p class="eyebrow">Facebook</p>
+        <p class="addr" style="word-break:normal">Heartsong Inspiration</p>
+        <p>New dolls, stories, and daily affirmations.</p>
+        <a class="btn small-btn ghost" style="align-self:flex-start" href="https://www.facebook.com/profile.php?id=61595026280214" target="_blank" rel="noopener">Find us on Facebook</a>
+      </div>
+      <div class="panel">
+        <p class="eyebrow">Instagram</p>
+        <p class="addr" style="word-break:normal">Heartsong Inspiration</p>
+        <p>Watch our dolls twirl and come to life in short videos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap inner">
+    <span class="name">Heartsong Inspiration</span>
+    <span>heartsonginspiration.com · shine@heartsonginspiration.com</span>
+    <span>All artwork, characters, stories and affirmations © 2026 Soretha Eldridge, Heartsong Inspiration. All rights reserved. No copying, downloading or reuse without written permission.</span>
+  </div>
+</footer>
 
 <script>
-(function(){
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const cv=document.getElementById('sky'),g=cv.getContext('2d');let W,H,stars=[],shoot=null,t0=performance.now(),trail=[];
-function size(){W=cv.width=innerWidth*devicePixelRatio;H=cv.height=innerHeight*devicePixelRatio;cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';stars=[];for(let i=0;i<Math.round(innerWidth*innerHeight/9000);i++)stars.push({x:Math.random()*W,y:Math.random()*H,r:(0.6+Math.random()*1.5)*devicePixelRatio,p:Math.random()*6.28,s:.5+Math.random()*1.5,d:Math.random()*2.4});}
-size();addEventListener('resize',size);
-function frame(now){const t=(now-t0)/1000;g.clearRect(0,0,W,H);
-for(const s of stars){const on=reduce?1:Math.min(1,Math.max(0,(t-s.d)/1));const a=on*(.35+.65*(0.5+0.5*Math.sin(s.p+t*s.s)));g.globalAlpha=a;g.fillStyle='#f7e2ad';g.shadowColor='#f7e2ad';g.shadowBlur=6*devicePixelRatio;g.beginPath();g.arc(s.x,s.y,s.r,0,6.28);g.fill();}
-if(!reduce){if(!shoot&&Math.random()<0.006&&t>3)shoot={x:W*(0.5+Math.random()*0.5),y:H*Math.random()*0.4,l:0};
-if(shoot){shoot.l+=0.018;const len=180*devicePixelRatio,x=shoot.x-shoot.l*700*devicePixelRatio,y=shoot.y+shoot.l*380*devicePixelRatio;const gr=g.createLinearGradient(x,y,x+len,y-len*.54);gr.addColorStop(0,'rgba(247,226,173,1)');gr.addColorStop(1,'rgba(247,226,173,0)');g.globalAlpha=1-shoot.l;g.strokeStyle=gr;g.lineWidth=2*devicePixelRatio;g.beginPath();g.moveTo(x,y);g.lineTo(x+len,y-len*.54);g.stroke();if(shoot.l>=1)shoot=null;}
-for(let i=trail.length-1;i>=0;i--){const p=trail[i];p.a-=0.025;p.y+=0.4*devicePixelRatio;if(p.a<=0){trail.splice(i,1);continue;}g.globalAlpha=p.a;g.fillStyle='#f7e2ad';g.beginPath();g.arc(p.x,p.y,p.r,0,6.28);g.fill();}}
-g.globalAlpha=1;g.shadowBlur=0;requestAnimationFrame(frame);}
-requestAnimationFrame(frame);
-function spark(x,y,n){for(let i=0;i<n;i++)trail.push({x:(x+(Math.random()-.5)*14)*devicePixelRatio,y:(y+(Math.random()-.5)*14)*devicePixelRatio,r:(0.8+Math.random()*1.6)*devicePixelRatio,a:1});}
-addEventListener('pointermove',e=>{if(e.pointerType==='mouse')spark(e.clientX,e.clientY,1);});
-addEventListener('pointerdown',e=>spark(e.clientX,e.clientY,14));
+const DOLLS = [
+  {n:"Soretha", k:"soretha", tag:"Our star girl", star:true, a:"I carry a light that was made to shine.", d:"In her starry blue dress, Soretha looks up at the night sky and believes every star is a wish waiting for her."},
+  {n:"Isabella", k:"isabella", tag:"The lantern keeper", a:"Carry your own light.", d:"In her green dress, Isabella holds her lantern high so no one has to walk through the dark alone."},
+  {n:"Janie", k:"janie", tag:"Six and fearless", a:"Little wonders are everywhere.", d:"Janie is six years old, and her ladybug friends remind her that small things can carry big luck."},
+  {n:"Kyran", k:"kyran", tag:"Sunshine heart", a:"Always grow toward the light.", d:"With his sunflowers and his bumblebee buddy, Kyran turns every gray day golden."},
+  {n:"Zaire", k:"zaire", tag:"The dreamer by the pond", a:"Wonder lives in small things.", d:"With dragonfly wings, Zaire stands by the pond and imagines all the places he will fly."},
+  {n:"Ariana", k:"ariana", tag:"Grace in motion", a:"I run because I am free.", d:"Ariana runs through the wildflowers with butterflies at her side, free in every season."},
+  {n:"Theresa", k:"theresa", tag:"The daisy girl", a:"Small things can be beautiful, and so can I.", d:"In her lavender dress with daisies in her hair, Theresa finds beauty in the smallest things."},
+  {n:"Dream", k:"dream", tag:"The garden girl", a:"", d:"Curly-haired Dream wears her red bow and overalls, with a bee resting on her fingertip among the red flowers."},
+  {n:"Jabari", k:"jabari", tag:"Brave on the green bicycle", a:"I am brave, even on hard days.", d:"Jabari waves at the butterflies in his green shirt and overalls. He wobbles, he falls, and he gets back on, one more time."},
+  {n:"Kwame", k:"kwame", tag:"The boy who climbs higher", a:"I can do hard things.", d:"Kwame loves his books and his red sneakers, and one brave breath at a time he climbs all the way to the top."},
+  {n:"Christopher", k:"christopher", tag:"Our littlest blessing", a:"", d:"Sweet Baby Christopher snuggles in his soft green sleeper with his teddy bear, while the moon and stars sing him to sleep."},
+  {n:"Harmony", k:"harmony", tag:"Song in her soul", a:"", d:"Harmony dances in her flower dress with music all around her, and her joy makes everyone feel at home."}
+];
 
-const Q=['I carry a light made to shine.','They did not break me. They only underestimated what a woman can carry — and still rise, still carrying it.','My scars were never flaws. They are the quiet places where I refused to give up on myself.','You are not going to believe who you become.','I still have your laugh. I still have your handwriting. We made it.','Intelligence without compassion is just cleverness. I’d rather be the kind of smart that shows up, listens, and helps someone rebuild.','Everything I’ve survived taught me one thing: healing was never meant to be done alone. So I spend my days making sure no family in my community has to. That isn’t charity — it’s simply how we’re meant to treat one another.','People ask why I keep going. It’s simple — I know what it feels like to need someone when no one comes. So now I try to be the someone who comes.'];
-let qi=0;const qel=document.getElementById('quote'),dots=document.getElementById('dots');Q.forEach(()=>dots.appendChild(document.createElement('span')));
-function showQ(){qel.style.opacity=0;setTimeout(()=>{qel.textContent='“'+Q[qi]+'”';qel.style.opacity=1;},250);[...dots.children].forEach((d,k)=>d.classList.toggle('on',k===qi));}
-showQ();document.getElementById('next').onclick=()=>{qi=(qi+1)%Q.length;showQ();};setInterval(()=>{qi=(qi+1)%Q.length;showQ();},8000);
+const AFFIRMATIONS = [
+  "Carry your own light. Who are you shining for today?",
+  "I can do hard things.",
+  "I am brave, even on hard days.",
+  "I carry a light that was made to shine.",
+  "Always grow toward the light.",
+  "Little wonders are everywhere.",
+  "Wonder lives in small things.",
+  "I run because I am free.",
+  "Small things can be beautiful, and so can I.",
+  "I am loved, I am chosen, and my light is needed here.",
+  "My skin, my curls, and my smile are beautiful just as they are.",
+  "I am allowed to rest. I do not have to earn my worth.",
+  "Today I choose courage, even if my voice shakes.",
+  "Good things are on their way to me, and I am ready to receive them.",
+  "I carry a song in my heart that no hard day can silence.",
+  "I am growing, even when I cannot see it yet.",
+  "My past does not decide my future. I do.",
+  "I am worthy of kindness, starting with the kindness I give myself.",
+  "There is a place for me, and I belong in it.",
+  "I can do hard things, one small step at a time.",
+  "My dreams are not too big. They are exactly my size.",
+  "I forgive myself for what I did not know before.",
+  "Joy is my birthright, and I will claim it today.",
+  "I shine brighter when I lift someone else.",
+  "The storms I survived became the strength I stand on.",
+  "I am a blessing to my family and my community.",
+  "I speak life over myself and over the people I love.",
+  "I am not behind. I am right on time for my story.",
+  "My heart is soft, and that is my superpower.",
+  "Peace lives in me, and I return to it whenever I need it.",
+  "I was made with purpose, and today I walk in it.",
+  "Every sunrise is a fresh page, and I hold the pen.",
+  "I am brave enough to hope again.",
+  "Love finds me, and I let it in.",
+  "I trust the light ahead, even when I can only see one step.",
+  "I am enough, today and every day.",
+  "My laughter is medicine, and I will share it freely.",
+  "I honor the people who came before me by rising.",
+  "Like the stars, I was made to shine in the dark."
+];
 
-const WISH=[['you carry a light made to shine.','You carry a light made to shine.'],['you are not going to believe who you become.','You are not going to believe who you become.'],['your scars were never flaws. They are the quiet places where you refused to give up on yourself.','Your scars were never flaws. They are the quiet places where you refused to give up on yourself.'],['they did not break you. Gentle is still strong, and you are still rising.','They did not break you. Gentle is still strong, and you are still rising.'],['you are allowed to take your time. Simple is enough for today.','You are allowed to take your time. Simple is enough for today.']];
-let wi=-1;const nm=document.getElementById('nm'),msg=document.getElementById('msg'),box=document.getElementById('stars');
-const path='M12 2.5l2.9 6.1 6.6.8-4.9 4.5 1.3 6.6L12 17.2l-5.9 3.3 1.3-6.6-4.9-4.5 6.6-.8z';
-WISH.forEach((w,k)=>{const b=document.createElement('button');b.type='button';b.className='star-btn';b.setAttribute('aria-label','Wish star '+(k+1));b.style.marginTop=[0,14,4,18,6][k]+'px';b.innerHTML='<svg width="46" height="46" viewBox="0 0 24 24" aria-hidden="true"><path d="'+path+'"/></svg>';b.onclick=e=>{wi=k;[...box.children].forEach((c,j)=>c.classList.toggle('on',j===k));const r=b.getBoundingClientRect();spark(r.left+r.width/2,r.top+r.height/2,30);render();};box.appendChild(b);});
-function text(){const n=nm.value.trim();return wi<0?'':(n?n+', '+WISH[wi][0]:WISH[wi][1]);}
-function render(){if(wi<0)return;msg.innerHTML='';msg.classList.remove('pop');void msg.offsetWidth;msg.classList.add('pop');const e=document.createElement('div');e.className='eyebrow';e.style.fontSize='10px';e.textContent='A gentle reminder';const q=document.createElement('q');q.textContent=text();msg.append(e,q);}
-nm.addEventListener('input',render);
-document.getElementById('save').onclick=()=>{const note=document.getElementById('saveNote');if(wi<0){note.textContent='Touch a star first, then make your wallpaper.';return;}
-const c=document.createElement('canvas');c.width=1080;c.height=2340;const x=c.getContext('2d');x.fillStyle='#0d1230';x.fillRect(0,0,1080,2340);
-const portrait=document.getElementById('phoneImg');const h=1500,sw=portrait.naturalWidth,sh=Math.min(portrait.naturalHeight,sw*h/1080);x.drawImage(portrait,0,0,sw,sh,0,0,1080,h);
-const gr=x.createLinearGradient(0,1050,0,1600);gr.addColorStop(0,'rgba(13,18,48,0)');gr.addColorStop(1,'#0d1230');x.fillStyle=gr;x.fillRect(0,1050,1080,560);
-x.textAlign='center';x.fillStyle='#e8c67a';x.font='800 34px Mulish, sans-serif';x.fillText('A  GENTLE  REMINDER',540,1650);
-x.fillStyle='#f8f3e8';x.font='64px "Playfair Display", Georgia, serif';let line='',y=1770;text().split(' ').forEach(w=>{const t=line?line+' '+w:w;if(x.measureText(t).width>900){x.fillText(line,540,y);line=w;y+=88;}else line=t;});x.fillText(line,540,y);
-x.fillStyle='#e8c67a';x.font='88px "Alex Brush", cursive';x.fillText('Heartsong Inspiration',540,2210);
-const img=document.getElementById('wall');img.src=c.toDataURL('image/png');img.hidden=false;note.textContent='Here it is. Press and hold the picture (or right-click it) and choose Save image.';};
-document.getElementById('joinForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('joinNote').textContent='Thank you! This is a preview, so nothing was sent yet.';});
-})();
-</script>
+const THEMES = [
+  {h:"For mornings", p:"Start the day by naming one thing you are grateful for, then speak your affirmation out loud."},
+  {h:"For little ones", p:"Read it together at bedtime. Let them choose which Heartsong doll would say it best."},
+  {h:"For hard days", p:"Write it on a card and keep it in your pocket. Read it whenever the day feels heavy."}
+];
 
+const GALLERY = ["soretha",{k:"racing",n:"Racing Together",c:"Jabari and Kwame race side by side through the autumn park."},"isabella","janie","kyran","zaire","ariana","theresa","dream","jabari","kwame","christopher"];
 
-<button id="musicBtn" aria-pressed="false" title="Play magical music"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg><span class="lbl">PLAY MUSIC</span><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
-<script>
-(function(){
-var btn=document.getElementById('musicBtn'),ctx,master,rev,timer,padOsc=[],on=false;
-function makeReverb(c){var len=c.sampleRate*3.2,buf=c.createBuffer(2,len,c.sampleRate);for(var ch=0;ch<2;ch++){var d=buf.getChannelData(ch);for(var i=0;i<len;i++){d[i]=(Math.random()*2-1)*Math.pow(1-i/len,2.6);}}var cv=c.createConvolver();cv.buffer=buf;return cv;}
-function start(){
-  if(!ctx){ctx=new (window.AudioContext||window.webkitAudioContext)();master=ctx.createGain();master.gain.value=0;master.connect(ctx.destination);
-    rev=makeReverb(ctx);var wet=ctx.createGain();wet.gain.value=.55;rev.connect(wet);wet.connect(master);}
-  if(ctx.state==='suspended')ctx.resume();
-  master.gain.cancelScheduledValues(ctx.currentTime);master.gain.setTargetAtTime(.5,ctx.currentTime,1.2);
-  /* starry pad */
-  var lp=ctx.createFilter?null:null;
-  [130.81,196.0,261.63].forEach(function(f,i){var o=ctx.createOscillator(),g=ctx.createGain(),fl=ctx.createBiquadFilter();o.type='triangle';o.frequency.value=f;o.detune.value=(i-1)*6;fl.type='lowpass';fl.frequency.value=420;g.gain.value=.045;o.connect(fl);fl.connect(g);g.connect(master);g.connect(rev);o.start();padOsc.push(o);
-    var lfo=ctx.createOscillator(),lg=ctx.createGain();lfo.frequency.value=.07+i*.03;lg.gain.value=.02;lfo.connect(lg);lg.connect(g.gain);lfo.start();padOsc.push(lfo);});
-  /* music-box bells, C major pentatonic */
-  var scale=[523.25,587.33,659.25,783.99,880.0,1046.5,1174.66,1318.51,1567.98,1760.0,2093.0];var step=0;
-  function bell(freq,t,vol){var g=ctx.createGain();g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+2.6);g.connect(master);g.connect(rev);
-    [[1,1],[2.76,.28],[5.4,.1]].forEach(function(h){var o=ctx.createOscillator();o.type='sine';o.frequency.value=freq*h[0];var hg=ctx.createGain();hg.gain.value=h[1];o.connect(hg);hg.connect(g);o.start(t);o.stop(t+2.8);});}
-  function tick(){if(!on)return;var t=ctx.currentTime+.05;var n=Math.random();
-    if(n<.78){var idx=Math.max(0,Math.min(scale.length-1,step+Math.round((Math.random()-.5)*4)));step=idx;bell(scale[idx],t,.16+Math.random()*.08);
-      if(Math.random()<.3)bell(scale[Math.max(0,idx-3)],t+.02,.09);}
-    if(Math.random()<.12)bell(scale[scale.length-1]*(Math.random()<.5?1:1.5),t+.15,.05);
-    timer=setTimeout(tick,330+Math.random()*260);}
-  on=true;tick();
+const STORIES = [
+  {"n": "Jabari", "t": "Jabari and the Green Bicycle", "tease": "The bicycle was green, and it did not like to stand up by itself.", "body": ["The bicycle was green, and it did not like to stand up by itself.", "Jabari held the handlebars and looked down the long park path. His knees had two bandages already. One was shaped like a star.", "“Again?” asked his grandma from the bench.", "“Again,” said Jabari.", "He pushed off. Wobble. Wobble. Wobble… and then, for one, two, three whole seconds, the wobbling stopped, and Jabari was flying. The wind lifted his curls and the butterflies raced right beside him.", "He didn’t fall this time. He just kept going, grinning so big his cheeks hurt.", "I am brave, even on hard days. Brave isn’t never wobbling. It’s getting back on, one more time."]},
+  {"n": "Kwame", "t": "Kwame and the Tall Rocks", "tease": "The climbing rocks at the park were taller than Kwame’s dad.", "body": ["The climbing rocks at the park were taller than Kwame’s dad.", "Every day Kwame watched the big kids scramble to the top. Every day he made it halfway, looked down, and climbed back to the ground.", "Today he took a deep breath. One hand. One foot. Another hand. His red sneakers found a tiny ledge, and he held on tight.", "“You’ve got this, Kwame!” his friends called from below.", "His arms shook. His heart thumped. And then, suddenly, there was nothing left to climb, just blue sky, fluffy clouds and the whole park spread out below him like a map.", "Kwame threw both arms up and laughed. “I did it!”", "I can do hard things. The top always looks far away, until you’re standing on it."]},
+  {n:"Soretha", t:"The Star That Waited",
+   tease:"Every night Soretha whispered the same wish to the same small star.",
+   body:["Soretha's mama worked late, so every night Soretha sat by the window in her starry blue dress and talked to one small star. She told it about school, about the girl who laughed at her braids, and about how quiet the house felt.",
+   "One night the clouds came and hid every star in the sky. Soretha cried, sure that her star had forgotten her. She fell asleep against the cold glass.",
+   "She woke up warm. Mama had come home early, wrapped her in a blanket, and was holding her close. \"I saw you from the street,\" Mama said. \"You were the brightest thing in the window.\"",
+   "Some stars wait for us in the sky. Some walk right through the front door."]},
+  {n:"Isabella", t:"The Lantern in the Rain",
+   tease:"When the lights went out on Maple Street, Isabella was afraid of the dark too.",
+   body:["The storm knocked out every light on Maple Street. Isabella's little brother cried, and Isabella's hands shook as she lit Grandma's old lantern. She was afraid of the dark too.",
+   "Then she heard knocking. Old Mr. James next door could not find his way to his medicine. Isabella swallowed her fear, took the lantern, and walked him there step by step.",
+   "One by one, neighbors followed her light to share candles, blankets, and soup. By midnight the whole street was sitting together, singing in the glow.",
+   "Courage is not having no fear. It is carrying your light anyway."]},
+  {n:"Janie", t:"Janie and the Last Ladybug",
+   tease:"Janie was the smallest in her class, and she felt it every single day.",
+   body:["Janie was six and the smallest in her class. Nobody picked her for games. One cold morning she found a ladybug shivering on the playground, too small to fly.",
+   "She cupped it in her hands all recess long, breathing warm air on its wings. The other children ran past. Janie did not mind. Someone needed her.",
+   "When the sun came out, the ladybug opened its wings and landed right on her nose. The whole class gathered to watch, and the teacher said, \"Janie, you saved it.\"",
+   "The smallest hands often hold the biggest love."]},
+  {n:"Kyran", t:"Kyran's Sunflowers",
+   tease:"Kyran planted sunflowers for his grandpa, but Grandpa was too sick to come see them.",
+   body:["Kyran planted sunflower seeds in Grandpa's yard, because Grandpa always said they were the happiest flowers. Then Grandpa got sick and could not leave his bed.",
+   "Every day Kyran watered the flowers and told Grandpa how tall they had grown. One day a bumblebee followed Kyran inside, as if it wanted to visit too.",
+   "On the day the sunflowers bloomed, Kyran's family carried Grandpa's chair to the window. Grandpa looked out at a wall of gold and laughed for the first time in weeks.",
+   "Love grows best when we tend it every day."]},
+  {n:"Zaire", t:"Wings by the Pond",
+   tease:"Zaire wore paper dragonfly wings, and some of the bigger boys made fun of them.",
+   body:["Zaire made dragonfly wings from paper and wore them everywhere. Some of the bigger boys laughed, and one tore a wing. Zaire went to the pond alone and cried.",
+   "A real dragonfly landed beside him. Its wing was bent too, yet it lifted off and flew anyway, crooked and shining.",
+   "Zaire taped his wing back together. The next day a little girl asked him to make her a pair. By Friday, half the playground was wearing wings.",
+   "What makes you different is what lets you fly."]},
+  {n:"Harmony", t:"Harmony's Quiet Song",
+   tease:"After the move to a new city, Harmony stopped singing altogether.",
+   body:["Harmony used to hum everywhere she went. Then her family moved to a new city, and she stopped singing. Nobody there knew her songs.",
+   "One afternoon she heard an elderly woman on the porch next door humming the same hymn her grandmother used to sing. Harmony's throat tightened. She began to hum along.",
+   "The woman smiled and sang louder. Soon they sang together every evening, and the neighbors began opening their windows to listen.",
+   "When you share your song, you find your home."]}
+];
+
+const SHOP = [
+  {t:"Daily Affirmation Cards", d:"A boxed set of 30 Heartsong affirmations with doll artwork, one for every day of the month.", c:["#c9993f","#8a6424"], s:"Coming soon"},
+  {t:"Original Art Prints", d:"Gallery-quality prints of Heartsong scenes, ready to frame for a nursery, classroom, or living room.", c:["#2c3e78","#141c38"], s:"Coming soon"},
+  {t:"Heartsong Greeting Cards", d:"Original illustrated cards for birthdays, encouragement, sympathy, and just because.", c:["#b7718f","#6d3550"], s:"Coming soon"},
+  {t:"I Think I See an Angel", d:"Our children's picture book, built from treasured family drawings.", c:["#e2b23c","#a5731a"], s:"Picture book"},
+  {t:"Roses, Glass & Grace", d:"A children's coloring book of portraits and roses inspired by a young artist's paintings.", c:["#c4473f","#7a2620"], s:"Coloring book"},
+  {t:"Doll Story Collection", d:"The Heartsong stories gathered into one keepsake book for bedtime reading.", c:["#3d93a0","#1c5560"], s:"Coming soon"}
+];
+
+const grad = c => `linear-gradient(150deg, ${c[0]}, ${c[1]})`;
+const dollCard = d => `<article class="doll">
+  <img class="portrait" src="img/doll-${d.k}.jpg" alt="${d.n}, ${d.tag.toLowerCase()}" loading="lazy" width="480" height="636">
+  ${d.star ? '<span class="star">Main character</span>' : ''}
+  <h3>${d.n}</h3><p class="tag">${d.tag}</p>${d.a ? `<p class="says">&ldquo;${d.a}&rdquo;</p>` : ''}<p>${d.d}</p></article>`;
+
+document.getElementById('home-dolls').innerHTML = DOLLS.map(dollCard).join('');
+document.getElementById('all-dolls').innerHTML = DOLLS.map(dollCard).join('');
+document.getElementById('aff-themes').innerHTML = THEMES.map(t=>`<div class="value"><h3>${t.h}</h3><p>${t.p}</p></div>`).join('');
+document.getElementById('gallery').innerHTML = GALLERY.map(g=>{const k=typeof g==='string'?g:g.k;const d=typeof g==='string'?DOLLS.find(x=>x.k===k):{n:g.n,a:g.c};return `<figure class="frame" style="margin:0">
+  <img class="art" src="img/card-${k}.jpg" alt="${d.n} affirmation card" loading="lazy" width="640" height="800">
+  <figcaption><h3>${d.n}</h3><p>${d.a || d.tag}</p></figcaption></figure>`}).join('');
+document.getElementById('stories').innerHTML = STORIES.map(s=>`<details class="story">
+  <summary><span class="eyebrow">${s.n}</span><h3>${s.t}</h3><p>${s.tease}</p><span class="more">Read the story</span></summary>
+  <div class="body">${s.body.map(p=>`<p>${p}</p>`).join('')}</div></details>`).join('');
+document.getElementById('shop').innerHTML = SHOP.map(p=>`<article class="product">
+  <div class="art" style="background:${grad(p.c)}">Heartsong</div>
+  <div class="info"><span class="pill">${p.s}</span><h3>${p.t}</h3><p>${p.d}</p>
+  <a class="btn small-btn ghost" style="align-self:flex-start" href="#contact" data-go="contact">Ask about this</a></div></article>`).join('');
+
+/* Daily affirmation */
+const now = new Date();
+const dayOfYear = Math.floor((now - new Date(now.getFullYear(),0,0)) / 864e5);
+let affIdx = dayOfYear % AFFIRMATIONS.length;
+const dateStr = now.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'});
+document.getElementById('home-date').textContent = dateStr;
+document.getElementById('home-affirm').textContent = AFFIRMATIONS[affIdx];
+document.getElementById('aff-date').textContent = dateStr;
+const affText = document.getElementById('aff-text');
+affText.textContent = AFFIRMATIONS[affIdx];
+document.getElementById('aff-next').addEventListener('click',()=>{
+  affIdx = (affIdx + 1) % AFFIRMATIONS.length;
+  affText.textContent = AFFIRMATIONS[affIdx];
+  document.getElementById('aff-date').textContent = 'Another for you';
+  document.getElementById('aff-note').textContent = '';
+});
+
+function copy(text, noteId, srcEl){
+  const note = document.getElementById(noteId);
+  const done = () => note.textContent = 'Copied. Share it with someone you love.';
+  const fail = () => {
+    try{const r=document.createRange();r.selectNodeContents(srcEl);const s=getSelection();s.removeAllRanges();s.addRange(r);}catch(e){}
+    note.textContent = 'Selected. Press copy on your device to share it.';
+  };
+  try{ navigator.clipboard.writeText(text).then(done, fail); }catch(e){ fail(); }
 }
-function stop(){on=false;clearTimeout(timer);if(!ctx)return;master.gain.cancelScheduledValues(ctx.currentTime);master.gain.setTargetAtTime(0,ctx.currentTime,.6);
-  setTimeout(function(){padOsc.forEach(function(o){try{o.stop()}catch(e){}});padOsc=[];},2500);}
-btn.addEventListener('click',function(){if(on){stop();btn.classList.remove('on');btn.setAttribute('aria-pressed','false');btn.querySelector('.lbl').textContent='PLAY MUSIC';btn.title='Play magical music';}
-  else{start();btn.classList.add('on');btn.setAttribute('aria-pressed','true');btn.querySelector('.lbl').textContent='MUSIC ON';btn.title='Pause music';}});
-document.addEventListener('visibilitychange',function(){if(ctx){if(document.hidden&&on)ctx.suspend();else if(on)ctx.resume();}});
-})();
+document.getElementById('home-copy').addEventListener('click',()=>{const el=document.getElementById('home-affirm');copy(el.textContent+' — Heartsong Inspiration','home-note',el)});
+document.getElementById('aff-copy').addEventListener('click',()=>copy(affText.textContent+' — Heartsong Inspiration','aff-note',affText));
+document.getElementById('email-copy').addEventListener('click',()=>{const el=document.getElementById('email');copy(el.textContent,'email-note',el);});
+
+/* Page routing with bare hash tokens */
+const PAGES=['home','dolls','affirmations','gallery','stories','shop','about','contact'];
+function show(p){
+  if(!PAGES.includes(p)) p='home';
+  document.querySelectorAll('section.page').forEach(s=>s.hidden = s.dataset.page!==p);
+  document.querySelectorAll('nav.tabs a').forEach(a=>{
+    if(a.dataset.go===p) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+  });
+  const cur=document.querySelector('nav.tabs a[aria-current]');
+  if(cur) cur.scrollIntoView({block:'nearest',inline:'nearest'});
+}
+document.addEventListener('click',e=>{
+  const a=e.target.closest('[data-go]'); if(!a) return;
+  e.preventDefault(); const p=a.dataset.go;
+  try{history.replaceState(null,'','#'+p)}catch(err){}
+  show(p); window.scrollTo({top:0});
+});
+show((location.hash||'').slice(1));
+document.addEventListener('contextmenu',e=>{if(e.target.tagName==='IMG')e.preventDefault()});
+document.addEventListener('dragstart',e=>{if(e.target.tagName==='IMG')e.preventDefault()});
+
+/* Starry sky in the medallions */
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function sky(id){
+  const cv=document.getElementById(id); if(!cv) return;
+  const ctx=cv.getContext('2d'); let w,h,stars=[];
+  function size(){const r=cv.getBoundingClientRect();const d=devicePixelRatio||1;w=cv.width=Math.max(1,r.width*d);h=cv.height=Math.max(1,r.height*d);
+    stars=Array.from({length:90},()=>({x:Math.random()*w,y:Math.random()*h*.8,r:(Math.random()*1.6+.4)*d,p:Math.random()*6.28}));}
+  function draw(t){ctx.clearRect(0,0,w,h);
+    for(const s of stars){const a=.45+.55*Math.abs(Math.sin(s.p+t/1400));ctx.globalAlpha=a;ctx.fillStyle='#f6e3b4';ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,6.28);ctx.fill();}
+    ctx.globalAlpha=1;
+    // crescent moon
+    const mx=w*.72,my=h*.24,mr=w*.075;ctx.fillStyle='#f3dda4';ctx.beginPath();ctx.arc(mx,my,mr,0,6.28);ctx.fill();
+    ctx.fillStyle='#1b2547';ctx.beginPath();ctx.arc(mx+mr*.45,my-mr*.2,mr*.9,0,6.28);ctx.fill();
+    if(!reduce) requestAnimationFrame(draw);}
+  size(); addEventListener('resize',size); requestAnimationFrame(draw);
+}
+sky('stars2');
 </script>
-<script>
-(function(){
-  var vids=[].slice.call(document.querySelectorAll('video[autoplay]'));
-  function nudge(v){ if(v.paused){ v.muted=true; var p=v.play(); if(p&&p.catch) p.catch(function(){}); } }
-  function nudgeAll(){ vids.forEach(nudge); }
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) nudge(e.target); }); },{threshold:0.2});
-    vids.forEach(function(v){ io.observe(v); });
-  }
-  ['pointerdown','touchstart','keydown','scroll'].forEach(function(ev){ window.addEventListener(ev,nudgeAll,{passive:true}); });
-  document.addEventListener('visibilitychange',function(){ if(!document.hidden) nudgeAll(); });
-  window.addEventListener('load',nudgeAll); window.addEventListener('pageshow',nudgeAll);
-})();
-</script>
-</body></html>
+
+</body>
+</html>
