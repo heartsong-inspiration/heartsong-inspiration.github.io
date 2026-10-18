@@ -115,6 +115,7 @@ main section.page{padding-block:40px 64px}
 /* Gallery */
 .grid.gallery{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
 .frame{background:var(--cream);padding:12px 12px 14px;border-radius:6px;box-shadow:0 0 0 1px var(--line),0 12px 24px rgba(59,38,24,.08);display:flex;flex-direction:column;gap:10px}
+video.portrait,video.art{pointer-events:none}
 .frame .art{width:100%;height:auto;object-fit:cover;display:block;aspect-ratio:4/5;max-width:100%;border-radius:3px;display:grid;place-items:center;position:relative;overflow:hidden}
 .frame .art span{font-family:var(--f-script);font-size:2.6rem;color:rgba(255,250,242,.92);text-shadow:0 2px 6px rgba(0,0,0,.25)}
 .frame h3{font-size:1.15rem}
@@ -167,6 +168,13 @@ footer .inner span:nth-child(3){max-width:60ch}
 footer .name{font-family:var(--f-script);font-size:1.8rem;color:var(--gold-deep)}
 .split{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px}
 
+.music{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font-family:var(--f-body);font-weight:700;font-size:.92rem;padding:12px 18px;border-radius:999px;background:var(--cocoa);color:var(--gold-light);box-shadow:0 8px 24px rgba(58,34,52,.28)}
+.music:hover{filter:brightness(1.1)}
+.music .note{font-size:1.1rem;line-height:1}
+.music[aria-pressed="true"] .note{animation:bob 1.2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-3px)}}
+@media (prefers-reduced-motion:reduce){.music[aria-pressed="true"] .note{animation:none}}
+footer.site{padding-bottom:72px}
 @media (max-width:760px){
   .hero,.about{grid-template-columns:1fr}
   .hero{gap:28px}
@@ -372,6 +380,8 @@ footer .name{font-family:var(--f-script);font-size:1.8rem;color:var(--gold-deep)
 </section>
 </main>
 
+<button class="music" id="music" type="button" aria-pressed="false"><span class="note" aria-hidden="true">&#9835;</span><span id="music-label">Play music</span></button>
+<audio id="song" src="audio/twinkle-lullaby.mp3" loop preload="none"></audio>
 <footer class="site">
   <div class="wrap inner">
     <span class="name">Heartsong Inspiration</span>
@@ -381,6 +391,7 @@ footer .name{font-family:var(--f-script);font-size:1.8rem;color:var(--gold-deep)
 </footer>
 
 <script>
+const MOVING = ["soretha","theresa","jabari","kwame","janie","kyran","zaire","christopher","ariana","harmony","dream"];
 const DOLLS = [
   {n:"Soretha", k:"soretha", tag:"Our star girl", star:true, a:"I carry a light that was made to shine.", d:"In her starry blue dress, Soretha looks up at the night sky and believes every star is a wish waiting for her."},
   {n:"Isabella", k:"isabella", tag:"The lantern keeper", a:"Carry your own light.", d:"In her green dress, Isabella holds her lantern high so no one has to walk through the dark alone."},
@@ -498,7 +509,9 @@ const SHOP = [
 
 const grad = c => `linear-gradient(150deg, ${c[0]}, ${c[1]})`;
 const dollCard = d => `<article class="doll">
-  <img class="portrait" src="img/doll-${d.k}.jpg" alt="${d.n}, ${d.tag.toLowerCase()}" loading="lazy" width="480" height="636">
+  ${MOVING.includes(d.k)
+    ? `<video class="portrait" src="vid/${d.k}.mp4" poster="img/doll-${d.k}.jpg" autoplay muted loop playsinline preload="metadata" aria-label="${d.n} moving"></video>`
+    : `<img class="portrait" src="img/doll-${d.k}.jpg" alt="${d.n}, ${d.tag.toLowerCase()}" loading="lazy" width="480" height="636">`}
   ${d.star ? '<span class="star">Main character</span>' : ''}
   <h3>${d.n}</h3><p class="tag">${d.tag}</p>${d.a ? `<p class="says">&ldquo;${d.a}&rdquo;</p>` : ''}<p>${d.d}</p></article>`;
 
@@ -506,7 +519,9 @@ document.getElementById('home-dolls').innerHTML = DOLLS.map(dollCard).join('');
 document.getElementById('all-dolls').innerHTML = DOLLS.map(dollCard).join('');
 document.getElementById('aff-themes').innerHTML = THEMES.map(t=>`<div class="value"><h3>${t.h}</h3><p>${t.p}</p></div>`).join('');
 document.getElementById('gallery').innerHTML = GALLERY.map(g=>{const k=typeof g==='string'?g:g.k;const d=typeof g==='string'?DOLLS.find(x=>x.k===k):{n:g.n,a:g.c};return `<figure class="frame" style="margin:0">
-  <img class="art" src="img/card-${k}.jpg" alt="${d.n} affirmation card" loading="lazy" width="640" height="800">
+  ${k==='racing'
+    ? `<video class="art" src="vid/racing.mp4" poster="img/card-racing.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Jabari and Kwame racing on their bikes"></video>`
+    : `<img class="art" src="img/card-${k}.jpg" alt="${d.n} affirmation card" loading="lazy" width="640" height="800">`}
   <figcaption><h3>${d.n}</h3><p>${d.a || d.tag}</p></figcaption></figure>`}).join('');
 document.getElementById('stories').innerHTML = STORIES.map(s=>`<details class="story">
   <summary><span class="eyebrow">${s.n}</span><h3>${s.t}</h3><p>${s.tease}</p><span class="more">Read the story</span></summary>
@@ -564,7 +579,14 @@ document.addEventListener('click',e=>{
   show(p); window.scrollTo({top:0});
 });
 show((location.hash||'').slice(1));
-document.addEventListener('contextmenu',e=>{if(e.target.tagName==='IMG')e.preventDefault()});
+document.addEventListener('contextmenu',e=>{if(e.target.tagName==='IMG'||e.target.tagName==='VIDEO')e.preventDefault()});
+/* play videos only when on screen; respect reduced motion */
+(function(){const vids=[...document.querySelectorAll('video')];const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ vids.forEach(v=>{v.muted=true;v.setAttribute('controlslist','nodownload');});
+ if(still){vids.forEach(v=>{v.removeAttribute('autoplay');v.pause();});return;}
+ if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const p=e.target.play();if(p&&p.catch)p.catch(()=>{});}else e.target.pause();}),{threshold:.2});vids.forEach(v=>io.observe(v));}
+ document.addEventListener('click',()=>vids.forEach(v=>{if(v.paused&&v.offsetParent){const p=v.play();if(p&&p.catch)p.catch(()=>{});}}),{once:true});
+})();
 document.addEventListener('dragstart',e=>{if(e.target.tagName==='IMG')e.preventDefault()});
 
 /* Starry sky in the medallions */
@@ -584,6 +606,11 @@ function sky(id){
   size(); addEventListener('resize',size); requestAnimationFrame(draw);
 }
 sky('stars2');
+
+/* Music button: Twinkle Lullaby */
+(function(){const b=document.getElementById('music'),a=document.getElementById('song'),l=document.getElementById('music-label');a.volume=.6;
+ b.addEventListener('click',()=>{if(a.paused){const p=a.play();if(p&&p.then)p.then(()=>{b.setAttribute('aria-pressed','true');l.textContent='Pause music';}).catch(()=>{l.textContent='Tap again to play';});else{b.setAttribute('aria-pressed','true');l.textContent='Pause music';}}else{a.pause();b.setAttribute('aria-pressed','false');l.textContent='Play music';}});
+})();
 </script>
 
 </body>
