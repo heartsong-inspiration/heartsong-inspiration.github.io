@@ -287,6 +287,10 @@ footer .love{color:var(--cream);font-weight:700}
 .hvid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s;pointer-events:none}
 .hvid.playing video{opacity:1}
 .hvid .playbtn{bottom:auto;top:61%;left:10px}
+
+.fullsong{position:fixed;left:50%;bottom:96px;transform:translate(-50%,10px);opacity:0;z-index:40;max-width:min(520px,92vw);background:rgba(18,26,63,.95);border:1px solid rgba(232,194,124,.5);border-radius:16px;padding:12px 18px;color:var(--cream);font-size:14px;line-height:1.45;text-align:center;transition:opacity .6s,transform .6s;pointer-events:none}
+.fullsong.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.fullsong a{color:var(--gold)}
 </style>
 </head>
 <body>
@@ -495,6 +499,7 @@ footer .love{color:var(--cream);font-weight:700}
 
 <dialog class="starpop" id="starPop"><img id="spImg" src="img/doll-soretha.jpg" alt=""><div class="in"><small id="spDate"></small><h3 id="spName"></h3><blockquote id="spWords"></blockquote><p>A new star opens here every day. Come back tomorrow to see who it is.</p><div class="row"><button class="btn btn-gold" type="button" id="spSend">Send this to someone you love</button><form method="dialog"><button class="btn btn-line" type="submit">Close</button></form></div><div class="toast" id="spToast" role="status" style="color:#8a6424"></div></div></dialog>
 <div class="welcome" id="welcome" role="status"><button type="button" aria-label="Close" id="welcomeX">&times;</button><div id="welcomeText"></div></div>
+<div class="fullsong" id="fullSong" role="status">Hear the whole song in the full video on <a href="https://www.facebook.com/profile.php?id=61595026280214" target="_blank" rel="noopener">Facebook</a>, <a href="https://www.instagram.com/heartsong_inspiration/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.youtube.com/@heartsong_inspiration" target="_blank" rel="noopener">YouTube</a>.</div>
 <dialog id="storyDlg"><h3 id="sdTitle"></h3><div id="sdBody"></div><form method="dialog"><button class="btn" type="submit">Close story</button></form></dialog>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -793,7 +798,7 @@ $("crewGrid").addEventListener("click", e => {
 
 
 /* Music: one song at a time, softly faded in and out, only while its video plays */
-const DOLL_MUSIC = {"Harmony":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/89884c38-aabb-4cf7-8f83-79a865e4e087.mp3","Ariana":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/c8e044a7-1007-4ae5-ab66-ec2826cf7a07.mp3"};
+const DOLL_MUSIC = {"Harmony":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/89884c38-aabb-4cf7-8f83-79a865e4e087.mp3","Ariana":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/c8e044a7-1007-4ae5-ab66-ec2826cf7a07.mp3","Christopher":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/d184a122-6228-4a41-8961-a979ce5bb846.mp3","Jabari":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/429ba120-41b4-4360-bd7e-be23c3ccf075.mp3","Kwame":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/c9d1ab98-5ec4-41cf-89fb-6a6c39d0f6a5.mp3","Kyran":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/1cc31c1e-07c2-4b27-8cdd-823bbe6409ac.mp3","Zaire":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/6aff73e4-e491-4641-b425-ebafa85bcad3.mp3","Christopher at 3":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/6d171420-14ab-4f87-aec7-f13ccdde9ca8.mp3","Sylvester Gene":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/3aaa9707-6d29-44ad-9e22-ee0ce87a4526.mp3","Tre' and Kiki":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/51168a52-af60-48a3-a952-e8dc13a8fb61.mp3"};
 const HOLIDAY_MUSIC = ["5ec5bdc0-bb73-48c6-8e7e-e5ce8a633cc0","8fb8b150-4acf-463a-98a5-23e72b7d9557","b1083a95-f727-45ee-8fcb-57fe73718629","882c3c33-de75-45b6-8851-660bc3740bb2","69634ef2-3d04-43ed-993a-f862c5e987a1","11cc933c-b1c6-4e2a-b168-f81bf6209134"].map(id => `https://cdn.creativeclaw.co/u/4c68c1c5/audio/${id}.mp3`);
 const song = new Audio(); song.loop = true; song.preload = "none"; song.volume = 0;
 let fadeT = null;
@@ -806,10 +811,20 @@ function playSong(src){
   const lull = $("lullaby"); if (lull && !lull.paused) $("musicBtn").click();
   if (wantSong === src && !song.paused) return;
   wantSong = src;
-  const go = () => { if (wantSong !== src) return; song.src = src; song.currentTime = 0; song.volume = 0; song.play().then(() => { if (wantSong === src) fadeTo(.8, 700); else song.pause(); }).catch(()=>{}); };
+  const go = () => { if (wantSong !== src) return; song.src = src; song.currentTime = 0; song.volume = 0; song.play().then(() => { if (wantSong === src) { fadeTo(.55, 900); armSnippet(); } else song.pause(); }).catch(()=>{}); };
   if (!song.paused) fadeTo(0, 300, () => { song.pause(); go(); }); else go();
 }
-function stopSong(){ wantSong = null; if (song.paused) { clearInterval(fadeT); return; } fadeTo(0, 500, () => { if (!wantSong) song.pause(); }); }
+/* A short snippet only: after 15 seconds the song fades away, the video rests, and a gentle note points to the full video */
+let snipT = null;
+function armSnippet(){
+  clearTimeout(snipT);
+  snipT = setTimeout(() => {
+    const w = document.querySelector("#crewGrid .vwrap.playing, #shelf .hvid.playing");
+    if (w) w.querySelector(".playbtn").click();
+    const n = $("fullSong"); n.classList.add("show"); clearTimeout(n._t); n._t = setTimeout(() => n.classList.remove("show"), 9000);
+  }, 15000);
+}
+function stopSong(){ clearTimeout(snipT); wantSong = null; if (song.paused) { clearInterval(fadeT); return; } fadeTo(0, 500, () => { if (!wantSong) song.pause(); }); }
 /* Seamless loops: each short video dissolves into its own beginning instead of jumping back */
 function ensureSeam(w){
   if (w._seam) { w._seam.run(); return; }
