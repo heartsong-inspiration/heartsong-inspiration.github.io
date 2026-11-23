@@ -751,7 +751,7 @@ $("shelf").addEventListener("click", e => {
   if (!v.src) v.src = v.dataset.src;
   if (v.paused) {
     document.querySelectorAll("#shelf .hvid.playing").forEach(o => { if (o !== w) { o.querySelector("video").pause(); o.classList.remove("playing"); const ob = o.querySelector(".playbtn"); ob.innerHTML = '<span aria-hidden="true">&#9654;</span> Play'; ob.setAttribute("aria-label", ob.getAttribute("aria-label").replace(/^Pause/,"Play")); } });
-    v.muted = false; v.play().catch(()=>{ v.muted = true; v.play().catch(()=>{}); }); w.classList.add("playing"); b.innerHTML = '<span aria-hidden="true">&#10074;&#10074;</span> Pause'; b.setAttribute("aria-label","Pause " + name);
+    v.muted = true; v.play().catch(()=>{}); w.classList.add("playing"); b.innerHTML = '<span aria-hidden="true">&#10074;&#10074;</span> Pause'; b.setAttribute("aria-label","Pause " + name);
   } else { v.pause(); w.classList.remove("playing"); b.innerHTML = '<span aria-hidden="true">&#9654;</span> Play'; b.setAttribute("aria-label","Play " + name); }
 });
 
@@ -785,7 +785,7 @@ $("crewGrid").addEventListener("click", e => {
   const v = w.querySelector("video"), b = w.querySelector(".playbtn"), name = b.getAttribute("aria-label").replace(/^(Play|Pause) /,"");
   if (v.paused) {
     document.querySelectorAll("#crewGrid .vwrap.playing").forEach(o => { if (o !== w) { o.querySelector("video").pause(); o.classList.remove("playing"); const ob = o.querySelector(".playbtn"); ob.innerHTML = '<span aria-hidden="true">&#9654;</span> Play'; ob.setAttribute("aria-label", ob.getAttribute("aria-label").replace(/^Pause/,"Play")); } });
-    v.muted = false; v.play().catch(()=>{ v.muted = true; v.play().catch(()=>{}); }); w.classList.add("playing"); b.innerHTML = '<span aria-hidden="true">&#10074;&#10074;</span> Pause'; b.setAttribute("aria-label", "Pause " + name);
+    v.muted = true; v.play().catch(()=>{}); w.classList.add("playing"); b.innerHTML = '<span aria-hidden="true">&#10074;&#10074;</span> Pause'; b.setAttribute("aria-label", "Pause " + name);
   } else {
     v.pause(); w.classList.remove("playing"); b.innerHTML = '<span aria-hidden="true">&#9654;</span> Play'; b.setAttribute("aria-label", "Play " + name);
   }
@@ -793,7 +793,7 @@ $("crewGrid").addEventListener("click", e => {
 
 
 /* Music for dolls whose videos have their own song (plays only while that video plays) */
-const DOLL_MUSIC = {"Harmony":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/73739171-47d7-4281-8a5d-3e61d78ce9cb.mp3","Ariana":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/c8e044a7-1007-4ae5-ab66-ec2826cf7a07.mp3"};
+const DOLL_MUSIC = {"Harmony":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/73739171-47d7-4281-8a5d-3e61d78ce9cb.mp3"};
 const dollAudio = new Audio(); dollAudio.loop = true; dollAudio.preload = "none";
 $("crewGrid").addEventListener("click", e => {
   const w = e.target.closest(".vwrap"); if (!w) return;
