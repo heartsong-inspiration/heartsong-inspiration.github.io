@@ -793,7 +793,7 @@ $("crewGrid").addEventListener("click", e => {
 
 
 /* Music for dolls whose videos have their own song (plays only while that video plays) */
-const DOLL_MUSIC = {"Harmony":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/73739171-47d7-4281-8a5d-3e61d78ce9cb.mp3"};
+const DOLL_MUSIC = {};
 const dollAudio = new Audio(); dollAudio.loop = true; dollAudio.preload = "none";
 $("crewGrid").addEventListener("click", e => {
   const w = e.target.closest(".vwrap"); if (!w) return;
