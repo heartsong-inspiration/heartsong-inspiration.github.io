@@ -1,397 +1,403 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Heartsong Inspiration: a gentle song for every heart. Daily affirmations, original art and stories by Soretha Eldridge.">
-<meta property="og:title" content="Heartsong Inspiration">
-<meta property="og:description" content="A gentle song for every heart. Daily affirmations, original art and soft encouragement.">
-<meta property="og:image" content="https://heartsonginspiration.com/img/card-soretha.jpg">
-<meta name="copyright" content="© 2026 Soretha Eldridge, Heartsong Inspiration">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Heartsong Inspiration</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Nunito+Sans:wght@400;600;700&display=swap">
+<meta property="og:title" content="Heartsong Inspiration">
+<meta property="og:description" content="Original dolls, daily affirmations and star stories by Soretha Eldridge.">
+<meta property="og:image" content="https://heartsonginspiration.com/img/card-soretha.jpg">
+<meta property="og:url" content="https://heartsonginspiration.com/">
+<meta name="copyright" content="© 2026 Soretha Eldridge, Heartsong Inspiration">
+<link rel="icon" href="img/emblem.png">
+
+<meta name="description" content="Heartsong Inspiration: original dolls, daily affirmations and star stories by Soretha Eldridge.">
 <style>
-/* Layout: champagne "keepsake box" — gold script masthead, sticky ribbon nav, one page per tab, soft sparkle ground. Single warm look by choice. */
+@font-face{font-family:"Cormorant Garamond";src:url(fonts/cormorant-garamond-latin-500-normal.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Cormorant Garamond";src:url(fonts/cormorant-garamond-latin-500-italic.woff2) format("woff2");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Cormorant Garamond";src:url(fonts/cormorant-garamond-latin-600-normal.woff2) format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Lato";src:url(fonts/lato-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Lato";src:url(fonts/lato-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
 :root{
-  --champagne:#f6eef3;
-  --cream:#fffafd;
-  --gold:#a8648f;
-  --gold-deep:#7a3f6c;
-  --gold-light:#ecd3e4;
-  --cocoa:#3a2234;
-  --cocoa-soft:#6b5266;
-  --rose:#c45c5c;
-  --line:#ead7e3;
-  --f-script:"Allura","Brush Script MT",cursive;
-  --f-head:"Cormorant Garamond",Georgia,"Times New Roman",serif;
-  --f-body:"Nunito Sans","Segoe UI",system-ui,sans-serif;
-  color-scheme:light;
+  /* One visual world: the night sky of the Heartsong expedition. 3D crew orbit is the one bold moment; every section after it is quiet. */
+  --sky:#0a1029;
+  --sky-2:#121a3f;
+  --sky-3:#1b2557;
+  --gold:#e8c27c;
+  --gold-soft:#b89659;
+  --cream:#f5ecdc;
+  --mist:#b9b6c9;
+  --berry:#c9524a;
+  --display:"Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --body:"Lato", "Segoe UI", system-ui, sans-serif;
+  color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  background:var(--champagne);
-  background-image:
-    radial-gradient(circle at 12% 18%, rgba(196,160,200,.55) 0 1.5px, transparent 2px),
-    radial-gradient(circle at 78% 8%, rgba(196,160,200,.6) 0 1.2px, transparent 2px),
-    radial-gradient(circle at 55% 62%, rgba(196,160,200,.5) 0 1.4px, transparent 2px),
-    radial-gradient(circle at 30% 85%, rgba(196,160,200,.5) 0 1.2px, transparent 2px);
-  background-size:220px 220px, 300px 300px, 260px 260px, 340px 340px;
-  color:var(--cocoa);
-  font-family:var(--f-body);
-  font-size:16px;
-  line-height:1.65;
-}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--cream)}
-.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-a{color:var(--gold-deep)}
-:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px;border-radius:4px}
-h1,h2,h3{font-family:var(--f-head);color:var(--cocoa);text-wrap:balance;line-height:1.15;margin:0}
-h2{font-size:clamp(1.9rem,4vw,2.6rem);font-weight:700}
-h3{font-size:1.45rem;font-weight:700}
-p{margin:0}
-.eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);font-weight:700}
-.script{font-family:var(--f-script);font-weight:400;
-  background:linear-gradient(180deg,#c98bb5 0%,#9b5a86 45%,#6e3a62 80%,#b07aa0 100%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  filter:drop-shadow(0 1px 1px rgba(80,30,70,.18))}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--sky);color:var(--cream);font:400 17px/1.65 var(--body)}
+img{max-width:100%;display:block}
+a{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.08;text-wrap:balance;margin:0}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
 
 /* Header */
-header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--cream);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.brand .mark{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e3b9d4,#8a4a78 70%);display:grid;place-items:center;color:var(--cream);font-family:var(--f-script);font-size:1.6rem;box-shadow:0 0 0 2px var(--cream),0 0 0 3px var(--gold)}
-.brand .name{font-family:var(--f-script);font-size:1.9rem;color:var(--gold-deep);line-height:1}
-.navscroll{overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--line)}
-.navscroll::-webkit-scrollbar{display:none}
-nav.tabs{display:flex;gap:4px;padding-block:6px;white-space:nowrap}
-nav.tabs a{font-family:var(--f-head);font-weight:600;font-size:1.08rem;text-decoration:none;color:var(--cocoa-soft);padding:6px 14px;border-radius:999px}
-nav.tabs a:hover{color:var(--cocoa);background:rgba(196,160,200,.35)}
-nav.tabs a[aria-current="page"]{background:var(--cocoa);color:var(--gold-light)}
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-body);font-weight:700;font-size:.95rem;border:0;cursor:pointer;text-decoration:none;padding:12px 22px;border-radius:999px;background:linear-gradient(180deg,#b06d98,#7f4270);color:#fffafd;box-shadow:0 2px 0 var(--gold-deep)}
-.btn:hover{filter:brightness(1.05)}
-.btn.ghost{background:transparent;color:var(--gold-deep);box-shadow:inset 0 0 0 1.5px var(--gold)}
-.small-btn{padding:8px 16px;font-size:.88rem}
+.top{position:sticky;top:0;z-index:20;background:rgba(10,16,41,.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(232,194,124,.14)}
+.top .wrap{display:flex;align-items:center;gap:22px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--cream);font-family:var(--display);font-size:24px;font-weight:600;letter-spacing:.01em;white-space:nowrap}
+.brand img{width:34px;height:34px;border-radius:50%}
+nav.menu{display:flex;gap:18px;margin-left:auto;white-space:nowrap}
+nav.menu a{color:var(--mist);text-decoration:none;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+nav.menu a:hover{color:var(--cream)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:11px 20px;font:700 14px/1 var(--body);letter-spacing:.03em;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn-gold{background:var(--gold);color:#1a1405}
+.btn-gold:hover{background:#f2d293}
+.btn-line{background:transparent;color:var(--cream);border:1px solid rgba(245,236,220,.35)}
+.btn-line:hover{border-color:var(--gold);color:var(--gold)}
+@media (max-width:1180px){nav.menu{display:none}.top .btn-gold{margin-left:auto}}
+@media (max-width:440px){.brand span{display:none}}
 
-main section.page{padding-block:40px 64px}
-.stack{display:flex;flex-direction:column;gap:40px}
-.intro{display:flex;flex-direction:column;gap:10px;max-width:640px}
-.intro p{color:var(--cocoa-soft)}
+/* Hero: 3D crew orbit */
+.hero{position:relative;height:clamp(560px,86vh,820px);overflow:hidden;background:radial-gradient(120% 90% at 70% 40%,#1d2a66 0%,var(--sky-2) 40%,var(--sky) 75%)}
+#stage{position:absolute;z-index:1;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y}
+#stage.dragging{cursor:grabbing}
+.hero::after{content:"";position:absolute;inset:0 auto 0 0;width:min(620px,60%);background:linear-gradient(90deg,rgba(10,16,41,.92) 0%,rgba(10,16,41,.7) 55%,rgba(10,16,41,0) 100%);z-index:2;pointer-events:none}
+.hero-copy{position:absolute;left:max(20px,calc((100% - 1180px)/2));top:50%;transform:translateY(-50%);max-width:470px;z-index:3;pointer-events:none}
+.hero-copy > *{pointer-events:auto}
+.kicker{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0 0 18px}
+.hero h1{font-size:clamp(46px,7vw,92px);letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p.lede{font-size:19px;color:#dcd6e6;margin:20px 0 28px;max-width:40ch}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+.hint{position:absolute;right:max(20px,calc((100% - 1180px)/2));top:22px;z-index:3;font-size:13px;color:var(--mist);letter-spacing:.06em}
+.crew-card{position:absolute;z-index:4;right:max(20px,calc((100% - 1180px)/2));top:50%;transform:translateY(-50%);width:min(320px,100% - 40px);background:rgba(14,21,52,.9);border:1px solid rgba(232,194,124,.35);border-radius:18px;padding:22px 22px 20px;box-shadow:0 30px 80px rgba(0,0,0,.45);display:none}
+.crew-card.open{display:block;animation:rise .35s ease}
+@keyframes rise{from{opacity:0;transform:translateY(-46%)}to{opacity:1;transform:translateY(-50%)}}
+.crew-card .tag{color:var(--gold);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.crew-card h3{font-size:40px;margin:6px 0 10px}
+.crew-card p{margin:0 0 10px;color:#ddd7e6}
+.crew-card blockquote{margin:14px 0 0;font-family:var(--display);font-style:italic;font-size:22px;line-height:1.3;color:var(--cream);border-left:2px solid var(--gold);padding-left:14px}
+.crew-card .close{position:absolute;top:10px;right:12px;background:none;border:0;color:var(--mist);font-size:26px;cursor:pointer;line-height:1}
+@media (max-width:760px){
+  .hero{height:auto;min-height:860px}
+  .hero::after{width:100%;height:470px;inset:0 0 auto 0;background:linear-gradient(180deg,rgba(10,16,41,.95) 0%,rgba(10,16,41,.85) 70%,rgba(10,16,41,0) 100%)}
+  .hero-copy{top:30px;transform:none;right:20px}
+  .hero h1{font-size:46px}
+  .hint{top:auto;bottom:84px;left:20px;right:20px;text-align:center}
+  .crew-card{top:auto;bottom:20px;transform:none}
+  .crew-card.open{animation:none}
+}
+.fallback-note{display:none}
 
-/* Hero */
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:24px}
-.hero h1 .script{display:block;font-size:clamp(3.6rem,10vw,6.4rem);line-height:1.05}
-.hero h1 .sub{display:block;font-family:var(--f-head);font-size:clamp(1.3rem,2.6vw,1.7rem);font-weight:600;color:var(--cocoa-soft);margin-top:6px}
-.hero p.lead{font-size:1.1rem;max-width:520px;margin-top:18px}
-.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
-.hero-art img{display:block;width:100%;max-width:420px;height:auto;margin:0 auto;border-radius:18px;box-shadow:0 0 0 8px var(--cream),0 0 0 9px var(--gold-light),0 24px 50px rgba(58,34,52,.22)}
-.medallion{position:relative;aspect-ratio:1;max-width:400px;width:100%;margin:0 auto;border-radius:50%;
-  background:radial-gradient(circle at 50% 40%,#22305a 0%,#141c38 70%);
-  box-shadow:0 0 0 10px var(--cream),0 0 0 13px var(--gold),0 24px 50px rgba(59,38,24,.25);overflow:hidden}
-.medallion canvas{width:100%;height:100%;display:block}
-.medallion .caption{position:absolute;left:0;right:0;bottom:18%;text-align:center;color:#f6e3b4;font-family:var(--f-script);font-size:2.4rem;text-shadow:0 2px 6px rgba(0,0,0,.4)}
-.medallion .caption small{display:block;font-family:var(--f-body);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:#e8dcc2}
+/* Sections */
+section.band{padding:96px 0}
+section.band.alt{background:var(--sky-2)}
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:end;margin-bottom:44px}
+.head h2{font-size:clamp(38px,5vw,62px)}
+.head p{margin:0;color:var(--mist);max-width:56ch}
+.eyebrow{display:block;font:700 12px/1 var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+@media (max-width:760px){.head{grid-template-columns:1fr;gap:14px}section.band{padding:72px 0}}
 
-/* Affirmation card */
-.affirm{background:var(--cream);border:1px solid var(--line);border-radius:22px;padding:32px clamp(20px,4vw,48px);text-align:center;position:relative;box-shadow:0 10px 30px rgba(59,38,24,.07)}
-.affirm .date{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-weight:700}
-.affirm blockquote{font-family:var(--f-head);font-style:italic;font-weight:500;font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.3;margin:14px auto 22px;max-width:30ch;color:var(--cocoa)}
-.affirm .row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.note{font-size:.85rem;color:var(--cocoa-soft);min-height:1.4em;margin-top:10px}
+/* Holiday Star series: cards on a 3D shelf */
+.shelf{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(240px,300px);gap:26px;overflow-x:auto;padding:20px 4px 34px;scroll-snap-type:x mandatory;perspective:1200px}
+.star-card{scroll-snap-align:start;margin:0;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s;border-radius:14px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.4);background:#f7f1e6}
+.star-card img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.star-card figcaption{padding:12px 14px;color:#2b2118;font-size:14px;display:flex;justify-content:space-between;gap:10px}
+.star-card figcaption b{font-family:var(--display);font-size:20px;font-weight:600}
+.star-card figcaption span{color:#7a6754;align-self:center;white-space:nowrap}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){.star-card:hover{box-shadow:0 30px 60px rgba(0,0,0,.55)}}
+.shelf-note{color:var(--mist);font-size:14px;margin-top:6px}
 
-/* Dolls */
-.grid{display:grid;gap:22px}
-.grid.dolls{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
-.doll{background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}
-.portrait{width:100%;max-width:100%;height:auto;aspect-ratio:480/636;object-fit:cover;border-radius:14px;box-shadow:0 0 0 4px var(--cream),0 0 0 5px var(--gold-light),0 10px 22px rgba(58,34,52,.14);background:var(--gold-light)}
-.doll .says{font-family:var(--f-head);font-style:italic;font-size:1.12rem;color:var(--gold-deep)}
-.doll .tag{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);font-weight:700}
-.doll p{font-size:.95rem;color:var(--cocoa-soft)}
-.doll .star{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--cocoa);color:var(--gold-light);padding:3px 10px;border-radius:999px}
+/* Star of the day */
+.today{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:center}
+.today .date{font-variant-numeric:tabular-nums;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-size:13px}
+.today blockquote{margin:16px 0 28px;font-family:var(--display);font-size:clamp(34px,4.4vw,56px);line-height:1.12;font-style:italic}
+.today .row{display:flex;gap:12px;flex-wrap:wrap}
+.orb{position:relative;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2a3a86,#121a3f 60%,#0a1029);box-shadow:inset 0 0 80px rgba(232,194,124,.12),0 0 120px rgba(232,194,124,.08);display:grid;place-items:center;overflow:hidden}
+.orb img{width:62%;border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.5);transform:rotate(-3deg)}
+@media (max-width:760px){.today{grid-template-columns:1fr;gap:30px}.orb{max-width:340px}}
+.toast{font-size:14px;color:var(--gold);min-height:1.4em;margin-top:10px}
 
-/* Gallery */
-.grid.gallery{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
-.frame{background:var(--cream);padding:12px 12px 14px;border-radius:6px;box-shadow:0 0 0 1px var(--line),0 12px 24px rgba(59,38,24,.08);display:flex;flex-direction:column;gap:10px}
-video.portrait,video.art{pointer-events:none}
-.frame .art{width:100%;height:auto;object-fit:cover;display:block;aspect-ratio:4/5;max-width:100%;border-radius:3px;display:grid;place-items:center;position:relative;overflow:hidden}
-.frame .art span{font-family:var(--f-script);font-size:2.6rem;color:rgba(255,250,242,.92);text-shadow:0 2px 6px rgba(0,0,0,.25)}
-.frame h3{font-size:1.15rem}
-.frame p{font-size:.85rem;color:var(--cocoa-soft)}
+/* Crew grid */
+.crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:22px}
+.mate{background:var(--sky-3);border-radius:14px;overflow:hidden;border:1px solid rgba(232,194,124,.12);display:flex;flex-direction:column}
+.mate img,.mate video{aspect-ratio:480/636;object-fit:cover;width:100%;display:block;background:var(--sky-2)}
+.mate div{padding:14px 16px 18px}
+.mate h3{font-size:26px}
+.mate .t{color:var(--gold);font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin:4px 0 8px}
+.mate p{margin:0;color:#d8d3e2;font-size:15px}
+.mate.new{border-color:rgba(232,194,124,.5)}
+.mark{color:var(--mist);font-size:13px;margin-top:22px}
 
+/* Doll collection */
+.collection{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.collection .pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.collection .pair img{border-radius:16px;aspect-ratio:480/636;object-fit:cover}
+.collection .pair img:last-child{margin-top:48px}
+form.wait{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+form.wait label{flex-basis:100%;font-size:14px;color:var(--mist)}
+form.wait input{flex:1 1 220px;min-width:0;padding:13px 16px;border-radius:999px;border:1px solid rgba(245,236,220,.3);background:rgba(255,255,255,.06);color:var(--cream);font:inherit}
+@media (max-width:760px){.collection{grid-template-columns:1fr}}
+
+.baby{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:start}
+.memory{margin:0}
+.memory video{width:100%;max-width:360px;aspect-ratio:9/16;border-radius:18px;background:#000;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.memory figcaption{color:var(--mist);font-size:14px;margin-top:10px;max-width:360px}
+.her-words{margin:0;font-family:var(--display);font-style:italic;font-size:clamp(26px,3vw,36px);line-height:1.25;color:var(--cream);border-left:2px solid var(--gold);padding-left:22px}
+.who{color:var(--gold);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin:16px 0 18px 24px}
+.baby-copy > p{color:#e4dfea;max-width:56ch}
+.first-baby{display:flex;gap:18px;align-items:center;background:var(--sky-3);border:1px solid rgba(232,194,124,.3);border-radius:16px;padding:14px;margin-top:26px;max-width:520px}
+.first-baby img{width:110px;border-radius:12px}
+.first-baby b{font-family:var(--display);font-size:30px;font-weight:600;display:block}
+.first-baby p{margin:4px 0 0;color:#ddd7e6;font-style:italic}
+@media (max-width:760px){.baby{grid-template-columns:1fr;gap:30px}.memory video{max-width:100%}}
 /* Stories */
-.grid.stories{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
-details.story{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:22px 24px}
-details.story summary{cursor:pointer;list-style:none;display:flex;flex-direction:column;gap:6px}
-details.story summary::-webkit-details-marker{display:none}
-details.story summary .more{font-size:.85rem;font-weight:700;color:var(--gold-deep)}
-details.story[open] summary .more{display:none}
-details.story .body{margin-top:14px;display:flex;flex-direction:column;gap:12px;max-width:62ch}
-details.story .body p:last-child{font-family:var(--f-head);font-style:italic;font-size:1.15rem;color:var(--gold-deep)}
+.stories{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.story{background:transparent;border:0;border-top:1px solid rgba(232,194,124,.3);padding:20px 0 6px;text-align:left;color:var(--cream);cursor:pointer;font:inherit}
+.story b{display:block;font-family:var(--display);font-size:28px;font-weight:500;line-height:1.15}
+.story span{display:block;color:var(--mist);margin-top:8px;font-size:15px}
+.story i{display:block;color:var(--gold);font-style:normal;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-top:12px}
+.story:hover b{color:var(--gold)}
+dialog{max-width:640px;width:calc(100% - 32px);background:#f7f1e6;color:#2b2118;border:0;border-radius:18px;padding:34px 34px 28px}
+dialog::backdrop{background:rgba(5,8,22,.75)}
+dialog h3{font-size:38px;margin-bottom:16px}
+dialog p{margin:0 0 14px;font-size:17px}
+dialog p:last-of-type{font-family:var(--display);font-style:italic;font-size:22px;color:#7a3c2c}
+dialog .btn{background:#2b2118;color:#f7f1e6;margin-top:6px}
 
 /* Shop */
-.grid.shop{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
-.product{background:var(--cream);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
-.product .art{aspect-ratio:3/2;max-width:100%;display:grid;place-items:center;font-family:var(--f-script);font-size:2.4rem;color:#fffaf2;text-shadow:0 2px 5px rgba(0,0,0,.25)}
-.product .info{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
-.product .info p{font-size:.92rem;color:var(--cocoa-soft);flex:1}
-.pill{align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:rgba(196,160,200,.5);color:var(--gold-deep)}
+.shop{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px}
+.item{background:var(--sky-3);border-radius:14px;overflow:hidden}
+.item img{aspect-ratio:1;object-fit:cover;width:100%}
+.item > div{padding:14px 16px 18px}
+.item h3{font-size:24px}
+.item p{color:var(--mist);font-size:14px}
 
-/* About */
-.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
-.about .copy{display:flex;flex-direction:column;gap:16px;max-width:62ch;min-width:0}
-.about .copy p{font-size:1.04rem}
-.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
-.value{border-top:2px solid var(--gold);padding-top:12px}
-.value h3{font-size:1.2rem}
-.value p{font-size:.92rem;color:var(--cocoa-soft)}
-.signature{font-family:var(--f-script);font-size:2.6rem;color:var(--gold-deep);line-height:1}
-
-/* Contact */
-.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
-.panel{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px;min-width:0}
-.panel .addr{font-family:var(--f-head);font-size:1.35rem;font-weight:700;word-break:break-all;user-select:all}
-.panel p{color:var(--cocoa-soft);font-size:.95rem}
-
-/* Ribbon + footer */
-.ribbon{background:var(--cocoa);color:var(--gold-light);border-radius:22px;padding:34px clamp(20px,4vw,44px);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
-.ribbon h2{color:var(--cream)}
-.ribbon p{color:#dcc6d6;max-width:52ch}
-.ribbon .btn.ghost{color:var(--gold-light);box-shadow:inset 0 0 0 1.5px var(--gold-light)}
-footer.site{border-top:1px solid var(--line);background:var(--cream)}
-footer .inner{padding-block:28px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;font-size:.88rem;color:var(--cocoa-soft)}
-.rights{font-size:.85rem;font-weight:700;color:var(--gold-deep)}
-img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
-footer .inner span:nth-child(3){max-width:60ch}
-footer .name{font-family:var(--f-script);font-size:1.8rem;color:var(--gold-deep)}
-.split{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px}
-
-.music{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font-family:var(--f-body);font-weight:700;font-size:.92rem;padding:12px 18px;border-radius:999px;background:var(--cocoa);color:var(--gold-light);box-shadow:0 8px 24px rgba(58,34,52,.28)}
-.music:hover{filter:brightness(1.1)}
-.music .note{font-size:1.1rem;line-height:1}
-.music[aria-pressed="true"] .note{animation:bob 1.2s ease-in-out infinite}
-@keyframes bob{50%{transform:translateY(-3px)}}
-@media (prefers-reduced-motion:reduce){.music[aria-pressed="true"] .note{animation:none}}
-footer.site{padding-bottom:72px}
-@media (max-width:760px){
-  .hero,.about{grid-template-columns:1fr}
-  .hero{gap:28px}
-  .medallion{max-width:300px}
-}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.shop-block{margin-top:46px}
+.shop-block:first-of-type{margin-top:0}
+.sub{margin-bottom:22px;max-width:62ch}
+.sub h3{font-size:clamp(30px,3.6vw,42px)}
+.sub p{margin:10px 0 0;color:var(--mist)}
+.item{display:flex;flex-direction:column}
+.item > div{display:flex;flex-direction:column;gap:6px;flex:1}
+.item p{margin:0}
+.price{font-variant-numeric:tabular-nums;color:var(--gold);font-weight:700;font-size:18px}
+.price s{color:var(--mist);font-weight:400;font-size:14px;margin-left:6px}
+.item .btn{align-self:flex-start;margin-top:auto;padding:9px 16px;font-size:13px}
+.scents{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.scents span{border:1px solid rgba(232,194,124,.35);border-radius:999px;padding:3px 10px;font-size:12px;color:var(--cream)}
+.soon{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.soon article{border-top:1px solid rgba(232,194,124,.3);padding-top:14px}
+.soon b{font-family:var(--display);font-size:24px;font-weight:600;display:block}
+.soon i{font-style:normal;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.soon p{margin:6px 0 0;color:var(--mist);font-size:15px}
+.mailnote{color:var(--mist);font-size:14px;margin-top:26px}
+/* Story + footer */
+.ourstory{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:56px}
+.ourstory p{margin:0 0 16px;max-width:62ch;color:#e4dfea}
+.ourstory .sig{font-family:var(--display);font-style:italic;font-size:26px;color:var(--gold)}
+.pillars{display:grid;gap:18px;align-content:start}
+.pillars div{border-left:2px solid var(--gold-soft);padding-left:16px}
+.pillars b{font-family:var(--display);font-size:24px;font-weight:600;display:block}
+.pillars span{color:var(--mist);font-size:15px}
+@media (max-width:760px){.ourstory{grid-template-columns:1fr}}
+footer{border-top:1px solid rgba(232,194,124,.18);padding:44px 0 90px;color:var(--mist);font-size:14px}
+footer .cols{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between}
+footer .love{color:var(--cream);font-weight:700}
+.music{position:fixed;left:18px;bottom:18px;z-index:30}
+.banner{position:fixed;right:18px;bottom:18px;z-index:30;background:var(--berry);color:#fff;border-radius:999px;padding:10px 18px;font-size:13px;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.35);max-width:calc(100% - 150px)}
+@media (max-width:560px){.banner{font-size:12px;padding:8px 12px;left:12px;right:12px;bottom:70px;max-width:none;text-align:center}}
 </style>
 </head>
 <body>
-
-
-<header class="site">
-  <div class="wrap bar">
-    <a class="brand" href="#home" data-go="home"><span class="mark" aria-hidden="true">H</span><span class="name">Heartsong Inspiration</span></a>
-    <a class="btn small-btn ghost" href="#contact" data-go="contact">Say hello</a>
-  </div>
-  <div class="navscroll">
-    <nav class="tabs wrap" aria-label="Site">
-      <a href="#home" data-go="home">Home</a>
-      <a href="#dolls" data-go="dolls">Meet the Dolls</a>
-      <a href="#affirmations" data-go="affirmations">Affirmations</a>
-      <a href="#gallery" data-go="gallery">Gallery</a>
-      <a href="#stories" data-go="stories">Stories</a>
-      <a href="#shop" data-go="shop">Shop</a>
-      <a href="#about" data-go="about">Our Story</a>
-      <a href="#contact" data-go="contact">Contact</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/emblem.png" alt="Heartsong Inspiration emblem"><span>Heartsong Inspiration</span></a>
+    <nav class="menu" aria-label="Main">
+      <a href="#holiday">Holiday Stars</a>
+      <a href="#today">Star of the day</a>
+      <a href="#crew">Meet the crew</a>
+      <a href="#dolls">Baby dolls</a>
+      <a href="#stories">Stories</a>
+      <a href="#shop">Shop</a>
+      <a href="#story">Our story</a>
     </nav>
+    <a class="btn btn-gold" href="#coloring">Free coloring page</a>
   </div>
 </header>
 
-<main>
-<!-- HOME -->
-<section class="page" id="page-home" data-page="home">
-  <div class="wrap stack">
-    <div class="hero">
-      <div>
-        <p class="eyebrow">Daily affirmations · Original art · Soft encouragement</p>
-        <h1><span class="script">Heartsong</span><span class="sub">Inspiration · a gentle song for every heart</span></h1>
-        <p class="lead">Welcome to our world of brown-skinned dolls, starlit dreams, and words that lift you up. Every doll has a name, every name has a story, and every story ends in light.</p>
-        <div class="ctas">
-          <a class="btn" href="#dolls" data-go="dolls">Meet the Dolls</a>
-          <a class="btn ghost" href="#affirmations" data-go="affirmations">Today's Affirmation</a>
-        </div>
-      </div>
-      <figure class="hero-art" style="margin:0">
-        <img src="img/card-soretha.jpg" alt="Soretha in her starry blue dress, with the words I carry a light that was made to shine" width="640" height="800">
-      </figure>
+<main id="top">
+<section class="hero" aria-label="The Heartsong crew in the night sky">
+  <canvas id="stage" aria-label="Heartsong dolls circling in a field of stars. Drag to turn the circle, tap a doll to meet her or him."></canvas>
+  <div class="hero-copy">
+    <p class="kicker">Daily affirmations · Original art · Star stories</p>
+    <h1>Every star in our sky has a <em>name.</em></h1>
+    <p class="lede">Welcome aboard the Heartsong expedition. Our brown-skinned dolls are the crew, every affirmation is a star, and every story ends in light.</p>
+    <div class="actions">
+      <a class="btn btn-gold" href="#crew">Meet the crew</a>
+      <a class="btn btn-line" href="#holiday">See the Holiday Stars</a>
     </div>
+  </div>
+  <aside class="crew-card" id="crewCard" aria-live="polite">
+    <button class="close" type="button" aria-label="Close" id="crewClose">&times;</button>
+    <div class="tag" id="ccTag"></div>
+    <h3 id="ccName"></h3>
+    <p id="ccDesc"></p>
+    <blockquote id="ccAff"></blockquote>
+  </aside>
+  <div class="hint" id="hint">Drag the circle · Tap a doll to meet them</div>
+</section>
 
-    <div class="affirm">
-      <p class="date" id="home-date">Today</p>
-      <blockquote id="home-affirm">I am loved, I am chosen, and my light is needed here.</blockquote>
+<section class="band" id="holiday">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">Christmas 2026 · Series of 6</span><h2>The Holiday Star series</h2></div>
+      <p>Six winter affirmations, each one paired with a verse and painted from our own Heartsong dolls. Save your favorite, share it with someone who needs it, and come back each day this season.</p>
+    </div>
+    <div class="shelf" id="shelf"></div>
+    <p class="shelf-note">Swipe or scroll sideways to see all six.</p>
+  </div>
+</section>
+
+<section class="band alt" id="today">
+  <div class="wrap today">
+    <div class="orb"><img id="todayImg" src="img/doll-soretha.jpg" alt="Soretha, the Heartsong girl in the starry blue dress"></div>
+    <div>
+      <span class="date" id="todayDate"></span>
+      <blockquote id="todayText"></blockquote>
       <div class="row">
-        <button class="btn small-btn" type="button" id="home-copy">Copy to share</button>
-        <a class="btn small-btn ghost" href="#affirmations" data-go="affirmations">More affirmations</a>
+        <button class="btn btn-gold" type="button" id="copyAff">Copy to share</button>
+        <button class="btn btn-line" type="button" id="nextAff">Show me another</button>
       </div>
-      <p class="note" id="home-note" aria-live="polite"></p>
-    </div>
-
-    <div class="stack" style="gap:20px">
-      <div class="split">
-        <div class="intro"><p class="eyebrow">The Heartsong family</p><h2>Meet our main characters</h2></div>
-      </div>
-      <div class="grid dolls" id="home-dolls"></div>
-    </div>
-
-    <div class="ribbon">
-      <div class="stack" style="gap:8px">
-        <h2>Join the Heartsong circle</h2>
-        <p>New dolls, new stories, and a fresh affirmation every morning on Facebook and Instagram.</p>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:10px">
-        <a class="btn" href="https://www.facebook.com/profile.php?id=61595026280214" target="_blank" rel="noopener">Follow on Facebook</a>
-        <a class="btn ghost" href="#contact" data-go="contact">Email us</a>
-      </div>
+      <div class="toast" id="toast" role="status"></div>
     </div>
   </div>
 </section>
 
-<!-- DOLLS -->
-<section class="page" id="page-dolls" data-page="dolls" hidden>
-  <div class="wrap stack">
-    <div class="intro">
-      <p class="eyebrow">Meet the Dolls</p>
-      <h2>Every doll has a name and a story</h2>
+<section class="band" id="crew">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">The Heartsong family</span><h2>Meet the crew</h2></div>
       <p>Each Heartsong doll carries a feeling we all know: hope, courage, wonder, belonging. Find the one who speaks to your heart today.</p>
-      <p class="rights">Every Heartsong character was created by Soretha Eldridge. © Soretha Eldridge · Heartsong Inspiration. All rights reserved.</p>
     </div>
-    <div class="grid dolls" id="all-dolls"></div>
+    <div class="crew" id="crewGrid"></div>
+    <p class="mark">Every Heartsong character was created by Soretha Eldridge. © Soretha Eldridge · Heartsong Inspiration. All rights reserved.</p>
   </div>
 </section>
 
-<!-- AFFIRMATIONS -->
-<section class="page" id="page-affirmations" data-page="affirmations" hidden>
-  <div class="wrap stack">
-    <div class="intro">
-      <p class="eyebrow">Daily Affirmations</p>
-      <h2>Words to carry with you</h2>
-      <p>A new affirmation greets you each day. Say it out loud, write it on your mirror, or send it to someone who needs it.</p>
+<section class="band alt" id="dolls">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">Coming soon · Heartsong Baby Dolls</span><h2>A soft baby doll that looks like them</h2></div>
+      <p>Heartsong began with one baby doll. Soon you will be able to hold a Heartsong baby doll of your own: soft-bodied, brown-skinned, and made from Soretha's art.</p>
     </div>
-    <div class="affirm">
-      <p class="date" id="aff-date">Today</p>
-      <blockquote id="aff-text"></blockquote>
-      <div class="row">
-        <button class="btn small-btn" type="button" id="aff-copy">Copy to share</button>
-        <button class="btn small-btn ghost" type="button" id="aff-next">Show me another</button>
+    <div class="baby">
+      <figure class="memory">
+        <video id="memVid" src="vid/baby-doll-memory.mp4" poster="img/baby-doll-memory.jpg" controls playsinline preload="metadata"></video>
+        <figcaption>The Baby Doll Memory: little Soretha and her sister Theresa.</figcaption>
+      </figure>
+      <div class="baby-copy">
+        <blockquote class="her-words">I remember being a very young girl, maybe 4 or 5 years old. My sister Theresa had a beautiful black baby doll with a soft body. I loved that baby doll so much, it never left my mind.</blockquote>
+        <p class="who">Soretha Eldridge, founder of Heartsong Inspiration</p>
+        <p>Today I make dolls so every little girl and boy can hold one that looks like them.</p>
+        <div class="first-baby">
+          <img src="img/new-amira.jpg" alt="Amira, the Heartsong baby with soft curls and a pink bow">
+          <div><span class="eyebrow" style="margin-bottom:6px">The first baby in the family</span><b>Amira</b><p>Every curl is a crown. Wear it proud.</p></div>
+        </div>
+        <form class="wait" id="waitForm" novalidate>
+          <label for="waitEmail">Join the waitlist and be the first to know when the Heartsong baby dolls are ready.</label>
+          <input id="waitEmail" type="email" placeholder="Your email address" autocomplete="email" required>
+          <button class="btn btn-gold" type="submit">Tell me first</button>
+        </form>
+        <div class="toast" id="waitMsg" role="status"></div>
       </div>
-      <p class="note" id="aff-note" aria-live="polite"></p>
     </div>
-    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))" id="aff-themes"></div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="page" id="page-gallery" data-page="gallery" hidden>
-  <div class="wrap stack">
-    <div class="intro">
-      <p class="eyebrow">Original Art Gallery</p>
-      <h2>Moments from the Heartsong world</h2>
-      <p>Original Heartsong artwork, painted with love. Each piece is one of a kind and may become a print, a card, or a page in one of our books.</p>
-      <p class="rights">© Soretha Eldridge · Heartsong Inspiration. Every image and character on this site belongs to Soretha Eldridge. Please do not copy or reuse.</p>
+<section class="band" id="coloring">
+  <div class="wrap collection">
+    <div class="pair" style="grid-template-columns:1fr">
+      <img src="img/coloring-i-am-loved.jpg" alt="Free Heartsong coloring page that reads I am loved" style="aspect-ratio:auto;max-width:360px;margin:0;background:#fff">
     </div>
-    <div class="grid gallery" id="gallery"></div>
+    <div>
+      <span class="eyebrow">A gift from us</span>
+      <h2 style="font-size:clamp(38px,5vw,60px)">Your free coloring page</h2>
+      <p style="color:#e4dfea;margin:20px 0 0;max-width:52ch">Comment LOVE on any Heartsong post on Facebook, Instagram or YouTube and we will send you a free coloring page. Follow us for your daily affirmation.</p>
+      <p style="margin-top:22px"><a class="btn btn-line" href="https://www.instagram.com/heartsong_inspiration/">Find us on Instagram</a></p>
+    </div>
   </div>
 </section>
 
-<!-- STORIES -->
-<section class="page" id="page-stories" data-page="stories" hidden>
-  <div class="wrap stack">
-    <div class="intro">
-      <p class="eyebrow">Heartsong Stories</p>
-      <h2>Tender stories with beautiful endings</h2>
+<section class="band alt" id="stories">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">Star stories</span><h2>Tender stories with beautiful endings</h2></div>
       <p>Short stories for little ones and grown-ups alike. Some will tug at your heart. Every one of them ends in light.</p>
     </div>
-    <div class="grid stories" id="stories"></div>
+    <div class="stories" id="storyList"></div>
   </div>
 </section>
 
-<!-- SHOP -->
-<section class="page" id="page-shop" data-page="shop" hidden>
-  <div class="wrap stack">
-    <div class="intro">
-      <p class="eyebrow">The Heartsong Shop</p>
-      <h2>Bring a little Heartsong home</h2>
-      <p>Our first collection is being prepared now. Email us to be the first to know when each item is ready.</p>
+<section class="band" id="shop">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">The Heartsong Shop</span><h2>Bring a little Heartsong home</h2></div>
+      <p>Our first collection is being prepared now. Tap "Reserve yours" and we will email you first when an item is ready, before anyone else.</p>
     </div>
-    <div class="grid shop" id="shop"></div>
+    <div class="shop-block">
+      <div class="sub"><span class="eyebrow">Black Friday · Friday, November 27</span><h3>Black Friday Shop</h3><p>To order or ask a question, write to us at <strong>shine@heartsonginspiration.com</strong>.</p></div>
+      <div class="shop" id="bfShop"></div>
+    </div>
+    <div class="shop-block">
+      <div class="sub"><span class="eyebrow">New · Heartsong Gifts</span><h3>Mugs, shirts and candles</h3><p>Our dolls and their words, on gifts you can hold. Tap "Reserve yours" and we will email you first when each one is ready.</p></div>
+      <div class="shop" id="giftShop"></div>
+    </div>
+    <div class="shop-block">
+      <div class="sub"><span class="eyebrow">Coming soon</span><h3>More from the Heartsong world</h3></div>
+      <div class="soon" id="soonShop"></div>
+    </div>
+    <p class="mailnote">Reserve buttons open an email to shine@heartsonginspiration.com. If your phone does not open email, write to that address and name the item.</p>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="page" id="page-about" data-page="about" hidden>
-  <div class="wrap stack">
-    <div class="about">
-      <div class="medallion" style="max-width:340px" aria-hidden="true"><canvas id="stars2"></canvas><div class="caption">Heartsong<small>Est. 2026</small></div></div>
-      <div class="copy">
-        <p class="eyebrow">Our Story</p>
-        <h2>Why Heartsong began</h2>
-        <p>Heartsong Inspiration began with a simple belief: every child deserves to see someone who looks like them on the page, wrapped in beauty, wonder, and love.</p>
-        <p>Our dolls are brown-skinned girls and boys with curls, braids, bows, and bright eyes. They chase fireflies, hold lanterns in the dark, and look up at the stars. Through them we share the words we wish every heart could hear each morning: you are worthy, you are wanted, and your song matters.</p>
-        <p>Heartsong is a family endeavor, rooted in Cleveland, Ohio, and in a lifetime of rising above hard places. Every affirmation is written with care, and every image is made to remind you that joy belongs to you too.</p>
-        <p class="signature">With love, Soretha</p>
-        <p class="rights">Heartsong Inspiration and every Heartsong doll, illustration, story and affirmation are the original work of Soretha Eldridge. © 2026 Soretha Eldridge. All rights reserved.</p>
-      </div>
+<section class="band alt" id="story">
+  <div class="wrap ourstory">
+    <div>
+      <span class="eyebrow">Heartsong · Est. 2026</span>
+      <h2 style="font-size:clamp(38px,5vw,60px);margin-bottom:26px">Why Heartsong began</h2>
+      <p>Heartsong Inspiration began with a simple belief: every child deserves to see someone who looks like them on the page, wrapped in beauty, wonder, and love.</p>
+      <p>Our dolls are brown-skinned girls and boys with curls, braids, bows, and bright eyes. They chase fireflies, hold lanterns in the dark, and look up at the stars. Through them we share the words we wish every heart could hear each morning: you are worthy, you are wanted, and your song matters.</p>
+      <p>Heartsong is a family endeavor, rooted in Cleveland, Ohio, and in a lifetime of rising above hard places. Every affirmation is written with care, and every image is made to remind you that joy belongs to you too.</p>
+      <p class="sig">With love, Soretha</p>
     </div>
-    <div class="values">
-      <div class="value"><h3>Representation</h3><p>Children of color shown as they are: beautiful, brilliant, and beloved.</p></div>
-      <div class="value"><h3>Encouragement</h3><p>A daily word to steady the heart and lift the chin.</p></div>
-      <div class="value"><h3>Original art</h3><p>Every Heartsong doll and scene is our own creation.</p></div>
-      <div class="value"><h3>Hope</h3><p>Hard things may come in our stories, and light always wins.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="page" id="page-contact" data-page="contact" hidden>
-  <div class="wrap stack">
-    <div class="intro">
-      <p class="eyebrow">Contact</p>
-      <h2>We would love to hear from you</h2>
-      <p>For orders, collaborations, school and church events, or simply to tell us which doll you love most, write to us.</p>
-    </div>
-    <div class="contact">
-      <div class="panel">
-        <p class="eyebrow">Email</p>
-        <p class="addr" id="email">shine@heartsonginspiration.com</p>
-        <button class="btn small-btn" type="button" id="email-copy" style="align-self:flex-start">Copy email address</button>
-        <p class="note" id="email-note" aria-live="polite"></p>
-      </div>
-      <div class="panel">
-        <p class="eyebrow">Facebook</p>
-        <p class="addr" style="word-break:normal">Heartsong Inspiration</p>
-        <p>New dolls, stories, and daily affirmations.</p>
-        <a class="btn small-btn ghost" style="align-self:flex-start" href="https://www.facebook.com/profile.php?id=61595026280214" target="_blank" rel="noopener">Find us on Facebook</a>
-      </div>
-      <div class="panel">
-        <p class="eyebrow">Instagram</p>
-        <p class="addr" style="word-break:normal">Heartsong Inspiration</p>
-        <p>Watch our dolls twirl and come to life in short videos.</p>
-      </div>
+    <div class="pillars">
+      <div><b>Representation</b><span>Children of color shown as they are: beautiful, brilliant, and beloved.</span></div>
+      <div><b>Encouragement</b><span>A daily word to steady the heart and lift the chin.</span></div>
+      <div><b>Original art</b><span>Every Heartsong doll and scene is our own creation.</span></div>
+      <div><b>Hope</b><span>Hard things may come in our stories, and light always wins.</span></div>
     </div>
   </div>
 </section>
 </main>
 
-<button class="music" id="music" type="button" aria-pressed="false"><span class="note" aria-hidden="true">&#9835;</span><span id="music-label">Play music</span></button>
-<audio id="song" src="audio/twinkle-lullaby.mp3" loop preload="none"></audio>
-<footer class="site">
-  <div class="wrap inner">
-    <span class="name">Heartsong Inspiration</span>
-    <span>heartsonginspiration.com · shine@heartsonginspiration.com</span>
-    <span>All artwork, characters, stories and affirmations © 2026 Soretha Eldridge, Heartsong Inspiration. All rights reserved. No copying, downloading or reuse without written permission.</span>
+<footer>
+  <div class="wrap cols">
+    <div><span class="love">Heartsong Inspiration</span> · a gentle song for every heart<br>shine@heartsonginspiration.com</div>
+    <div><a href="https://www.facebook.com/profile.php?id=61595026280214">Facebook</a> · <a href="https://www.instagram.com/heartsong_inspiration/">Instagram @heartsong_inspiration</a> · <a href="https://www.youtube.com/@heartsong_inspiration">YouTube @heartsong_inspiration</a></div>
+    <div style="flex-basis:100%">All artwork, characters, stories and affirmations © 2026 Soretha Eldridge, Heartsong Inspiration. All rights reserved. No copying, downloading or reuse without written permission.</div>
   </div>
 </footer>
 
+<button class="btn btn-line music" type="button" id="musicBtn" aria-pressed="false">&#9835; Play music</button>
+<audio id="lullaby" src="audio/twinkle-lullaby.mp3" loop preload="none"></audio>
+<div class="banner">Follow for your daily affirmation 💛 Comment LOVE for a free coloring page</div>
+
+<dialog id="storyDlg"><h3 id="sdTitle"></h3><div id="sdBody"></div><form method="dialog"><button class="btn" type="submit">Close story</button></form></dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-const MOVING = ["soretha","theresa","jabari","kwame","janie","kyran","zaire","christopher","ariana","harmony","dream"];
 const DOLLS = [
   {n:"Soretha", k:"soretha", tag:"Our star girl", star:true, a:"I carry a light that was made to shine.", d:"In her starry blue dress, Soretha looks up at the night sky and believes every star is a wish waiting for her."},
   {n:"Isabella", k:"isabella", tag:"The lantern keeper", a:"Carry your own light.", d:"In her green dress, Isabella holds her lantern high so no one has to walk through the dark alone."},
@@ -403,10 +409,13 @@ const DOLLS = [
   {n:"Dream", k:"dream", tag:"The garden girl", a:"", d:"Curly-haired Dream wears her red bow and overalls, with a bee resting on her fingertip among the red flowers."},
   {n:"Jabari", k:"jabari", tag:"Brave on the green bicycle", a:"I am brave, even on hard days.", d:"Jabari waves at the butterflies in his green shirt and overalls. He wobbles, he falls, and he gets back on, one more time."},
   {n:"Kwame", k:"kwame", tag:"The boy who climbs higher", a:"I can do hard things.", d:"Kwame loves his books and his red sneakers, and one brave breath at a time he climbs all the way to the top."},
-  {n:"Christopher", k:"christopher", tag:"Our littlest blessing", a:"", d:"Sweet Baby Christopher snuggles in his soft green sleeper with his teddy bear, while the moon and stars sing him to sleep."},
+  {n:"Christopher", k:"christopher", tag:"Ariana and Janie's baby brother", a:"Hold the ones you love close.", d:"Christopher is three years old, and he is Ariana and Janie's baby brother. He snuggles with his teddy bear while the moon and stars sing him to sleep."},
   {n:"Harmony", k:"harmony", tag:"Song in her soul", a:"", d:"Harmony dances in her flower dress with music all around her, and her joy makes everyone feel at home."}
 ];
-
+const NEWDOLLS = [
+  {n:"Amira", k:"amira", tag:"The littlest crown", a:"Every curl is a crown. Wear it proud.", d:"Sweet baby Amira, with her soft curls and pink bow, is the newest heart in the Heartsong family."},
+  {n:"Ayo", k:"ayo", tag:"Joy in every step", a:"Do not be afraid, for the Lord your God goes with you. (Deuteronomy 31:6)", d:"Ayo bounces under a rainbow of stars, and her laugh makes the whole sky sparkle."}
+];
 const AFFIRMATIONS = [
   "Carry your own light. Who are you shining for today?",
   "I can do hard things.",
@@ -448,15 +457,6 @@ const AFFIRMATIONS = [
   "I honor the people who came before me by rising.",
   "Like the stars, I was made to shine in the dark."
 ];
-
-const THEMES = [
-  {h:"For mornings", p:"Start the day by naming one thing you are grateful for, then speak your affirmation out loud."},
-  {h:"For little ones", p:"Read it together at bedtime. Let them choose which Heartsong doll would say it best."},
-  {h:"For hard days", p:"Write it on a card and keep it in your pocket. Read it whenever the day feels heavy."}
-];
-
-const GALLERY = ["soretha",{k:"racing",n:"Racing Together",c:"Jabari and Kwame race side by side through the autumn park."},"isabella","janie","kyran","zaire","ariana","theresa","dream","jabari","kwame","christopher"];
-
 const STORIES = [
   {"n": "Jabari", "t": "Jabari and the Green Bicycle", "tease": "The bicycle was green, and it did not like to stand up by itself.", "body": ["The bicycle was green, and it did not like to stand up by itself.", "Jabari held the handlebars and looked down the long park path. His knees had two bandages already. One was shaped like a star.", "“Again?” asked his grandma from the bench.", "“Again,” said Jabari.", "He pushed off. Wobble. Wobble. Wobble… and then, for one, two, three whole seconds, the wobbling stopped, and Jabari was flying. The wind lifted his curls and the butterflies raced right beside him.", "He didn’t fall this time. He just kept going, grinning so big his cheeks hurt.", "I am brave, even on hard days. Brave isn’t never wobbling. It’s getting back on, one more time."]},
   {"n": "Kwame", "t": "Kwame and the Tall Rocks", "tease": "The climbing rocks at the park were taller than Kwame’s dad.", "body": ["The climbing rocks at the park were taller than Kwame’s dad.", "Every day Kwame watched the big kids scramble to the top. Every day he made it halfway, looked down, and climbed back to the ground.", "Today he took a deep breath. One hand. One foot. Another hand. His red sneakers found a tiny ledge, and he held on tight.", "“You’ve got this, Kwame!” his friends called from below.", "His arms shook. His heart thumped. And then, suddenly, there was nothing left to climb, just blue sky, fluffy clouds and the whole park spread out below him like a map.", "Kwame threw both arms up and laughed. “I did it!”", "I can do hard things. The top always looks far away, until you’re standing on it."]},
@@ -497,7 +497,31 @@ const STORIES = [
    "The woman smiled and sang louder. Soon they sang together every evening, and the neighbors began opening their windows to listen.",
    "When you share your song, you find your home."]}
 ];
+const VIDS = {soretha:1,isabella:0,janie:1,kyran:1,zaire:1,ariana:1,theresa:1,dream:1,jabari:1,kwame:1,christopher:1,harmony:1};
+const ORBIT = DOLLS;
+const HOLIDAY = [
+  {n:"Harmony and Luna", a:"I was made to carry light into every room.", v:"Matthew 5:16"},
+  {n:"Janie", a:"Small hands can still move big things.", v:"Zechariah 4:10"},
+  {n:"Harmony", a:"Wonder still knows my name.", v:"Psalm 118:24"},
+  {n:"Janie in the snow", a:"Love wraps around me like a warm red scarf.", v:"Colossians 3:14"},
+  {n:"Winter", a:"Joy lives in me, even when the days are cold.", v:"Nehemiah 8:10"},
+  {n:"Soretha", a:"He knows every star by name, and He knows mine.", v:"Psalm 147:4"}
+];
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $ = id => document.getElementById(id);
 
+const BF = [
+  {t:"Heartsong: A Little Book of Gentle Affirmations", img:"shop-book.jpg", alt:"Front cover of Heartsong, A Little Book of Gentle Affirmations, with little Soretha under the stars", d:"Nineteen gentle words for growing hearts, each one carried by a Heartsong friend. Read one together at breakfast or tuck one in at bedtime. Full-color paperback, 8.25 x 8.25 inches, 24 pages.", p:"$12.99", r:"$14.99"},
+  {t:"Heartsong Guided Affirmation Journal", img:"shop-journal.jpg", alt:"Front cover of the Heartsong Guided Affirmation Journal with Daisy Girl Theresa in an arched window", d:"Thirty days of gentle pages for the days the song gets quiet. A loving affirmation, room to be grateful and a place to rest your heart each day. Paperback, 8.5 x 11 inches.", p:"$11.99"},
+  {t:"The Heartsong Candle Collection", img:"shop-candles.jpg", alt:"Two Heartsong candles in glass jars, Starlight with little Soretha and Golden Morning with Nia", d:"9 oz soy candles with our dolls on the label. Starlight, white sage and lavender: “I carry a light that was made to shine.” Golden Morning, cinnamon vanilla: “I was born with a purpose.”", p:"$26", r:"$29"},
+  {t:"Heartsong Pillow Friend", img:"doll-theresa.jpg", alt:"Daisy Girl Theresa, one of the Heartsong dolls a Pillow Friend can be made from", d:"A soft pillow cut to the shape of one of our dolls, with her words beside her. Something sweet to hug at bedtime, made from Soretha's art.", p:"$34", r:"$39"},
+  {t:"New Heartsong Coloring Book", img:"shop-coloring.jpg", alt:"The free I am loved coloring page, a sample of Heartsong line art", d:"Our dolls in black-and-white line art, ready for crayons. The pages are being drawn now. Write to us and we'll tell you the minute it's ready.", p:""}
+];
+const GIFTS = [
+  {t:"Dream Mug", img:"shop-mug-dream.jpg", alt:"White mug printed with Dream holding a smiling star under a night sky, with the words The storm did not win. I am still here.", d:"Dream and her smiling star on a white mug, with her words: \u201cThe storm did not win. I am still here.\u201d A morning reminder for anyone who made it through."},
+  {t:"Jabari T-Shirt", img:"shop-shirt-jabari.jpg", alt:"White T-shirt printed with Jabari reaching for the stars, with the words My past does not get to write my future.", d:"Jabari reaching for the stars on a soft white tee, with his words: \u201cMy past does not get to write my future. It is part of my story. It is not the ending.\u201d"},
+  {t:"Group Hug Candle", img:"shop-candle-grouphug.jpg", alt:"Candle jar with a gold lid and a label showing six Heartsong friends in a circle hug, laughing up at the sky", d:"Six Heartsong friends in one big circle hug, on a candle for the people you hold close. Choose from six scents: Starlight (white sage and lavender), Golden Morning (cinnamon vanilla), Group Hug (warm vanilla and brown sugar), Sunflower Field (fresh citrus and honey), After the Storm (soft rain and cedar) and Sweet Dreams (chamomile and clean cotton)."}
+];
 const SHOP = [
   {t:"Daily Affirmation Cards", d:"A boxed set of 30 Heartsong affirmations with doll artwork, one for every day of the month.", c:["#c9993f","#8a6424"], s:"Coming soon"},
   {t:"Original Art Prints", d:"Gallery-quality prints of Heartsong scenes, ready to frame for a nursery, classroom, or living room.", c:["#2c3e78","#141c38"], s:"Coming soon"},
@@ -506,112 +530,207 @@ const SHOP = [
   {t:"Roses, Glass & Grace", d:"A children's coloring book of portraits and roses inspired by a young artist's paintings.", c:["#c4473f","#7a2620"], s:"Coloring book"},
   {t:"Doll Story Collection", d:"The Heartsong stories gathered into one keepsake book for bedtime reading.", c:["#3d93a0","#1c5560"], s:"Coming soon"}
 ];
+const mailto = t => `mailto:shine@heartsonginspiration.com?subject=${encodeURIComponent("Reserve: "+t)}&body=${encodeURIComponent("Please email me first when "+t+" is ready.")}`;
+const SCENTS = ["Starlight","Golden Morning","Group Hug","Sunflower Field","After the Storm","Sweet Dreams"];
+$("bfShop").innerHTML = BF.map(p => `<article class="item"><img src="img/${p.img}" alt="${p.alt}"><div><h3>${p.t}</h3>${p.p?`<span class="price">${p.p}${p.r?`<s>${p.r}</s>`:""}</span>`:""}<p>${p.d}</p><a class="btn btn-gold" href="${mailto(p.t)}">Reserve yours</a></div></article>`).join("");
+$("giftShop").innerHTML = GIFTS.map(p => `<article class="item"><img src="img/${p.img}" alt="${p.alt}"><div><h3>${p.t}</h3><p>${p.d}</p>${p.t.includes("Candle")?`<div class="scents">${SCENTS.map(x=>`<span>${x}</span>`).join("")}</div>`:""}<a class="btn btn-gold" href="${mailto(p.t)}">Reserve yours</a></div></article>`).join("");
+$("soonShop").innerHTML = SHOP.map(p => `<article><i>${p.s}</i><b>${p.t}</b><p>${p.d}</p></article>`).join("");
 
-const grad = c => `linear-gradient(150deg, ${c[0]}, ${c[1]})`;
-const dollCard = d => `<article class="doll">
-  ${MOVING.includes(d.k)
-    ? `<video class="portrait" src="vid/${d.k}.mp4" poster="img/doll-${d.k}.jpg" autoplay muted loop playsinline preload="metadata" aria-label="${d.n} moving"></video>`
-    : `<img class="portrait" src="img/doll-${d.k}.jpg" alt="${d.n}, ${d.tag.toLowerCase()}" loading="lazy" width="480" height="636">`}
-  ${d.star ? '<span class="star">Main character</span>' : ''}
-  <h3>${d.n}</h3><p class="tag">${d.tag}</p>${d.a ? `<p class="says">&ldquo;${d.a}&rdquo;</p>` : ''}<p>${d.d}</p></article>`;
-
-document.getElementById('home-dolls').innerHTML = DOLLS.map(dollCard).join('');
-document.getElementById('all-dolls').innerHTML = DOLLS.map(dollCard).join('');
-document.getElementById('aff-themes').innerHTML = THEMES.map(t=>`<div class="value"><h3>${t.h}</h3><p>${t.p}</p></div>`).join('');
-document.getElementById('gallery').innerHTML = GALLERY.map(g=>{const k=typeof g==='string'?g:g.k;const d=typeof g==='string'?DOLLS.find(x=>x.k===k):{n:g.n,a:g.c};return `<figure class="frame" style="margin:0">
-  ${k==='racing'
-    ? `<video class="art" src="vid/racing.mp4" poster="img/card-racing.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Jabari and Kwame racing on their bikes"></video>`
-    : `<img class="art" src="img/card-${k}.jpg" alt="${d.n} affirmation card" loading="lazy" width="640" height="800">`}
-  <figcaption><h3>${d.n}</h3><p>${d.a || d.tag}</p></figcaption></figure>`}).join('');
-document.getElementById('stories').innerHTML = STORIES.map(s=>`<details class="story">
-  <summary><span class="eyebrow">${s.n}</span><h3>${s.t}</h3><p>${s.tease}</p><span class="more">Read the story</span></summary>
-  <div class="body">${s.body.map(p=>`<p>${p}</p>`).join('')}</div></details>`).join('');
-document.getElementById('shop').innerHTML = SHOP.map(p=>`<article class="product">
-  <div class="art" style="background:${grad(p.c)}">Heartsong</div>
-  <div class="info"><span class="pill">${p.s}</span><h3>${p.t}</h3><p>${p.d}</p>
-  <a class="btn small-btn ghost" style="align-self:flex-start" href="#contact" data-go="contact">Ask about this</a></div></article>`).join('');
-
-/* Daily affirmation */
-const now = new Date();
-const dayOfYear = Math.floor((now - new Date(now.getFullYear(),0,0)) / 864e5);
-let affIdx = dayOfYear % AFFIRMATIONS.length;
-const dateStr = now.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'});
-document.getElementById('home-date').textContent = dateStr;
-document.getElementById('home-affirm').textContent = AFFIRMATIONS[affIdx];
-document.getElementById('aff-date').textContent = dateStr;
-const affText = document.getElementById('aff-text');
-affText.textContent = AFFIRMATIONS[affIdx];
-document.getElementById('aff-next').addEventListener('click',()=>{
-  affIdx = (affIdx + 1) % AFFIRMATIONS.length;
-  affText.textContent = AFFIRMATIONS[affIdx];
-  document.getElementById('aff-date').textContent = 'Another for you';
-  document.getElementById('aff-note').textContent = '';
-});
-
-function copy(text, noteId, srcEl){
-  const note = document.getElementById(noteId);
-  const done = () => note.textContent = 'Copied. Share it with someone you love.';
-  const fail = () => {
-    try{const r=document.createRange();r.selectNodeContents(srcEl);const s=getSelection();s.removeAllRanges();s.addRange(r);}catch(e){}
-    note.textContent = 'Selected. Press copy on your device to share it.';
-  };
-  try{ navigator.clipboard.writeText(text).then(done, fail); }catch(e){ fail(); }
-}
-document.getElementById('home-copy').addEventListener('click',()=>{const el=document.getElementById('home-affirm');copy(el.textContent+' — Heartsong Inspiration','home-note',el)});
-document.getElementById('aff-copy').addEventListener('click',()=>copy(affText.textContent+' — Heartsong Inspiration','aff-note',affText));
-document.getElementById('email-copy').addEventListener('click',()=>{const el=document.getElementById('email');copy(el.textContent,'email-note',el);});
-
-/* Page routing with bare hash tokens */
-const PAGES=['home','dolls','affirmations','gallery','stories','shop','about','contact'];
-function show(p){
-  if(!PAGES.includes(p)) p='home';
-  document.querySelectorAll('section.page').forEach(s=>s.hidden = s.dataset.page!==p);
-  document.querySelectorAll('nav.tabs a').forEach(a=>{
-    if(a.dataset.go===p) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+/* Holiday shelf with 3D tilt */
+$("shelf").innerHTML = HOLIDAY.map((h,i) => `<figure class="star-card"><img src="img/holiday-0${i+1}.jpg" alt="Holiday Star ${i+1}, ${h.n}: ${h.a}"><figcaption><b>${h.n}</b><span>Star ${String(i+1).padStart(2,"0")} · ${h.v}</span></figcaption></figure>`).join("");
+if (!reduce && matchMedia("(hover: hover)").matches) {
+  document.querySelectorAll(".star-card").forEach(c => {
+    c.addEventListener("pointermove", e => {
+      const r = c.getBoundingClientRect(), x = (e.clientX - r.left)/r.width - .5, y = (e.clientY - r.top)/r.height - .5;
+      c.style.transform = `rotateY(${x*16}deg) rotateX(${-y*12}deg) translateZ(18px)`;
+    });
+    c.addEventListener("pointerleave", () => c.style.transform = "");
   });
-  const cur=document.querySelector('nav.tabs a[aria-current]');
-  if(cur) cur.scrollIntoView({block:'nearest',inline:'nearest'});
 }
-document.addEventListener('click',e=>{
-  const a=e.target.closest('[data-go]'); if(!a) return;
-  e.preventDefault(); const p=a.dataset.go;
-  try{history.replaceState(null,'','#'+p)}catch(err){}
-  show(p); window.scrollTo({top:0});
+
+/* Star of the day */
+const start = new Date(2026,0,1), today = new Date();
+let ai = Math.floor((today - start)/864e5) % AFFIRMATIONS.length;
+const withAff = DOLLS.filter(d => d.a);
+function showAff(){
+  $("todayText").textContent = AFFIRMATIONS[ai];
+  const d = withAff[ai % withAff.length];
+  $("todayImg").src = `img/doll-${d.k}.jpg`; $("todayImg").alt = `${d.n}, ${d.tag}`;
+}
+$("todayDate").textContent = "Today · " + today.toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric"});
+showAff();
+$("nextAff").onclick = () => { ai = (ai+1) % AFFIRMATIONS.length; showAff(); $("toast").textContent = ""; };
+$("copyAff").onclick = async () => {
+  try { await navigator.clipboard.writeText(AFFIRMATIONS[ai] + " · Heartsong Inspiration"); $("toast").textContent = "Copied. Send it to someone who needs it today."; }
+  catch { $("toast").textContent = "Press and hold the words to copy them."; }
+};
+
+/* Crew grid */
+$("crewGrid").innerHTML = DOLLS.concat(NEWDOLLS).map(d => {
+  const nw = NEWDOLLS.includes(d), src = nw ? `img/new-${d.k}.jpg` : `img/doll-${d.k}.jpg`;
+  const pic = VIDS[d.k]
+    ? `<video src="vid/${d.k}.mp4" poster="${src}" ${reduce?"":"autoplay "}muted loop playsinline preload="metadata" aria-label="${d.n}, ${d.tag}"></video>`
+    : `<img src="${src}" alt="${d.n}, ${d.tag}">`;
+  return `<article class="mate${nw?" new":""}">${pic}<div><h3>${d.n}</h3><div class="t">${nw?"Just arrived · ":""}${d.tag}</div><p>${d.d}</p></div></article>`;
+}).join("");
+
+/* Stories */
+$("storyList").innerHTML = STORIES.map((s,i) => `<button class="story" type="button" data-i="${i}"><b>${s.t}</b><span>${s.tease}</span><i>Read ${s.n}'s story</i></button>`).join("");
+$("storyList").addEventListener("click", e => {
+  const b = e.target.closest(".story"); if (!b) return;
+  const s = STORIES[b.dataset.i];
+  $("sdTitle").textContent = s.t;
+  $("sdBody").innerHTML = s.body.map(p => `<p>${p}</p>`).join("");
+  $("storyDlg").showModal();
 });
-show((location.hash||'').slice(1));
-document.addEventListener('contextmenu',e=>{if(e.target.tagName==='IMG'||e.target.tagName==='VIDEO')e.preventDefault()});
-/* play videos only when on screen; respect reduced motion */
-(function(){const vids=[...document.querySelectorAll('video')];const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
- vids.forEach(v=>{v.muted=true;v.setAttribute('controlslist','nodownload');});
- if(still){vids.forEach(v=>{v.removeAttribute('autoplay');v.pause();});return;}
- if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const p=e.target.play();if(p&&p.catch)p.catch(()=>{});}else e.target.pause();}),{threshold:.2});vids.forEach(v=>io.observe(v));}
- document.addEventListener('click',()=>vids.forEach(v=>{if(v.paused&&v.offsetParent){const p=v.play();if(p&&p.catch)p.catch(()=>{});}}),{once:true});
-})();
-document.addEventListener('dragstart',e=>{if(e.target.tagName==='IMG')e.preventDefault()});
 
-/* Starry sky in the medallions */
-const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-function sky(id){
-  const cv=document.getElementById(id); if(!cv) return;
-  const ctx=cv.getContext('2d'); let w,h,stars=[];
-  function size(){const r=cv.getBoundingClientRect();const d=devicePixelRatio||1;w=cv.width=Math.max(1,r.width*d);h=cv.height=Math.max(1,r.height*d);
-    stars=Array.from({length:90},()=>({x:Math.random()*w,y:Math.random()*h*.8,r:(Math.random()*1.6+.4)*d,p:Math.random()*6.28}));}
-  function draw(t){ctx.clearRect(0,0,w,h);
-    for(const s of stars){const a=.45+.55*Math.abs(Math.sin(s.p+t/1400));ctx.globalAlpha=a;ctx.fillStyle='#f6e3b4';ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,6.28);ctx.fill();}
-    ctx.globalAlpha=1;
-    // crescent moon
-    const mx=w*.72,my=h*.24,mr=w*.075;ctx.fillStyle='#f3dda4';ctx.beginPath();ctx.arc(mx,my,mr,0,6.28);ctx.fill();
-    ctx.fillStyle='#1b2547';ctx.beginPath();ctx.arc(mx+mr*.45,my-mr*.2,mr*.9,0,6.28);ctx.fill();
-    if(!reduce) requestAnimationFrame(draw);}
-  size(); addEventListener('resize',size); requestAnimationFrame(draw);
-}
-sky('stars2');
+/* Waitlist (preview: nothing is sent yet) */
+$("waitForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const v = $("waitEmail").value.trim();
+  $("waitMsg").textContent = /\S+@\S+\.\S+/.test(v) ? "Thank you. This is a preview, so your email was not saved yet. The sign-up goes live with the baby dolls." : "Please enter an email address like name@example.com.";
+});
 
-/* Music button: Twinkle Lullaby */
-(function(){const b=document.getElementById('music'),a=document.getElementById('song'),l=document.getElementById('music-label');a.volume=.6;
- b.addEventListener('click',()=>{if(a.paused){const p=a.play();if(p&&p.then)p.then(()=>{b.setAttribute('aria-pressed','true');l.textContent='Pause music';}).catch(()=>{l.textContent='Tap again to play';});else{b.setAttribute('aria-pressed','true');l.textContent='Pause music';}}else{a.pause();b.setAttribute('aria-pressed','false');l.textContent='Play music';}});
+/* Music */
+$("musicBtn").onclick = async () => {
+  const a = $("lullaby"), b = $("musicBtn");
+  try { if (a.paused) { await a.play(); b.innerHTML = "&#9835; Pause music"; b.setAttribute("aria-pressed","true"); } else { a.pause(); b.innerHTML = "&#9835; Play music"; b.setAttribute("aria-pressed","false"); } }
+  catch { b.textContent = "Music unavailable"; }
+};
+
+/* 3D crew orbit */
+(function(){
+  const canvas = $("stage");
+  if (!window.THREE) { $("hint").textContent = "Scroll down to meet the crew"; return; }
+  let renderer;
+  try { renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true}); } catch(e) { $("hint").textContent = "Scroll down to meet the crew"; return; }
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x0a1029, 0.035);
+  const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 200);
+
+  // stars
+  const N = 2600, pos = new Float32Array(N*3), col = new Float32Array(N*3);
+  for (let i=0;i<N;i++){
+    const r = 30 + Math.random()*70, t = Math.random()*Math.PI*2, p = Math.acos(2*Math.random()-1);
+    pos.set([r*Math.sin(p)*Math.cos(t), r*Math.cos(p)*.7, r*Math.sin(p)*Math.sin(t)], i*3);
+    const g = Math.random(); col.set(g > .82 ? [0.91,0.76,0.49] : [0.85,0.86,1], i*3);
+  }
+  const sg = new THREE.BufferGeometry();
+  sg.setAttribute("position", new THREE.BufferAttribute(pos,3));
+  sg.setAttribute("color", new THREE.BufferAttribute(col,3));
+  const dot = document.createElement("canvas"); dot.width = dot.height = 64;
+  const dc = dot.getContext("2d"), grd = dc.createRadialGradient(32,32,0,32,32,32);
+  grd.addColorStop(0,"rgba(255,255,255,1)"); grd.addColorStop(.25,"rgba(255,240,210,.8)"); grd.addColorStop(1,"rgba(255,255,255,0)");
+  dc.fillStyle = grd; dc.fillRect(0,0,64,64);
+  const stars = new THREE.Points(sg, new THREE.PointsMaterial({size:.55, map:new THREE.CanvasTexture(dot), vertexColors:true, transparent:true, depthWrite:false, blending:THREE.AdditiveBlending}));
+  scene.add(stars);
+
+  // golden heart-star at the center
+  const glowTex = new THREE.CanvasTexture(dot);
+  const glow = new THREE.Sprite(new THREE.SpriteMaterial({map:glowTex, color:0xe8c27c, transparent:true, blending:THREE.AdditiveBlending, depthWrite:false}));
+  glow.scale.set(9,9,1); scene.add(glow);
+
+  // orbit ring
+  const ring = new THREE.Group(); scene.add(ring);
+  const R = 6.2, panels = [], vids = [];
+  const loader = new THREE.TextureLoader();
+  const orbitPath = new THREE.Mesh(new THREE.TorusGeometry(R, .012, 6, 160), new THREE.MeshBasicMaterial({color:0xe8c27c, transparent:true, opacity:.35}));
+  orbitPath.rotation.x = Math.PI/2; ring.add(orbitPath);
+
+  ORBIT.forEach((d,i) => {
+    const a = i/ORBIT.length*Math.PI*2;
+    const g = new THREE.Group();
+    g.position.set(Math.sin(a)*R, Math.sin(i*1.7)*.35, Math.cos(a)*R);
+    let tex;
+    if (VIDS[d.k]) {
+      const v = document.createElement("video");
+      v.src = `vid/${d.k}.mp4`; v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute("playsinline",""); v.crossOrigin = "anonymous"; v.preload = "auto";
+      v.play().catch(()=>{}); vids.push(v);
+      tex = new THREE.VideoTexture(v);
+    } else tex = loader.load(`img/doll-${d.k}.jpg`);
+    tex.minFilter = THREE.LinearFilter;
+    const w = 1.85, h = w*636/480;
+    const frame = new THREE.Mesh(new THREE.PlaneGeometry(w+.14, h+.14), new THREE.MeshBasicMaterial({color:0xe8c27c, side:THREE.DoubleSide}));
+    const pic = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({map:tex, side:THREE.FrontSide}));
+    pic.position.z = .01; frame.position.z = -.005;
+    const back = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({color:0x1b2557}));
+    back.rotation.y = Math.PI; back.position.z = -.012;
+    g.add(frame, pic, back);
+    // name plate
+    const nc = document.createElement("canvas"); nc.width = 512; nc.height = 96;
+    const nx = nc.getContext("2d");
+    nx.font = "500 64px 'Cormorant Garamond', Georgia, serif"; nx.fillStyle = "#f5ecdc"; nx.textAlign = "center"; nx.textBaseline = "middle"; nx.fillText(d.n, 256, 50);
+    const plate = new THREE.Mesh(new THREE.PlaneGeometry(2.2, .41), new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(nc), transparent:true}));
+    plate.position.y = -h/2 - .38; g.add(plate);
+    plate.userData.redraw = () => { nx.clearRect(0,0,512,96); nx.font = "500 64px 'Cormorant Garamond', Georgia, serif"; nx.fillText(d.n,256,50); plate.material.map.needsUpdate = true; };
+    g.userData = {d, pic, frame, base:g.position.y, phase:i};
+    pic.userData.group = g; frame.userData.group = g;
+    ring.add(g); panels.push(g);
+  });
+  document.fonts && document.fonts.ready.then(() => panels.forEach(p => p.children[3].userData.redraw && p.children[3].userData.redraw()));
+
+  // start videos on first touch for browsers that block autoplay
+  const kick = () => vids.forEach(v => v.play().catch(()=>{}));
+  addEventListener("pointerdown", kick, {once:true});
+
+  // interaction
+  let spin = 0, vel = reduce ? 0 : 0.0018, dragging = false, lastX = 0, moved = 0, focusTarget = null;
+  let mx = 0, my = 0;
+  const ray = new THREE.Raycaster(), ptr = new THREE.Vector2();
+  canvas.addEventListener("pointerdown", e => { dragging = true; moved = 0; lastX = e.clientX; canvas.classList.add("dragging"); canvas.setPointerCapture(e.pointerId); });
+  canvas.addEventListener("pointermove", e => {
+    const r = canvas.getBoundingClientRect(); mx = (e.clientX - r.left)/r.width - .5; my = (e.clientY - r.top)/r.height - .5;
+    if (!dragging) return;
+    const dx = e.clientX - lastX; lastX = e.clientX; moved += Math.abs(dx);
+    spin += dx*0.006; vel = dx*0.0006; focusTarget = null;
+  });
+  canvas.addEventListener("pointerup", e => {
+    dragging = false; canvas.classList.remove("dragging");
+    if (moved > 6) return;
+    const r = canvas.getBoundingClientRect();
+    ptr.set(((e.clientX - r.left)/r.width)*2-1, -((e.clientY - r.top)/r.height)*2+1);
+    ray.setFromCamera(ptr, camera);
+    const hit = ray.intersectObjects(panels.flatMap(p => [p.userData.pic, p.userData.frame]))[0];
+    if (hit) openCard(hit.object.userData.group);
+  });
+  function openCard(g){
+    const d = g.userData.d, i = panels.indexOf(g);
+    focusTarget = -i/panels.length*Math.PI*2; vel = 0;
+    $("ccTag").textContent = d.tag; $("ccName").textContent = d.n; $("ccDesc").textContent = d.d;
+    $("ccAff").textContent = d.a || "Every song begins with one brave note."; $("ccAff").style.display = "block";
+    $("crewCard").classList.add("open"); $("hint").style.opacity = 0;
+  }
+  $("crewClose").onclick = () => { $("crewCard").classList.remove("open"); focusTarget = null; vel = reduce ? 0 : 0.0018; $("hint").style.opacity = 1; };
+
+  function size(){
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    renderer.setSize(w, h, false); camera.aspect = w/h;
+    const narrow = w < 760;
+    camera.fov = narrow ? 64 : 42; camera.updateProjectionMatrix();
+    ring.position.x = narrow ? 0 : 4.6; glow.position.x = ring.position.x;
+    ring.position.y = narrow ? -5.6 : -.3; glow.position.y = ring.position.y;
+  }
+  addEventListener("resize", size); size();
+
+  const clock = new THREE.Clock();
+  (function loop(){
+    const t = clock.getElapsedTime();
+    if (focusTarget !== null) {
+      let diff = focusTarget - spin; diff = Math.atan2(Math.sin(diff), Math.cos(diff)); spin += diff*0.08;
+    } else if (!dragging) { spin += vel; vel += ((reduce?0:0.0018) - vel)*0.02; }
+    ring.rotation.y = spin;
+    panels.forEach(g => {
+      g.rotation.y = -spin;  // keep every doll facing the viewer
+      if (!reduce) g.position.y = g.userData.base + Math.sin(t*.9 + g.userData.phase)*.18;
+    });
+    if (!reduce) { stars.rotation.y = t*0.006; glow.material.opacity = .75 + Math.sin(t*1.6)*.15; }
+    camera.position.set(mx*1.6, 2.1 - my*1.0, 15.5);
+    camera.lookAt(ring.position.x*.55, ring.position.y + .4, 0);
+    renderer.render(scene, camera);
+    requestAnimationFrame(loop);
+  })();
 })();
 </script>
-
 </body>
 </html>
