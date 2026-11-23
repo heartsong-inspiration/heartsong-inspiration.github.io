@@ -61,7 +61,15 @@ nav.menu a:hover{color:var(--cream)}
 /* Hero: 3D crew orbit */
 .hero{position:relative;height:clamp(560px,86vh,820px);overflow:hidden;background:radial-gradient(120% 90% at 70% 40%,#1d2a66 0%,var(--sky-2) 40%,var(--sky) 75%)}
 #stage{position:absolute;z-index:1;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y}
-@media (min-width:761px){#stage{left:auto;right:0;width:calc(100% - max(500px, calc((100% - 1180px)/2 + 480px)))}.hero::after{display:none}.hero-copy{top:50%;transform:translateY(-50%)}}
+@media (min-width:761px){
+  .hero{height:clamp(820px,calc(100vh - 64px),1000px)}
+  .hero::after{display:none}
+  .hero .hero-copy{left:50%;right:auto;top:36px;transform:translateX(-50%);max-width:880px;width:calc(100% - 40px);text-align:center}
+  .hero .hero-copy h1{font-size:clamp(40px,4.4vw,62px)}
+  .hero .hero-copy p.lede{margin:14px auto 20px;max-width:60ch}
+  .hero .hero-copy .actions{justify-content:center}
+  #stage{top:300px;height:calc(100% - 300px)}
+}
 #stage.dragging{cursor:grabbing}
 .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(640px 560px at 12% 26%,rgba(10,16,41,.9) 0%,rgba(10,16,41,.72) 45%,rgba(10,16,41,0) 100%);z-index:2;pointer-events:none}
 .hero-copy{position:absolute;left:max(20px,calc((100% - 1180px)/2));top:44px;transform:none;max-width:470px;z-index:3;pointer-events:none}
@@ -714,9 +722,9 @@ $("musicBtn").onclick = async () => {
     const narrow = w < 760;
     camera.fov = narrow ? 64 : 42; camera.updateProjectionMatrix();
     ring.position.x = 0; glow.position.x = 0;
-    ring.position.y = narrow ? -5.6 : -.3; lookOff = narrow ? 3.2 : .4; glow.position.y = ring.position.y;
+    ring.position.y = narrow ? -5.6 : -.3; lookOff = narrow ? 3.2 : -1.6; glow.position.y = ring.position.y;
     // on wide screens the circle has its own panel beside the words: pull the camera back until the whole circle fits
-    camZ = narrow ? 15.5 : Math.max(17, (R + 2.6) / (Math.tan(21*Math.PI/180) * camera.aspect));
+    camZ = narrow ? 15.5 : Math.max(16, (R + 2.6) / (Math.tan(21*Math.PI/180) * camera.aspect));
   }
   addEventListener("resize", size); size();
 
