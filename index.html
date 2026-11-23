@@ -336,12 +336,12 @@ footer .love{color:var(--cream);font-weight:700}
 <section class="band" id="holiday">
   <div class="wrap">
     <div class="head">
-      <div><span class="eyebrow">Christmas 2026 · Series of 6</span><h2>The Holiday Star series</h2></div>
-      <p>Six winter affirmations, each one paired with a verse and painted from our own Heartsong dolls. Save your favorite, share it with someone who needs it, and come back each day this season.</p>
+      <div><span class="eyebrow">Christmas 2026 · Series of 8</span><h2>The Holiday Star series</h2></div>
+      <p>Eight winter affirmations, each one paired with a verse and painted from our own Heartsong dolls. Save your favorite, share it with someone who needs it, and come back each day this season.</p>
     </div>
     <div class="countdown" id="countdown"></div>
     <div class="shelf" id="shelf"></div>
-    <p class="shelf-note">Swipe or scroll sideways to see all six.</p>
+    <p class="shelf-note">Swipe or scroll sideways to see all eight.</p>
     <p style="text-align:center;margin-top:18px"><button class="btn btn-gold" type="button" id="holidayStoryBtn">Read the Holiday Star story: The Night Luna Lost Her Light</button></p>
   </div>
 </section>
@@ -704,7 +704,9 @@ const HOLIDAY = [
   {n:"Harmony", a:"Wonder still knows my name.", v:"Psalm 118:24"},
   {n:"Scarlett", a:"Love wraps around me like a warm red scarf.", v:"Colossians 3:14"},
   {n:"Jubilee", a:"Joy lives in me, even when the days are cold.", v:"Nehemiah 8:10"},
-  {n:"Soretha", a:"He knows every star by name, and He knows mine.", v:"Psalm 147:4"}
+  {n:"Soretha", a:"He knows every star by name, and He knows mine.", v:"Psalm 147:4"},
+  {n:"Jabari", a:"I am brave, even on hard days.", v:"Joshua 1:9"},
+  {n:"Kwame", a:"I can do hard things.", v:"Philippians 4:13"}
 ];
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $ = id => document.getElementById(id);
@@ -744,7 +746,7 @@ $("giftShop").innerHTML = GIFTS.map(p => `<article class="item"><img src="img/${
 $("soonShop").innerHTML = SHOP.map(p => `<article><i>${p.s}</i><b>${p.t}</b><p>${p.d}</p></article>`).join("");
 
 /* Holiday shelf with 3D tilt */
-const HVID = ['https://cdn.creativeclaw.co/u/4c68c1c5/videos/e220addc-068a-4f86-9e34-0fb497ba0351.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/21689c2c-dedf-4371-8c72-77ba2dac58e6.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/339ee6a6-153e-44fa-99f7-c5ca432207d9.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/f339ee5b-a452-46d0-9f83-ba8af6171333.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/ba94d3bb-fb57-413a-8492-55a6dcc34c14.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/cf507274-3117-4e85-8f3d-6d8a76fc1d01.mp4'];
+const HVID = ['https://cdn.creativeclaw.co/u/4c68c1c5/videos/e220addc-068a-4f86-9e34-0fb497ba0351.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/21689c2c-dedf-4371-8c72-77ba2dac58e6.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/339ee6a6-153e-44fa-99f7-c5ca432207d9.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/f339ee5b-a452-46d0-9f83-ba8af6171333.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/ba94d3bb-fb57-413a-8492-55a6dcc34c14.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/cf507274-3117-4e85-8f3d-6d8a76fc1d01.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/de4ee8e5-fe6c-48c1-94d1-510b2a5dbd84.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/bd0401f4-fb9b-465b-8d55-56370786b6df.mp4'];
 $("shelf").innerHTML = HOLIDAY.map((h,i) => `<figure class="star-card"><div class="vwrap hvid"><img src="img/holiday-0${i+1}.jpg" alt="Holiday Star ${i+1}, ${h.n}: ${h.a}"><video data-src="${HVID[i]}" muted loop playsinline preload="none" aria-label="${h.n} moving"></video><button class="playbtn" type="button" aria-label="Play ${h.n}'s video"><span aria-hidden="true">&#9654;</span> Play</button></div><figcaption><b>${h.n}</b><span>Star ${String(i+1).padStart(2,"0")} · ${h.v}</span></figcaption></figure>`).join("");
 if (!reduce && matchMedia("(hover: hover)").matches) {
   document.querySelectorAll(".star-card").forEach(c => {
@@ -807,7 +809,7 @@ $("crewGrid").addEventListener("click", e => {
 
 /* Music: one song at a time, softly faded in and out, only while its video plays */
 const DOLL_MUSIC = {"Soretha":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/68ace8a5-ae4e-499a-a3e7-246ff0a58682.mp3","Isabella":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/72b9762d-ad4d-4dbd-8d9f-02d0f8442e17.mp3","Janie":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/36a75a4a-4a61-4809-b16a-78d9e29c14c9.mp3","Theresa":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/b158e350-5590-4511-889e-6d3540ac2391.mp3","Dream":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/918ac8e5-f4c0-4d3f-82c7-8f9e9eb79250.mp3","Amira":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/ccae8d29-7931-4d3b-b53c-65f8bac8a30a.mp3","Ayo":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/a2d15536-2ee8-428a-bec1-dc0456f3d262.mp3","Khailee-Ann and Kayvion":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/e1ab9dfc-0d4b-4a68-b03a-c21735201460.mp3","Harmony":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/89884c38-aabb-4cf7-8f83-79a865e4e087.mp3","Ariana":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/c8e044a7-1007-4ae5-ab66-ec2826cf7a07.mp3","Christopher":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/d184a122-6228-4a41-8961-a979ce5bb846.mp3","Jabari":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/429ba120-41b4-4360-bd7e-be23c3ccf075.mp3","Kwame":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/c9d1ab98-5ec4-41cf-89fb-6a6c39d0f6a5.mp3","Kyran":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/1cc31c1e-07c2-4b27-8cdd-823bbe6409ac.mp3","Zaire":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/6aff73e4-e491-4641-b425-ebafa85bcad3.mp3","Christopher at 3":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/6d171420-14ab-4f87-aec7-f13ccdde9ca8.mp3","Sylvester Gene":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/3aaa9707-6d29-44ad-9e22-ee0ce87a4526.mp3","Tre' and Kiki":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/51168a52-af60-48a3-a952-e8dc13a8fb61.mp3"};
-const HOLIDAY_MUSIC = ["5ec5bdc0-bb73-48c6-8e7e-e5ce8a633cc0","8fb8b150-4acf-463a-98a5-23e72b7d9557","b1083a95-f727-45ee-8fcb-57fe73718629","882c3c33-de75-45b6-8851-660bc3740bb2","69634ef2-3d04-43ed-993a-f862c5e987a1","11cc933c-b1c6-4e2a-b168-f81bf6209134"].map(id => `https://cdn.creativeclaw.co/u/4c68c1c5/audio/${id}.mp3`);
+const HOLIDAY_MUSIC = ["5ec5bdc0-bb73-48c6-8e7e-e5ce8a633cc0","8fb8b150-4acf-463a-98a5-23e72b7d9557","b1083a95-f727-45ee-8fcb-57fe73718629","882c3c33-de75-45b6-8851-660bc3740bb2","69634ef2-3d04-43ed-993a-f862c5e987a1","11cc933c-b1c6-4e2a-b168-f81bf6209134","402cb2b2-db29-4a25-9ace-248339b16a89","840240ef-a004-4735-a972-026083a85c6f"].map(id => `https://cdn.creativeclaw.co/u/4c68c1c5/audio/${id}.mp3`);
 const song = new Audio(); song.loop = true; song.preload = "none"; song.volume = 0;
 let fadeT = null;
 function fadeTo(target, ms, done){
