@@ -861,6 +861,9 @@ $("musicBtn").onclick = async () => {
     ring.rotation.y = spin;
     panels.forEach(g => {
       g.rotation.y = -spin;  // keep every doll facing the viewer
+      // show a name only on the dolls at the front of the circle, so names never pile on top of each other
+      const front = Math.cos(g.userData.phase / panels.length * Math.PI * 2 + spin);
+      const plate = g.children[3]; if (plate && plate.material) plate.material.opacity = Math.max(0, Math.min(1, (front - 0.6) / 0.25));
       if (!reduce) g.position.y = g.userData.base + Math.sin(t*.9 + g.userData.phase)*.18;
     });
     if (!reduce) { stars.rotation.y = t*0.006; glow.material.opacity = .75 + Math.sin(t*1.6)*.15; }
