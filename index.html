@@ -62,13 +62,13 @@ nav.menu a:hover{color:var(--cream)}
 .hero{position:relative;height:clamp(560px,86vh,820px);overflow:hidden;background:radial-gradient(120% 90% at 70% 40%,#1d2a66 0%,var(--sky-2) 40%,var(--sky) 75%)}
 #stage{position:absolute;z-index:1;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y}
 #stage.dragging{cursor:grabbing}
-.hero::after{content:"";position:absolute;inset:0 auto 0 0;width:min(620px,60%);background:linear-gradient(90deg,rgba(10,16,41,.92) 0%,rgba(10,16,41,.7) 55%,rgba(10,16,41,0) 100%);z-index:2;pointer-events:none}
-.hero-copy{position:absolute;left:max(20px,calc((100% - 1180px)/2));top:50%;transform:translateY(-50%);max-width:470px;z-index:3;pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(640px 560px at 12% 26%,rgba(10,16,41,.9) 0%,rgba(10,16,41,.72) 45%,rgba(10,16,41,0) 100%);z-index:2;pointer-events:none}
+.hero-copy{position:absolute;left:max(20px,calc((100% - 1180px)/2));top:44px;transform:none;max-width:470px;z-index:3;pointer-events:none}
 .hero-copy > *{pointer-events:auto}
 .kicker{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0 0 18px}
-.hero h1{font-size:clamp(46px,7vw,92px);letter-spacing:-.01em}
+.hero h1{font-size:clamp(44px,5.4vw,72px);letter-spacing:-.01em}
 .hero h1 em{font-style:italic;color:var(--gold)}
-.hero p.lede{font-size:19px;color:#dcd6e6;margin:20px 0 28px;max-width:40ch}
+.hero p.lede{font-size:18px;color:#dcd6e6;margin:16px 0 22px;max-width:38ch}
 .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
 .hint{position:absolute;right:max(20px,calc((100% - 1180px)/2));top:22px;z-index:3;font-size:13px;color:var(--mist);letter-spacing:.06em}
 .crew-card{position:absolute;z-index:4;right:max(20px,calc((100% - 1180px)/2));top:50%;transform:translateY(-50%);width:min(320px,100% - 40px);background:rgba(14,21,52,.9);border:1px solid rgba(232,194,124,.35);border-radius:18px;padding:22px 22px 20px;box-shadow:0 30px 80px rgba(0,0,0,.45);display:none}
@@ -709,7 +709,7 @@ $("musicBtn").onclick = async () => {
     const narrow = w < 760;
     camera.fov = narrow ? 64 : 42; camera.updateProjectionMatrix();
     ring.position.x = narrow ? 0 : 4.6; glow.position.x = ring.position.x;
-    ring.position.y = narrow ? -5.6 : -.3; glow.position.y = ring.position.y;
+    ring.position.y = narrow ? -5.6 : -1.5; glow.position.y = ring.position.y;
   }
   addEventListener("resize", size); size();
 
