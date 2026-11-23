@@ -413,6 +413,10 @@ const DOLLS = [
   {n:"Harmony", k:"harmony", tag:"Song in her soul", a:"", d:"Harmony dances in her flower dress with music all around her, and her joy makes everyone feel at home."}
 ];
 const NEWDOLLS = [
+  {n:"Tre'", k:"tre", tag:"Kiki's big brother", a:"God gave me a brother to hold my hand through life.", d:"Tre' wears his purple shirt and striped tie, and he is always the first one to push his little sister Kiki on the swing."},
+  {n:"Kiki", k:"kiki", tag:"The little baker", a:"His mercy is new this morning. So am I.", d:"Kiki ties on her pink apron, climbs her step stool and stirs the cookie dough until there is flour on her nose."},
+  {n:"Khailee-Ann", k:"khailee-ann", tag:"Kayvion's twin sister", a:"", d:"Khailee-Ann is eight, with long red hair, green eyes and freckles. She and her twin brother Kayvion do everything together."},
+  {n:"Kayvion", k:"kayvion", tag:"Khailee-Ann's twin brother", a:"", d:"Kayvion is eight, with red curly twists, green eyes and freckles. He never lets go of his twin sister's hand."},
   {n:"Amira", k:"amira", tag:"The littlest crown", a:"Every curl is a crown. Wear it proud.", d:"Sweet baby Amira, with her soft curls and pink bow, is the newest heart in the Heartsong family."},
   {n:"Ayo", k:"ayo", tag:"Joy in every step", a:"Do not be afraid, for the Lord your God goes with you. (Deuteronomy 31:6)", d:"Ayo bounces under a rainbow of stars, and her laugh makes the whole sky sparkle."}
 ];
@@ -498,7 +502,7 @@ const STORIES = [
    "When you share your song, you find your home."]}
 ];
 const VIDS = {soretha:1,isabella:0,janie:1,kyran:1,zaire:1,ariana:1,theresa:1,dream:1,jabari:1,kwame:1,christopher:1,harmony:1};
-const ORBIT = DOLLS;
+const ORBIT = DOLLS.concat(NEWDOLLS.filter(d => ["tre","kiki","khailee-ann","kayvion"].includes(d.k)));
 const HOLIDAY = [
   {n:"Harmony and Luna", a:"I was made to carry light into every room.", v:"Matthew 5:16"},
   {n:"Janie", a:"Small hands can still move big things.", v:"Zechariah 4:10"},
@@ -648,7 +652,7 @@ $("musicBtn").onclick = async () => {
       v.src = `vid/${d.k}.mp4`; v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute("playsinline",""); v.crossOrigin = "anonymous"; v.preload = "auto";
       v.play().catch(()=>{}); vids.push(v);
       tex = new THREE.VideoTexture(v);
-    } else tex = loader.load(`img/doll-${d.k}.jpg`);
+    } else tex = loader.load(NEWDOLLS.includes(d) ? `img/new-${d.k}.jpg` : `img/doll-${d.k}.jpg`);
     tex.minFilter = THREE.LinearFilter;
     const w = 1.85, h = w*636/480;
     const frame = new THREE.Mesh(new THREE.PlaneGeometry(w+.14, h+.14), new THREE.MeshBasicMaterial({color:0xe8c27c, side:THREE.DoubleSide}));
