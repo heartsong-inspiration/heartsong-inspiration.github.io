@@ -4,14 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Heartsong Inspiration</title>
+<meta name="description" content="Heartsong Inspiration: original dolls, daily affirmations and star stories by Soretha Eldridge.">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Heartsong Inspiration">
 <meta property="og:title" content="Heartsong Inspiration">
 <meta property="og:description" content="Original dolls, daily affirmations and star stories by Soretha Eldridge.">
-<meta property="og:image" content="https://heartsonginspiration.com/img/card-soretha.jpg">
 <meta property="og:url" content="https://heartsonginspiration.com/">
-<meta name="copyright" content="© 2026 Soretha Eldridge, Heartsong Inspiration">
-<link rel="icon" href="img/emblem.png">
-
-<meta name="description" content="Heartsong Inspiration: original dolls, daily affirmations and star stories by Soretha Eldridge.">
+<meta property="og:image" content="https://heartsonginspiration.com/img/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Four Heartsong dolls: Soretha, Dream, Theresa and the twins Khailee-Ann and Kayvion">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://heartsonginspiration.com/img/og-share.jpg">
 <style>
 @font-face{font-family:"Cormorant Garamond";src:url(fonts/cormorant-garamond-latin-500-normal.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
 @font-face{font-family:"Cormorant Garamond";src:url(fonts/cormorant-garamond-latin-500-italic.woff2) format("woff2");font-weight:500;font-style:italic;font-display:swap}
@@ -71,13 +77,13 @@ nav.menu a:hover{color:var(--cream)}
   #stage{top:300px;height:calc(100% - 300px)}
 }
 #stage.dragging{cursor:grabbing}
-.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(640px 560px at 12% 26%,rgba(10,16,41,.9) 0%,rgba(10,16,41,.72) 45%,rgba(10,16,41,0) 100%);z-index:2;pointer-events:none}
-.hero-copy{position:absolute;left:max(20px,calc((100% - 1180px)/2));top:44px;transform:none;max-width:470px;z-index:3;pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0 auto 0 0;width:min(620px,60%);background:linear-gradient(90deg,rgba(10,16,41,.92) 0%,rgba(10,16,41,.7) 55%,rgba(10,16,41,0) 100%);z-index:2;pointer-events:none}
+.hero-copy{position:absolute;left:max(20px,calc((100% - 1180px)/2));top:50%;transform:translateY(-50%);max-width:470px;z-index:3;pointer-events:none}
 .hero-copy > *{pointer-events:auto}
 .kicker{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0 0 18px}
-.hero h1{font-size:clamp(44px,5.4vw,72px);letter-spacing:-.01em}
+.hero h1{font-size:clamp(46px,7vw,92px);letter-spacing:-.01em}
 .hero h1 em{font-style:italic;color:var(--gold)}
-.hero p.lede{font-size:18px;color:#dcd6e6;margin:16px 0 22px;max-width:38ch}
+.hero p.lede{font-size:19px;color:#dcd6e6;margin:20px 0 28px;max-width:40ch}
 .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
 .hint{position:absolute;right:max(20px,calc((100% - 1180px)/2));top:22px;z-index:3;font-size:13px;color:var(--mist);letter-spacing:.06em}
 .crew-card{position:absolute;z-index:4;right:max(20px,calc((100% - 1180px)/2));top:50%;transform:translateY(-50%);width:min(320px,100% - 40px);background:rgba(14,21,52,.9);border:1px solid rgba(232,194,124,.35);border-radius:18px;padding:22px 22px 20px;box-shadow:0 30px 80px rgba(0,0,0,.45);display:none}
@@ -131,7 +137,12 @@ section.band.alt{background:var(--sky-2)}
 /* Crew grid */
 .crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:22px}
 .mate{background:var(--sky-3);border-radius:14px;overflow:hidden;border:1px solid rgba(232,194,124,.12);display:flex;flex-direction:column}
-.mate img,.mate video{aspect-ratio:480/636;object-fit:cover;width:100%;display:block;background:var(--sky-2)}
+.mate img,.mate video{aspect-ratio:480/636;object-fit:cover;width:100%;display:block}
+.vwrap{position:relative;cursor:pointer}
+.playbtn{position:absolute;left:10px;bottom:30px;display:flex;align-items:center;justify-content:center;gap:5px;height:34px;padding:0 12px 0 10px;border-radius:999px;border:1.5px solid #fff;background:rgba(214,72,72,.92);color:#fff;font:700 13px/1 Lato,system-ui,sans-serif;box-shadow:0 3px 10px rgba(0,0,0,.35);cursor:pointer;transition:opacity .2s,transform .2s}
+.playbtn span{font-size:11px}
+.playbtn:hover{transform:scale(1.06)}
+.vwrap.playing .playbtn{opacity:.75}
 .mate div{padding:14px 16px 18px}
 .mate h3{font-size:26px}
 .mate .t{color:var(--gold);font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin:4px 0 8px}
@@ -157,7 +168,7 @@ form.wait input{flex:1 1 220px;min-width:0;padding:13px 16px;border-radius:999px
 .who{color:var(--gold);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin:16px 0 18px 24px}
 .baby-copy > p{color:#e4dfea;max-width:56ch}
 .first-baby{display:flex;gap:18px;align-items:center;background:var(--sky-3);border:1px solid rgba(232,194,124,.3);border-radius:16px;padding:14px;margin-top:26px;max-width:520px}
-.first-baby img{width:110px;border-radius:12px}
+.first-baby img,.first-baby video{width:110px;border-radius:12px}
 .first-baby b{font-family:var(--display);font-size:30px;font-weight:600;display:block}
 .first-baby p{margin:4px 0 0;color:#ddd7e6;font-style:italic}
 @media (max-width:760px){.baby{grid-template-columns:1fr;gap:30px}.memory video{max-width:100%}}
@@ -266,6 +277,7 @@ footer .love{color:var(--cream);font-weight:700}
     </div>
     <div class="shelf" id="shelf"></div>
     <p class="shelf-note">Swipe or scroll sideways to see all six.</p>
+    <p style="text-align:center;margin-top:18px"><button class="btn btn-gold" type="button" id="holidayStoryBtn">Read the Holiday Star story: The Night Luna Lost Her Light</button></p>
   </div>
 </section>
 
@@ -311,7 +323,7 @@ footer .love{color:var(--cream);font-weight:700}
         <p class="who">Soretha Eldridge, founder of Heartsong Inspiration</p>
         <p>Today I make dolls so every little girl and boy can hold one that looks like them.</p>
         <div class="first-baby">
-          <img src="img/new-amira.jpg" alt="Amira, the Heartsong baby with soft curls and a pink bow">
+          <video src="vid/amira.mp4" poster="img/new-amira.jpg" autoplay muted loop playsinline aria-label="Amira, the Heartsong baby with soft curls and a pink bow"></video>
           <div><span class="eyebrow" style="margin-bottom:6px">The first baby in the family</span><b>Amira</b><p>Every curl is a crown. Wear it proud.</p></div>
         </div>
         <form class="wait" id="waitForm" novalidate>
@@ -376,9 +388,11 @@ footer .love{color:var(--cream);font-weight:700}
     <div>
       <span class="eyebrow">Heartsong · Est. 2026</span>
       <h2 style="font-size:clamp(38px,5vw,60px);margin-bottom:26px">Why Heartsong began</h2>
-      <p>Heartsong Inspiration began with a simple belief: every child deserves to see someone who looks like them on the page, wrapped in beauty, wonder, and love.</p>
-      <p>Our dolls are brown-skinned girls and boys with curls, braids, bows, and bright eyes. They chase fireflies, hold lanterns in the dark, and look up at the stars. Through them we share the words we wish every heart could hear each morning: you are worthy, you are wanted, and your song matters.</p>
-      <p>Heartsong is a family endeavor, rooted in Cleveland, Ohio, and in a lifetime of rising above hard places. Every affirmation is written with care, and every image is made to remind you that joy belongs to you too.</p>
+      <p>Heartsong Inspiration began with one baby doll.</p>
+      <p>When Soretha Eldridge was a very young girl, maybe 4 or 5 years old, her big sister Theresa had a beautiful Black baby doll with a soft body. Soretha loved that baby doll so much that it never left her heart.</p>
+      <p>Years later, that memory became Heartsong. Soretha began creating her own dolls: brown-skinned girls and boys with curls, braids, bows and bright eyes. They chase fireflies, hold lanterns in the dark and look up at the stars. Every one of them carries a daily affirmation, the words we wish every heart could hear each morning: you are worthy, you are wanted, and your song matters.</p>
+      <p>Heartsong is a family endeavor, rooted in Cleveland, Ohio, and in a lifetime of rising above hard places. Soretha's sister Theresa and their baby brother, Sylvester Gene, are part of the Heartsong family as dolls of their own, and Sylvester's memory lives on there.</p>
+      <p>Today Soretha is working toward the dream that started it all: soft-bodied Heartsong baby dolls you can hold, so every little girl and boy can have a doll that looks like them.</p>
       <p class="sig">With love, Soretha</p>
     </div>
     <div class="pillars">
@@ -394,7 +408,7 @@ footer .love{color:var(--cream);font-weight:700}
 <footer>
   <div class="wrap cols">
     <div><span class="love">Heartsong Inspiration</span> · a gentle song for every heart<br>shine@heartsonginspiration.com</div>
-    <div><a href="https://www.facebook.com/profile.php?id=61595026280214">Facebook</a> · <a href="https://www.instagram.com/heartsong_inspiration/">Instagram @heartsong_inspiration</a> · <a href="https://www.youtube.com/@heartsong_inspiration">YouTube @heartsong_inspiration</a></div>
+    <div><a href="https://www.facebook.com/profile.php?id=61595026280214" target="_blank" rel="noopener">Facebook: Heartsong Inspiration</a> · <a href="https://www.instagram.com/heartsong_inspiration/" target="_blank" rel="noopener">Instagram @heartsong_inspiration</a> · <a href="https://www.youtube.com/@heartsong_inspiration" target="_blank" rel="noopener">YouTube @heartsong_inspiration</a></div>
     <div style="flex-basis:100%">All artwork, characters, stories and affirmations © 2026 Soretha Eldridge, Heartsong Inspiration. All rights reserved. No copying, downloading or reuse without written permission.</div>
   </div>
 </footer>
@@ -415,19 +429,19 @@ const DOLLS = [
   {n:"Zaire", k:"zaire", tag:"The dreamer by the pond", a:"Wonder lives in small things.", d:"With dragonfly wings, Zaire stands by the pond and imagines all the places he will fly."},
   {n:"Ariana", k:"ariana", tag:"Grace in motion", a:"I run because I am free.", d:"Ariana runs through the wildflowers with butterflies at her side, free in every season."},
   {n:"Theresa", k:"theresa", tag:"The daisy girl", a:"Small things can be beautiful, and so can I.", d:"In her lavender dress with daisies in her hair, Theresa finds beauty in the smallest things."},
-  {n:"Dream", k:"dream", tag:"The garden girl", a:"", d:"Curly-haired Dream wears her red bow and overalls, with a bee resting on her fingertip among the red flowers."},
+  {n:"Dream", k:"dream", tag:"The garden girl", a:"The storm did not win. I am still here.", d:"Dream jumps rope and chases her little bumblebee friend through the red-flower garden, curly puffs bouncing."},
   {n:"Jabari", k:"jabari", tag:"Brave on the green bicycle", a:"I am brave, even on hard days.", d:"Jabari waves at the butterflies in his green shirt and overalls. He wobbles, he falls, and he gets back on, one more time."},
   {n:"Kwame", k:"kwame", tag:"The boy who climbs higher", a:"I can do hard things.", d:"Kwame loves his books and his red sneakers, and one brave breath at a time he climbs all the way to the top."},
-  {n:"Christopher", k:"christopher", tag:"Ariana and Janie's baby brother", a:"Hold the ones you love close.", d:"Christopher is three years old, and he is Ariana and Janie's baby brother. He snuggles with his teddy bear while the moon and stars sing him to sleep."},
-  {n:"Harmony", k:"harmony", tag:"Song in her soul", a:"", d:"Harmony dances in her flower dress with music all around her, and her joy makes everyone feel at home."}
+  {n:"Christopher", k:"christopher", tag:"Our littlest blessing", a:"Little arms can hold big love.", d:"Sweet Baby Christopher snuggles in his soft green sleeper with his teddy bear, while the moon and stars sing him to sleep."},
+  {n:"Harmony", k:"harmony", tag:"Song in her soul", a:"When you share your song, you find your home.", d:"Harmony dances in her flower dress with music all around her, and her joy makes everyone feel at home."}
 ];
 const NEWDOLLS = [
-  {n:"Tre'", k:"tre", tag:"Kiki's big brother", a:"God gave me a brother to hold my hand through life.", d:"Tre' wears his purple shirt and striped tie, and he is always the first one to push his little sister Kiki on the swing."},
-  {n:"Kiki", k:"kiki", tag:"The little baker", a:"His mercy is new this morning. So am I.", d:"Kiki ties on her pink apron, climbs her step stool and stirs the cookie dough until there is flour on her nose."},
-  {n:"Khailee-Ann", k:"khailee-ann", tag:"Kayvion's twin sister", a:"", d:"Khailee-Ann is eight, with long red hair, green eyes and freckles. She and her twin brother Kayvion do everything together."},
-  {n:"Kayvion", k:"kayvion", tag:"Khailee-Ann's twin brother", a:"", d:"Kayvion is eight, with red curly twists, green eyes and freckles. He never lets go of his twin sister's hand."},
-  {n:"Amira", k:"amira", tag:"The littlest crown", a:"Every curl is a crown. Wear it proud.", d:"Sweet baby Amira, with her soft curls and pink bow, is the newest heart in the Heartsong family."},
-  {n:"Ayo", k:"ayo", tag:"Joy in every step", a:"Do not be afraid, for the Lord your God goes with you. (Deuteronomy 31:6)", d:"Ayo bounces under a rainbow of stars, and her laugh makes the whole sky sparkle."}
+  {n:"Amira", k:"amira", v:"vid/amira.mp4", tag:"The littlest crown", a:"Every curl is a crown. Wear it proud.", d:"Sweet baby Amira, with her soft curls and pink bow, is the newest heart in the Heartsong family."},
+  {n:"Ayo", k:"ayo", v:"vid/ayo.mp4", tag:"Joy in every step", a:"Do not be afraid, for the Lord your God goes with you. (Deuteronomy 31:6)", d:"Ayo bounces under a rainbow of stars, and her laugh makes the whole sky sparkle."},
+  {n:"Khailee-Ann and Kayvion", k:"twins", v:"vid/twins.mp4", tag:"Twins, hand in hand", a:"Two are better than one.", d:"Twins Khailee-Ann and Kayvion leap into a big pile of golden leaves together, red hair, freckles and all."},
+  {n:"Tre' and Kiki", k:"trekiki", v:"vid/trekiki.mp4", tag:"Brother and sister", a:"God gave me a brother to hold my hand through life.", d:"Big brother Tre' pushes little sister Kiki high on the garden swing, and she laughs all the way up."},
+  {n:"Christopher at 3", k:"christopher3", v:"vid/christopher3.mp4", tag:"Our littlest blessing, growing up", a:"Gentle hands are strong hands.", d:"Little Christopher is three now. He runs through the meadow with his teddy bear and a little jar, chasing fireflies under the moon."},
+  {n:"Sylvester Gene", k:"sylvester", v:"vid/sylvester.mp4", tag:"Our little dreamer in the kitchen", a:"Dream big. Work hard. Love is my secret ingredient.", d:"Soretha and Theresa's baby brother loved to pretend to cook. He grew up to become the general manager of a large restaurant and built a career he was proud of. Forever loved, forever in our kitchen."}
 ];
 const AFFIRMATIONS = [
   "Carry your own light. Who are you shining for today?",
@@ -470,6 +484,17 @@ const AFFIRMATIONS = [
   "I honor the people who came before me by rising.",
   "Like the stars, I was made to shine in the dark."
 ];
+const HOLIDAY_STORY = {n:"Luna", t:"The Night Luna Lost Her Light",
+   tease:"On Christmas Eve, the littlest reindeer's antlers would not glow.",
+   body:["On Christmas Eve, Luna, the littlest of Santa's reindeer, landed in Harmony's snowy yard with a soft thump. Harmony knew her already. Luna was the reindeer she caught sneaking cookies, the one who gave her a ride over the rooftops. But tonight something was wrong. Luna's antlers were supposed to glow gold, and they stayed dark.",
+   "\"Santa can't fly without every light,\" Luna whispered. Harmony threw her arms around Luna's neck. \"Then we'll help you find yours.\"",
+   "Out by the sleigh, Janie was helping Santa load the presents. She was the smallest helper there, but she lifted one tiny box with both hands and set it right in place. \"Small hands can still move big things,\" she said. Luna's antlers gave one little flicker.",
+   "Inside, by the Christmas tree, Harmony spotted something she had never seen before: a stocking with Luna's name stitched on it. \"Somebody was waiting for you!\" she gasped. The antlers flickered again.",
+   "On the sidewalk, Scarlett saw Luna shivering. She unwound her warm red scarf and tied it around Luna's neck. Love felt warm, and the glow grew a little brighter.",
+   "Then Jubilee came running through the snow in her purple hat, laughing so hard her puffs bounced. \"Joy keeps you warmer than any coat!\" she called, and Luna started laughing too.",
+   "Last came Soretha in her starry blue dress. She pointed up at the sky. \"God calls every star by name,\" she said, \"and He knows yours too, Luna. Your light was never lost.\"",
+   "Luna's antlers blazed gold. She leaped into the night beside Santa's sleigh and lit the way over every rooftop in town.",
+   "I was made to carry light into every room. So were you."]};
 const STORIES = [
   {"n": "Jabari", "t": "Jabari and the Green Bicycle", "tease": "The bicycle was green, and it did not like to stand up by itself.", "body": ["The bicycle was green, and it did not like to stand up by itself.", "Jabari held the handlebars and looked down the long park path. His knees had two bandages already. One was shaped like a star.", "“Again?” asked his grandma from the bench.", "“Again,” said Jabari.", "He pushed off. Wobble. Wobble. Wobble… and then, for one, two, three whole seconds, the wobbling stopped, and Jabari was flying. The wind lifted his curls and the butterflies raced right beside him.", "He didn’t fall this time. He just kept going, grinning so big his cheeks hurt.", "I am brave, even on hard days. Brave isn’t never wobbling. It’s getting back on, one more time."]},
   {"n": "Kwame", "t": "Kwame and the Tall Rocks", "tease": "The climbing rocks at the park were taller than Kwame’s dad.", "body": ["The climbing rocks at the park were taller than Kwame’s dad.", "Every day Kwame watched the big kids scramble to the top. Every day he made it halfway, looked down, and climbed back to the ground.", "Today he took a deep breath. One hand. One foot. Another hand. His red sneakers found a tiny ledge, and he held on tight.", "“You’ve got this, Kwame!” his friends called from below.", "His arms shook. His heart thumped. And then, suddenly, there was nothing left to climb, just blue sky, fluffy clouds and the whole park spread out below him like a map.", "Kwame threw both arms up and laughed. “I did it!”", "I can do hard things. The top always looks far away, until you’re standing on it."]},
@@ -508,10 +533,88 @@ const STORIES = [
    body:["Harmony used to hum everywhere she went. Then her family moved to a new city, and she stopped singing. Nobody there knew her songs.",
    "One afternoon she heard an elderly woman on the porch next door humming the same hymn her grandmother used to sing. Harmony's throat tightened. She began to hum along.",
    "The woman smiled and sang louder. Soon they sang together every evening, and the neighbors began opening their windows to listen.",
-   "When you share your song, you find your home."]}
+   "When you share your song, you find your home."]},
+  {n:"Ariana", t:"Ariana Runs Toward It",
+   tease:"Ariana used to run away from the things that scared her.",
+   body:["Ariana used to run away from the things that scared her. The big hill behind school. The new girl at lunch. The spelling bee.",
+   "One spring morning, her little cousin's kite string snapped and the kite went sailing toward the wildflower field. Everyone froze. Ariana felt her feet want to turn around.",
+   "Instead, she ran toward it. Through the tall grass, past the butterflies, all the way to the fence where the kite was caught. She untangled it and ran it back, laughing the whole way.",
+   "\"How did you get so brave?\" her cousin asked. Ariana shrugged. \"I just decided to run toward it this time.\"",
+   "I run because I am free.",
+   "What is one thing you are ready to run toward?"]},
+  {n:"Theresa", t:"The Soft Baby Doll",
+   tease:"Theresa had a beautiful black baby doll with a soft body.",
+   body:["Theresa had a beautiful black baby doll with a soft body. She carried it everywhere, tucked in her lavender dress with a daisy in her hair.",
+   "Her little sister watched that baby doll with shining eyes. She was only 4 or 5, and she loved it so much it never left her heart.",
+   "One day Theresa sat down in the grass, set the baby doll in her sister's arms, and showed her how to hold its head just right. They rocked it together under the daisies and sang it a song they made up.",
+   "That little sister never forgot. She grew up and made dolls of her own, so every child could hold one that looks like them. And her very first story was about Theresa.",
+   "Small things can be beautiful, and so can I.",
+   "Who is your Theresa?"]},
+  {n:"Dream", t:"Dream and the Storm",
+   tease:"The storm came for Dream's heart, but it did not win.",
+   body:["Some days Dream's heart felt heavy, like a gray cloud parked right over her house. It had been a hard week, and her heart was hurt.",
+   "So Dream did what she always does. She went out to the garden with her jump rope, and her little bumblebee friend came buzzing along.",
+   "One jump. Two jumps. Ten. Her curly puffs bounced and the red flowers waved. By twenty jumps she was giggling, and by thirty the clouds had started to break.",
+   "Her heart still remembered the storm. But it also remembered how to laugh, and how to love.",
+   "The storm did not win. I am still here.",
+   "What helps your heart feel light again?"]},
+  {n:"Christopher", t:"Little Arms, Big Love",
+   tease:"Baby Christopher could not say many words yet, but he knew how to love.",
+   body:["Baby Christopher could not say many words yet. He had red hair as soft as a peach, green eyes, and a little teddy bear that went everywhere he went.",
+   "Every night his family took turns holding him while the moon and stars came out. Christopher would reach up his little arms, grab a finger, and hold on tight.",
+   "He did not know how to say \"I love you.\" So he said it the only way he could: by holding on, by snuggling in, by falling asleep with his cheek on someone's heart.",
+   "Little arms can hold big love.",
+   "Who are you holding close today?"]},
+  {n:"Amira", t:"Amira's Crown",
+   tease:"Baby Amira's curls bounced every time she laughed.",
+   body:["Baby Amira's curls bounced every time she laughed, and she laughed a lot.",
+   "Her mama would brush them gently every morning and tie them with a little pink bow. \"Every curl is a crown,\" Mama would whisper. Amira did not know the words yet, but she knew the feeling: warm, safe and loved.",
+   "When Amira pushed herself up on her blanket for the very first time, her curls bounced and her whole family cheered. She smiled the biggest smile, like a little queen.",
+   "Every curl is a crown. Wear it proud.",
+   "What do you love most about the way God made you?"]},
+  {n:"Ayo", t:"Ayo Under the Rainbow Stars",
+   tease:"Ayo's name means joy, and she lives up to it.",
+   body:["Ayo bounces when she walks. She bounces when she talks. She even bounces when she is nervous, which is how her family always knows.",
+   "The night before her first dance recital, Ayo could not sleep. Her stomach flip-flopped. She looked out her window at the stars and whispered, \"What if I forget the steps?\"",
+   "Her grandmother sat on the edge of the bed. \"Do not be afraid, baby. The Lord your God goes with you, even onto that stage.\"",
+   "The next day, when the music started, Ayo took a deep breath and bounced right onto the stage. She did not forget a single step, and her laugh made the whole room sparkle.",
+   "Do not be afraid, for the Lord your God goes with you. (Deuteronomy 31:6)",
+   "What helps you feel brave when you are nervous?"]},
+  {n:"Khailee-Ann and Kayvion", t:"Two of a Kind",
+   tease:"Khailee-Ann and Kayvion were born nine minutes apart, and they never let anyone forget it.",
+   body:["Khailee-Ann and Kayvion are twins, born nine minutes apart. Khailee-Ann never lets her brother forget that she is the oldest.",
+   "They have the same red hair, the same freckles and the same green eyes. But they are not the same. Khailee-Ann loves quiet books. Kayvion loves loud games. She plans. He jumps.",
+   "One fall afternoon their grandpa raked the biggest pile of leaves they had ever seen. Khailee-Ann wanted to count to three. Kayvion wanted to go right now.",
+   "So they held hands, counted to one, and jumped together. Leaves flew everywhere, and they laughed so hard they could not stand up.",
+   "Two are better than one.",
+   "Who is the person who makes you braver just by being next to you?"]},
+  {n:"Tre' and Kiki", t:"Higher, Tre', Higher!",
+   tease:"Kiki was scared of the big swing, until her brother stood behind her.",
+   body:["The big swing in the backyard hung from the tallest tree, and Kiki was scared of it.",
+   "Her big brother Tre' sat down beside her in the grass. \"I'll be right behind you the whole time,\" he said. \"I won't let go until you tell me to.\"",
+   "Kiki climbed on and held her pink flowers tight. Tre' gave a gentle push. Then another. Her puffs bounced and her legs kicked, and suddenly Kiki was laughing. \"Higher, Tre'! Higher!\"",
+   "He pushed her higher, and he stayed right behind her, just like he promised.",
+   "God gave me a brother to hold my hand through life.",
+   "Who has always been right behind you?"]},
+  {n:"Christopher at 3", t:"Christopher and the Fireflies",
+   tease:"Christopher is three now, and he wants to catch a star.",
+   body:["Christopher is three now. He still has his red hair and his teddy bear, but now he runs everywhere he goes.",
+   "One summer evening the meadow behind his house started to glow. Tiny lights blinked on and off in the grass. \"Stars!\" Christopher shouted. \"Little stars!\"",
+   "\"Those are fireflies,\" his mama laughed, and handed him a little jar.",
+   "Christopher chased them around and around, teddy bear tucked under his arm. When one finally landed on the jar, he looked at it glowing in his hands, then gently opened the lid and let it fly back to the others. \"Go home, little star,\" he whispered.",
+   "Gentle hands are strong hands.",
+   "What is your little one teaching you?"]},
+  {n:"Sylvester Gene", t:"In Loving Memory of Sylvester Gene",
+   tease:"As a little boy he stood on a chair at the stove, stirring pretend soup.",
+   body:["Sylvester Gene was the baby brother of Soretha and Theresa. As a little boy he stood on a chair at the stove, stirring pretend soup and serving it with the proudest grin. That little boy grew up to lead one of the busiest kitchens anyone could imagine.",
+   "Sylvester became the general manager of a large restaurant. He ran the whole house: the kitchen, the staff, the guests and every detail in between. People trusted him to make it all work, and he did. He built a highly successful career at the very top of his field, proof of how hard he worked and how far his gifts carried him.",
+   "Cancer took Sylvester from us at 38, far too soon. But love that is cooked into a family never leaves. We feel it at every holiday table and hear it in every laugh that fills the kitchen.",
+   "In Heartsong, Sylvester is forever the little boy in the chef's hat, stirring something wonderful and dreaming big, saving the very first taste for his big sisters.",
+   "\"Taste and see that the Lord is good.\" Psalm 34:8",
+   "Dream big. Work hard. Love is my secret ingredient."]}
 ];
-const VIDS = {soretha:1,isabella:0,janie:1,kyran:1,zaire:1,ariana:1,theresa:1,dream:1,jabari:1,kwame:1,christopher:1,harmony:1};
-const ORBIT = DOLLS.concat(NEWDOLLS.filter(d => ["tre","kiki","khailee-ann","kayvion"].includes(d.k)));
+const VIDS = {soretha:1,isabella:1,janie:1,kyran:1,zaire:1,ariana:1,theresa:1,dream:1,jabari:1,kwame:1,harmony:1,christopher:1};
+const ORBIT = DOLLS.filter(d => d.k !== "christopher").concat(NEWDOLLS);
 const HOLIDAY = [
   {n:"Harmony and Luna", a:"I was made to carry light into every room.", v:"Matthew 5:16"},
   {n:"Janie", a:"Small hands can still move big things.", v:"Zechariah 4:10"},
@@ -528,7 +631,7 @@ const BF = [
   {t:"Heartsong Guided Affirmation Journal", img:"shop-journal.jpg", alt:"Front cover of the Heartsong Guided Affirmation Journal with Daisy Girl Theresa in an arched window", d:"Thirty days of gentle pages for the days the song gets quiet. A loving affirmation, room to be grateful and a place to rest your heart each day. Paperback, 8.5 x 11 inches.", p:"$11.99"},
   {t:"The Heartsong Candle Collection", img:"shop-candles.jpg", alt:"Two Heartsong candles in glass jars, Starlight with little Soretha and Golden Morning with Nia", d:"9 oz soy candles with our dolls on the label. Starlight, white sage and lavender: “I carry a light that was made to shine.” Golden Morning, cinnamon vanilla: “I was born with a purpose.”", p:"$26", r:"$29"},
   {t:"Heartsong Pillow Friend", img:"doll-theresa.jpg", alt:"Daisy Girl Theresa, one of the Heartsong dolls a Pillow Friend can be made from", d:"A soft pillow cut to the shape of one of our dolls, with her words beside her. Something sweet to hug at bedtime, made from Soretha's art.", p:"$34", r:"$39"},
-  {t:"New Heartsong Coloring Book", img:"shop-coloring.jpg", alt:"The free I am loved coloring page, a sample of Heartsong line art", d:"Our dolls in black-and-white line art, ready for crayons. The pages are being drawn now. Write to us and we'll tell you the minute it's ready.", p:""}
+  {t:"New Heartsong Coloring Book", img:"shop-coloring.jpg", alt:"The free I am loved coloring page, a sample of Heartsong line art", d:"Our dolls in black-and-white line art, ready for crayons. Start with the free “I am loved” page starring Dream. Write to us and we’ll tell you the minute the full book is ready.", p:""}
 ];
 const GIFTS = [
   {t:"Jabari T-Shirt", img:"shop-shirt-jabari.jpg", alt:"White T-shirt printed with Jabari reaching for the stars, with the words My past does not get to write my future.", d:"Jabari reaching for the stars on a soft white tee, with his words: \u201cMy past does not get to write my future. It is part of my story. It is not the ending.\u201d"},
@@ -580,11 +683,21 @@ $("copyAff").onclick = async () => {
 /* Crew grid */
 $("crewGrid").innerHTML = DOLLS.concat(NEWDOLLS).map(d => {
   const nw = NEWDOLLS.includes(d), src = nw ? `img/new-${d.k}.jpg` : `img/doll-${d.k}.jpg`;
-  const pic = VIDS[d.k]
-    ? `<video src="vid/${d.k}.mp4" poster="${src}" ${reduce?"":"autoplay "}muted loop playsinline preload="metadata" aria-label="${d.n}, ${d.tag}"></video>`
-    : `<img src="${src}" alt="${d.n}, ${d.tag}">`;
-  return `<article class="mate${nw?" new":""}">${pic}<div><h3>${d.n}</h3><div class="t">${nw?"Just arrived · ":""}${d.tag}</div><p>${d.d}</p></div></article>`;
+  const vsrc = d.v || (VIDS[d.k] ? `vid/${d.k}.mp4` : "");
+  const media = vsrc ? `<div class="vwrap"><video src="${vsrc}" poster="${src}" muted loop playsinline preload="metadata" aria-label="${d.n}, ${d.tag}"></video><button class="playbtn" type="button" aria-label="Play ${d.n}'s video"><span aria-hidden="true">&#9654;</span> Play</button></div>` : `<img src="${src}" alt="${d.n}, ${d.tag}">`;
+  return `<article class="mate${nw?" new":""}">${media}<div><h3>${d.n}</h3><div class="t">${nw?"Just arrived · ":""}${d.tag}</div><p>${d.d}</p></div></article>`;
 }).join("");
+/* Play buttons: videos wait for a tap, and only one card plays at a time */
+$("crewGrid").addEventListener("click", e => {
+  const w = e.target.closest(".vwrap"); if (!w) return;
+  const v = w.querySelector("video"), b = w.querySelector(".playbtn"), name = b.getAttribute("aria-label").replace(/^(Play|Pause) /,"");
+  if (v.paused) {
+    document.querySelectorAll("#crewGrid .vwrap.playing").forEach(o => { if (o !== w) { o.querySelector("video").pause(); o.classList.remove("playing"); const ob = o.querySelector(".playbtn"); ob.innerHTML = '<span aria-hidden="true">&#9654;</span> Play'; ob.setAttribute("aria-label", ob.getAttribute("aria-label").replace(/^Pause/,"Play")); } });
+    v.play().catch(()=>{}); w.classList.add("playing"); b.innerHTML = '<span aria-hidden="true">&#10074;&#10074;</span> Pause'; b.setAttribute("aria-label", "Pause " + name);
+  } else {
+    v.pause(); w.classList.remove("playing"); b.innerHTML = '<span aria-hidden="true">&#9654;</span> Play'; b.setAttribute("aria-label", "Play " + name);
+  }
+});
 
 /* Stories */
 $("storyList").innerHTML = STORIES.map((s,i) => `<button class="story" type="button" data-i="${i}"><b>${s.t}</b><span>${s.tease}</span><i>Read ${s.n}'s story</i></button>`).join("");
@@ -595,12 +708,20 @@ $("storyList").addEventListener("click", e => {
   $("sdBody").innerHTML = s.body.map(p => `<p>${p}</p>`).join("");
   $("storyDlg").showModal();
 });
+$("holidayStoryBtn").addEventListener("click", () => {
+  $("sdTitle").textContent = HOLIDAY_STORY.t;
+  $("sdBody").innerHTML = HOLIDAY_STORY.body.map(p => `<p>${p}</p>`).join("");
+  $("storyDlg").showModal();
+});
 
-/* Waitlist (preview: nothing is sent yet) */
+/* Waitlist: opens a ready-to-send email to Heartsong so the sign-up reaches Soretha */
 $("waitForm").addEventListener("submit", e => {
   e.preventDefault();
   const v = $("waitEmail").value.trim();
-  $("waitMsg").textContent = /\S+@\S+\.\S+/.test(v) ? "Thank you. This is a preview, so your email was not saved yet. The sign-up goes live with the baby dolls." : "Please enter an email address like name@example.com.";
+  if (!/\S+@\S+\.\S+/.test(v)) { $("waitMsg").textContent = "Please enter an email address like name@example.com."; return; }
+  const body = `Please add me to the Heartsong baby doll waitlist.\n\nMy email: ${v}`;
+  location.href = `mailto:shine@heartsonginspiration.com?subject=${encodeURIComponent("Heartsong baby doll waitlist")}&body=${encodeURIComponent(body)}`;
+  $("waitMsg").textContent = "Thank you! Your email app is opening with your note ready. Tap Send and you're on the list.";
 });
 
 /* Music */
@@ -645,7 +766,7 @@ $("musicBtn").onclick = async () => {
 
   // orbit ring
   const ring = new THREE.Group(); scene.add(ring);
-  const R = 6.2, panels = [], vids = [];
+  const R = Math.max(6.2, ORBIT.length * 2.15 / (Math.PI * 2)), panels = [], vids = [];
   const loader = new THREE.TextureLoader();
   const orbitPath = new THREE.Mesh(new THREE.TorusGeometry(R, .012, 6, 160), new THREE.MeshBasicMaterial({color:0xe8c27c, transparent:true, opacity:.35}));
   orbitPath.rotation.x = Math.PI/2; ring.add(orbitPath);
@@ -655,9 +776,9 @@ $("musicBtn").onclick = async () => {
     const g = new THREE.Group();
     g.position.set(Math.sin(a)*R, Math.sin(i*1.7)*.35, Math.cos(a)*R);
     let tex;
-    if (VIDS[d.k]) {
+    if (d.v || VIDS[d.k]) {
       const v = document.createElement("video");
-      v.src = `vid/${d.k}.mp4`; v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute("playsinline",""); v.crossOrigin = "anonymous"; v.preload = "auto";
+      v.src = d.v || `vid/${d.k}.mp4`; v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute("playsinline",""); v.crossOrigin = "anonymous"; v.preload = "auto";
       v.play().catch(()=>{}); vids.push(v);
       tex = new THREE.VideoTexture(v);
     } else tex = loader.load(NEWDOLLS.includes(d) ? `img/new-${d.k}.jpg` : `img/doll-${d.k}.jpg`);
@@ -672,10 +793,11 @@ $("musicBtn").onclick = async () => {
     // name plate
     const nc = document.createElement("canvas"); nc.width = 512; nc.height = 96;
     const nx = nc.getContext("2d");
-    nx.font = "500 64px 'Cormorant Garamond', Georgia, serif"; nx.fillStyle = "#f5ecdc"; nx.textAlign = "center"; nx.textBaseline = "middle"; nx.fillText(d.n, 256, 50);
+    const fitFont = () => { let s = 64; do { nx.font = `500 ${s}px 'Cormorant Garamond', Georgia, serif`; s -= 2; } while (nx.measureText(d.n).width > 496 && s > 24); };
+    fitFont(); nx.fillStyle = "#f5ecdc"; nx.textAlign = "center"; nx.textBaseline = "middle"; nx.fillText(d.n, 256, 50);
     const plate = new THREE.Mesh(new THREE.PlaneGeometry(2.2, .41), new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(nc), transparent:true}));
     plate.position.y = -h/2 - .38; g.add(plate);
-    plate.userData.redraw = () => { nx.clearRect(0,0,512,96); nx.font = "500 64px 'Cormorant Garamond', Georgia, serif"; nx.fillText(d.n,256,50); plate.material.map.needsUpdate = true; };
+    plate.userData.redraw = () => { nx.clearRect(0,0,512,96); fitFont(); nx.fillText(d.n,256,50); plate.material.map.needsUpdate = true; };
     g.userData = {d, pic, frame, base:g.position.y, phase:i};
     pic.userData.group = g; frame.userData.group = g;
     ring.add(g); panels.push(g);
@@ -722,9 +844,10 @@ $("musicBtn").onclick = async () => {
     const narrow = w < 760;
     camera.fov = narrow ? 64 : 42; camera.updateProjectionMatrix();
     ring.position.x = 0; glow.position.x = 0;
-    ring.position.y = narrow ? -5.6 : -.3; lookOff = narrow ? 3.2 : -1.6; glow.position.y = ring.position.y;
-    // on wide screens the circle has its own panel beside the words: pull the camera back until the whole circle fits
-    camZ = narrow ? 15.5 : Math.max(16, (R + 2.6) / (Math.tan(21*Math.PI/180) * camera.aspect));
+    ring.position.y = narrow ? -5.6 : -.3; glow.position.y = ring.position.y;
+    lookOff = narrow ? 3.2 : -1.6;
+    // the circle sits centered under the words: pull the camera back until the whole circle fits
+    camZ = narrow ? 15.5 * R / 6.2 : Math.max(15.5 * R / 6.2, (R + 2.6) / (Math.tan(21*Math.PI/180) * camera.aspect));
   }
   addEventListener("resize", size); size();
 
@@ -740,7 +863,7 @@ $("musicBtn").onclick = async () => {
       if (!reduce) g.position.y = g.userData.base + Math.sin(t*.9 + g.userData.phase)*.18;
     });
     if (!reduce) { stars.rotation.y = t*0.006; glow.material.opacity = .75 + Math.sin(t*1.6)*.15; }
-    camera.position.set(mx*1.6, (2.1 - my*1.0) * camZ/15.5 + (camZ-15.5)*.12, camZ);
+    camera.position.set(mx*1.6, (2.1 - my*1.0) * camZ/15.5, camZ);
     camera.lookAt(ring.position.x*.55, ring.position.y + lookOff, 0);
     renderer.render(scene, camera);
     requestAnimationFrame(loop);
