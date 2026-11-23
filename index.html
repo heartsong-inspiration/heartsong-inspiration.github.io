@@ -791,6 +791,19 @@ $("crewGrid").addEventListener("click", e => {
   }
 });
 
+
+/* Music for dolls whose videos have their own song (plays only while that video plays) */
+const DOLL_MUSIC = {"Harmony":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/73739171-47d7-4281-8a5d-3e61d78ce9cb.mp3","Ariana":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/c8e044a7-1007-4ae5-ab66-ec2826cf7a07.mp3"};
+const dollAudio = new Audio(); dollAudio.loop = true; dollAudio.preload = "none";
+$("crewGrid").addEventListener("click", e => {
+  const w = e.target.closest(".vwrap"); if (!w) return;
+  setTimeout(() => {
+    const name = w.closest(".mate").querySelector("h3").textContent, src = DOLL_MUSIC[name];
+    if (w.classList.contains("playing") && src) { if (dollAudio.src !== src) dollAudio.src = src; dollAudio.currentTime = 0; dollAudio.play().catch(()=>{}); }
+    else dollAudio.pause();
+  }, 0);
+});
+
 /* Stories */
 $("storyList").innerHTML = STORIES.map((s,i) => `<button class="story" type="button" data-i="${i}"><b>${s.t}</b><span>${s.tease}</span><i>Read ${s.n}'s story</i></button>`).join("");
 $("storyList").addEventListener("click", e => {
