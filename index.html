@@ -282,6 +282,11 @@ footer .love{color:var(--cream);font-weight:700}
 #candleImg.swap{animation:candleswap .6s ease}
 @keyframes candleswap{0%{opacity:0;transform:translateX(40px) scale(.96)}100%{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){#candleImg.swap{animation:none}}
+
+.hvid{position:relative}
+.hvid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s;pointer-events:none}
+.hvid.playing video{opacity:1}
+.hvid .playbtn{bottom:auto;top:44px;left:10px}
 </style>
 </head>
 <body>
@@ -511,7 +516,7 @@ const DOLLS = [
 const NEWDOLLS = [
   {n:"Amira", k:"amira", v:"vid/amira.mp4", tag:"The littlest crown", a:"Every curl is a crown. Wear it proud.", d:"Sweet baby Amira, with her soft curls and pink bow, is the newest heart in the Heartsong family."},
   {n:"Ayo", k:"ayo", v:"vid/ayo.mp4", tag:"Joy in every step", a:"Do not be afraid, for the Lord your God goes with you. (Deuteronomy 31:6)", d:"Ayo bounces under a rainbow of stars, and her laugh makes the whole sky sparkle."},
-  {n:"Khailee-Ann and Kayvion", k:"twins", cv:"https://cdn.creativeclaw.co/u/4c68c1c5/videos/f7cc5051-c549-4d13-b41a-b53e58f9ca7c.mp4", tag:"Twins, hand in hand", a:"Two are better than one.", d:"Twins Khailee-Ann and Kayvion leap into a big pile of golden leaves together, red hair, freckles and all."},
+  {n:"Khailee-Ann and Kayvion", k:"twins", cv:"https://cdn.creativeclaw.co/u/4c68c1c5/videos/70949227-4f40-4db4-b467-5ba9370dcf47.mp4", tag:"Twins, hand in hand", a:"Two are better than one.", d:"Twins Khailee-Ann and Kayvion leap into a big pile of golden leaves together, red hair, freckles and all."},
   {n:"Tre' and Kiki", k:"trekiki", v:"vid/trekiki.mp4", tag:"Brother and sister", a:"God gave me a brother to hold my hand through life.", d:"Big brother Tre' pushes little sister Kiki high on the garden swing, and she laughs all the way up."},
   {n:"Christopher at 3", k:"christopher3", v:"vid/christopher3.mp4", tag:"Our littlest blessing, growing up", a:"Gentle hands are strong hands.", d:"Little Christopher is three now. He runs through the meadow with his teddy bear and a little jar, chasing fireflies under the moon."},
   {n:"Sylvester Gene", k:"sylvester", v:"vid/sylvester.mp4", tag:"Our little dreamer in the kitchen", a:"Dream big. Work hard. Love is my secret ingredient.", d:"Soretha and Theresa's baby brother loved to pretend to cook. He grew up to become the general manager of a large restaurant and built a career he was proud of. Forever loved, forever in our kitchen."}
@@ -726,7 +731,8 @@ $("giftShop").innerHTML = GIFTS.map(p => `<article class="item"><img src="img/${
 $("soonShop").innerHTML = SHOP.map(p => `<article><i>${p.s}</i><b>${p.t}</b><p>${p.d}</p></article>`).join("");
 
 /* Holiday shelf with 3D tilt */
-$("shelf").innerHTML = HOLIDAY.map((h,i) => `<figure class="star-card"><img src="img/holiday-0${i+1}.jpg" alt="Holiday Star ${i+1}, ${h.n}: ${h.a}"><figcaption><b>${h.n}</b><span>Star ${String(i+1).padStart(2,"0")} · ${h.v}</span></figcaption></figure>`).join("");
+const HVID = ['https://cdn.creativeclaw.co/u/4c68c1c5/videos/e220addc-068a-4f86-9e34-0fb497ba0351.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/21689c2c-dedf-4371-8c72-77ba2dac58e6.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/339ee6a6-153e-44fa-99f7-c5ca432207d9.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/f339ee5b-a452-46d0-9f83-ba8af6171333.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/ba94d3bb-fb57-413a-8492-55a6dcc34c14.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/cf507274-3117-4e85-8f3d-6d8a76fc1d01.mp4'];
+$("shelf").innerHTML = HOLIDAY.map((h,i) => `<figure class="star-card"><div class="vwrap hvid"><img src="img/holiday-0${i+1}.jpg" alt="Holiday Star ${i+1}, ${h.n}: ${h.a}"><video data-src="${HVID[i]}" muted loop playsinline preload="none" aria-label="${h.n} moving"></video><button class="playbtn" type="button" aria-label="Play ${h.n}'s video"><span aria-hidden="true">&#9654;</span> Play</button></div><figcaption><b>${h.n}</b><span>Star ${String(i+1).padStart(2,"0")} · ${h.v}</span></figcaption></figure>`).join("");
 if (!reduce && matchMedia("(hover: hover)").matches) {
   document.querySelectorAll(".star-card").forEach(c => {
     c.addEventListener("pointermove", e => {
@@ -736,6 +742,18 @@ if (!reduce && matchMedia("(hover: hover)").matches) {
     c.addEventListener("pointerleave", () => c.style.transform = "");
   });
 }
+
+
+/* Holiday Star videos: tap Play to see each star move */
+$("shelf").addEventListener("click", e => {
+  const w = e.target.closest(".hvid"); if (!w) return;
+  const v = w.querySelector("video"), b = w.querySelector(".playbtn"), name = b.getAttribute("aria-label").replace(/^(Play|Pause) /,"");
+  if (!v.src) v.src = v.dataset.src;
+  if (v.paused) {
+    document.querySelectorAll("#shelf .hvid.playing").forEach(o => { if (o !== w) { o.querySelector("video").pause(); o.classList.remove("playing"); const ob = o.querySelector(".playbtn"); ob.innerHTML = '<span aria-hidden="true">&#9654;</span> Play'; ob.setAttribute("aria-label", ob.getAttribute("aria-label").replace(/^Pause/,"Play")); } });
+    v.play().catch(()=>{}); w.classList.add("playing"); b.innerHTML = '<span aria-hidden="true">&#10074;&#10074;</span> Pause'; b.setAttribute("aria-label","Pause " + name);
+  } else { v.pause(); w.classList.remove("playing"); b.innerHTML = '<span aria-hidden="true">&#9654;</span> Play'; b.setAttribute("aria-label","Play " + name); }
+});
 
 /* Star of the day */
 const start = new Date(2026,0,1), today = new Date();
