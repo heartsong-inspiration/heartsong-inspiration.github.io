@@ -749,7 +749,7 @@ $("shelf").addEventListener("click", e => {
   const w = e.target.closest(".hvid"); if (!w) return;
   const v = w.querySelector("video"), b = w.querySelector(".playbtn"), name = b.getAttribute("aria-label").replace(/^(Play|Pause) /,"");
   if (!v.src) v.src = v.dataset.src;
-  if (v.paused) {
+  if (!w.classList.contains("playing")) {
     document.querySelectorAll("#shelf .hvid.playing").forEach(o => { if (o !== w) { o.querySelector("video").pause(); o.classList.remove("playing"); const ob = o.querySelector(".playbtn"); ob.innerHTML = '<span aria-hidden="true">&#9654;</span> Play'; ob.setAttribute("aria-label", ob.getAttribute("aria-label").replace(/^Pause/,"Play")); } });
     v.muted = true; v.play().catch(()=>{}); w.classList.add("playing"); b.innerHTML = '<span aria-hidden="true">&#10074;&#10074;</span> Pause'; b.setAttribute("aria-label","Pause " + name);
   } else { v.pause(); w.classList.remove("playing"); b.innerHTML = '<span aria-hidden="true">&#9654;</span> Play'; b.setAttribute("aria-label","Play " + name); }
@@ -783,7 +783,7 @@ $("crewGrid").innerHTML = DOLLS.concat(NEWDOLLS).map(d => {
 $("crewGrid").addEventListener("click", e => {
   const w = e.target.closest(".vwrap"); if (!w) return;
   const v = w.querySelector("video"), b = w.querySelector(".playbtn"), name = b.getAttribute("aria-label").replace(/^(Play|Pause) /,"");
-  if (v.paused) {
+  if (!w.classList.contains("playing")) {
     document.querySelectorAll("#crewGrid .vwrap.playing").forEach(o => { if (o !== w) { o.querySelector("video").pause(); o.classList.remove("playing"); const ob = o.querySelector(".playbtn"); ob.innerHTML = '<span aria-hidden="true">&#9654;</span> Play'; ob.setAttribute("aria-label", ob.getAttribute("aria-label").replace(/^Pause/,"Play")); } });
     v.muted = true; v.play().catch(()=>{}); w.classList.add("playing"); b.innerHTML = '<span aria-hidden="true">&#10074;&#10074;</span> Pause'; b.setAttribute("aria-label", "Pause " + name);
   } else {
@@ -792,17 +792,39 @@ $("crewGrid").addEventListener("click", e => {
 });
 
 
-/* Music for dolls whose videos have their own song (plays only while that video plays) */
-const DOLL_MUSIC = {"Harmony":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/89884c38-aabb-4cf7-8f83-79a865e4e087.mp3"};
-const dollAudio = new Audio(); dollAudio.loop = true; dollAudio.preload = "none";
-$("crewGrid").addEventListener("click", e => {
-  const w = e.target.closest(".vwrap"); if (!w) return;
+/* Music: one song at a time, softly faded in and out, only while its video plays */
+const DOLL_MUSIC = {"Harmony":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/89884c38-aabb-4cf7-8f83-79a865e4e087.mp3","Ariana":"https://cdn.creativeclaw.co/u/4c68c1c5/audio/c8e044a7-1007-4ae5-ab66-ec2826cf7a07.mp3"};
+const HOLIDAY_MUSIC = ["5ec5bdc0-bb73-48c6-8e7e-e5ce8a633cc0","8fb8b150-4acf-463a-98a5-23e72b7d9557","b1083a95-f727-45ee-8fcb-57fe73718629","882c3c33-de75-45b6-8851-660bc3740bb2","69634ef2-3d04-43ed-993a-f862c5e987a1","11cc933c-b1c6-4e2a-b168-f81bf6209134"].map(id => `https://cdn.creativeclaw.co/u/4c68c1c5/audio/${id}.mp3`);
+const song = new Audio(); song.loop = true; song.preload = "none"; song.volume = 0;
+let fadeT = null;
+function fadeTo(target, ms, done){
+  clearInterval(fadeT); const start = song.volume, steps = Math.max(1, Math.round(ms/40)); let n = 0;
+  fadeT = setInterval(() => { n++; song.volume = Math.min(1, Math.max(0, start + (target - start) * n / steps)); if (n >= steps) { clearInterval(fadeT); done && done(); } }, 40);
+}
+let wantSong = null;
+function playSong(src){
+  const lull = $("lullaby"); if (lull && !lull.paused) $("musicBtn").click();
+  if (wantSong === src && !song.paused) return;
+  wantSong = src;
+  const go = () => { if (wantSong !== src) return; song.src = src; song.currentTime = 0; song.volume = 0; song.play().then(() => { if (wantSong === src) fadeTo(.8, 700); else song.pause(); }).catch(()=>{}); };
+  if (!song.paused) fadeTo(0, 300, () => { song.pause(); go(); }); else go();
+}
+function stopSong(){ wantSong = null; if (song.paused) { clearInterval(fadeT); return; } fadeTo(0, 500, () => { if (!wantSong) song.pause(); }); }
+function syncSong(){
   setTimeout(() => {
-    const name = w.closest(".mate").querySelector("h3").textContent, src = DOLL_MUSIC[name];
-    if (w.classList.contains("playing") && src) { if (dollAudio.src !== src) dollAudio.src = src; dollAudio.currentTime = 0; dollAudio.play().catch(()=>{}); }
-    else dollAudio.pause();
+    const crew = document.querySelector("#crewGrid .vwrap.playing"), hol = document.querySelector("#shelf .hvid.playing");
+    let src = null;
+    if (hol) src = HOLIDAY_MUSIC[[...document.querySelectorAll("#shelf .hvid")].indexOf(hol)];
+    else if (crew) src = DOLL_MUSIC[crew.closest(".mate").querySelector("h3").textContent];
+    src ? playSong(src) : stopSong();
   }, 0);
-});
+}
+/* only one video plays anywhere: starting a Holiday Star pauses the crew and the reverse */
+function pauseOthers(scope){
+  document.querySelectorAll(scope + " .playing").forEach(o => { o.querySelector("video").pause(); o.classList.remove("playing"); const ob = o.querySelector(".playbtn"); ob.innerHTML = '<span aria-hidden="true">&#9654;</span> Play'; ob.setAttribute("aria-label", ob.getAttribute("aria-label").replace(/^Pause/,"Play")); });
+}
+$("crewGrid").addEventListener("click", e => { if (e.target.closest(".vwrap")) { pauseOthers("#shelf"); syncSong(); } });
+$("shelf").addEventListener("click", e => { if (e.target.closest(".hvid")) { pauseOthers("#crewGrid"); syncSong(); } });
 
 /* Stories */
 $("storyList").innerHTML = STORIES.map((s,i) => `<button class="story" type="button" data-i="${i}"><b>${s.t}</b><span>${s.tease}</span><i>Read ${s.n}'s story</i></button>`).join("");
