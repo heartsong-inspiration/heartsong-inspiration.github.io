@@ -504,7 +504,7 @@ const DOLLS = [
 const NEWDOLLS = [
   {n:"Amira", k:"amira", v:"vid/amira.mp4", tag:"The littlest crown", a:"Every curl is a crown. Wear it proud.", d:"Sweet baby Amira, with her soft curls and pink bow, is the newest heart in the Heartsong family."},
   {n:"Ayo", k:"ayo", v:"vid/ayo.mp4", tag:"Joy in every step", a:"Do not be afraid, for the Lord your God goes with you. (Deuteronomy 31:6)", d:"Ayo bounces under a rainbow of stars, and her laugh makes the whole sky sparkle."},
-  {n:"Khailee-Ann and Kayvion", k:"twins", tag:"Twins, hand in hand", a:"Two are better than one.", d:"Twins Khailee-Ann and Kayvion leap into a big pile of golden leaves together, red hair, freckles and all."},
+  {n:"Khailee-Ann and Kayvion", k:"twins", cv:"https://cdn.creativeclaw.co/u/4c68c1c5/videos/f7cc5051-c549-4d13-b41a-b53e58f9ca7c.mp4", tag:"Twins, hand in hand", a:"Two are better than one.", d:"Twins Khailee-Ann and Kayvion leap into a big pile of golden leaves together, red hair, freckles and all."},
   {n:"Tre' and Kiki", k:"trekiki", v:"vid/trekiki.mp4", tag:"Brother and sister", a:"God gave me a brother to hold my hand through life.", d:"Big brother Tre' pushes little sister Kiki high on the garden swing, and she laughs all the way up."},
   {n:"Christopher at 3", k:"christopher3", v:"vid/christopher3.mp4", tag:"Our littlest blessing, growing up", a:"Gentle hands are strong hands.", d:"Little Christopher is three now. He runs through the meadow with his teddy bear and a little jar, chasing fireflies under the moon."},
   {n:"Sylvester Gene", k:"sylvester", v:"vid/sylvester.mp4", tag:"Our little dreamer in the kitchen", a:"Dream big. Work hard. Love is my secret ingredient.", d:"Soretha and Theresa's baby brother loved to pretend to cook. He grew up to become the general manager of a large restaurant and built a career he was proud of. Forever loved, forever in our kitchen."}
@@ -750,7 +750,7 @@ $("copyAff").onclick = async () => {
 /* Crew grid */
 $("crewGrid").innerHTML = DOLLS.concat(NEWDOLLS).map(d => {
   const nw = NEWDOLLS.includes(d), src = nw ? `img/new-${d.k}.jpg` : `img/doll-${d.k}.jpg`;
-  const vsrc = d.v || (VIDS[d.k] ? `vid/${d.k}.mp4` : "");
+  const vsrc = d.v || d.cv || (VIDS[d.k] ? `vid/${d.k}.mp4` : "");
   const media = vsrc ? `<div class="vwrap"><video src="${vsrc}" poster="${src}" muted loop playsinline preload="metadata" aria-label="${d.n}, ${d.tag}"></video><button class="playbtn" type="button" aria-label="Play ${d.n}'s video"><span aria-hidden="true">&#9654;</span> Play</button></div>` : `<img src="${src}" alt="${d.n}, ${d.tag}">`;
   return `<article class="mate${nw?" new":""}">${media}<div><h3>${d.n}</h3><div class="t">${nw?"Just arrived · ":""}${d.tag}</div><p>${d.d}</p></div></article>`;
 }).join("");
