@@ -66,7 +66,8 @@ nav.menu a:hover{color:var(--cream)}
 
 /* Hero: 3D crew orbit */
 .hero{position:relative;height:clamp(560px,86vh,820px);overflow:hidden;background:radial-gradient(120% 90% at 70% 40%,#1d2a66 0%,var(--sky-2) 40%,var(--sky) 75%)}
-#stage{position:absolute;z-index:1;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y}
+#stage{position:absolute;z-index:1;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y;background:url(img/ring-still-mobile.webp) center bottom/cover no-repeat}
+#stage.live{background:none}
 @media (min-width:761px){
   .hero{height:clamp(820px,calc(100vh - 64px),1000px)}
   .hero::after{display:none}
@@ -74,7 +75,7 @@ nav.menu a:hover{color:var(--cream)}
   .hero .hero-copy h1{font-size:clamp(40px,4.4vw,62px)}
   .hero .hero-copy p.lede{margin:14px auto 20px;max-width:60ch}
   .hero .hero-copy .actions{justify-content:center}
-  #stage{top:300px;height:calc(100% - 300px)}
+  #stage{top:300px;height:calc(100% - 300px);background-image:url(img/ring-still-desktop.webp);background-position:center;background-size:cover}
 }
 #stage.dragging{cursor:grabbing}
 .hero::after{content:"";position:absolute;inset:0 auto 0 0;width:min(620px,60%);background:linear-gradient(90deg,rgba(10,16,41,.92) 0%,rgba(10,16,41,.7) 55%,rgba(10,16,41,0) 100%);z-index:2;pointer-events:none}
@@ -503,7 +504,6 @@ footer .love{color:var(--cream);font-weight:700}
 <div class="fullsong" id="fullSong" role="status">Hear the whole song in the full video on <a href="https://www.facebook.com/profile.php?id=61595026280214" target="_blank" rel="noopener">Facebook</a>, <a href="https://www.instagram.com/heartsong_inspiration/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.youtube.com/@heartsong_inspiration" target="_blank" rel="noopener">YouTube</a>.</div>
 <dialog id="storyDlg"><h3 id="sdTitle"></h3><div id="sdBody"></div><form method="dialog"><button class="btn" type="submit">Close story</button></form></dialog>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 const DOLLS = [
   {n:"Soretha", k:"soretha", tag:"Our star girl", star:true, a:"I carry a light that was made to shine.", d:"In her starry blue dress, Soretha looks up at the night sky and believes every star is a wish waiting for her."},
@@ -905,7 +905,6 @@ $("waitForm").addEventListener("submit", e => {
 
 /* Candle scents: tap a scent and the candle changes to show it */
 const SCENT_LOOK = {"Starlight":["candle-starlight.jpg","white sage and lavender"],"Golden Morning":["candle-golden-morning.jpg","cinnamon vanilla"],"Group Hug":["shop-candle-grouphug.jpg","warm vanilla and brown sugar"],"Sunflower Field":["candle-sunflower-field.jpg","fresh citrus and honey"],"After the Storm":["candle-after-the-storm.jpg","soft rain and cedar"],"Sweet Dreams":["candle-sweet-dreams.jpg","chamomile and clean cotton"]};
-Object.values(SCENT_LOOK).forEach(([f]) => { const i = new Image(); i.src = "img/" + f; });
 $("scentPick") && $("scentPick").addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
   const name = b.textContent, [file, notes] = SCENT_LOOK[name], img = $("candleImg");
@@ -1030,8 +1029,16 @@ $("musicBtn").onclick = async () => {
   new IntersectionObserver(es => { if (es[0].isIntersecting) { if (!v.src) v.src = v.dataset.src; v.play().catch(()=>{}); } else if (v.src) v.pause(); }, {rootMargin:"200px"}).observe(v);
 })();
 
-/* 3D crew orbit */
-(function(){
+/* 3D crew orbit: the still picture shows first; the live ring loads the first time a visitor moves, scrolls or touches */
+let ring3dStarted = false;
+function startRing3D(){
+  if (ring3dStarted) return; ring3dStarted = true;
+  ["pointerdown","pointermove","scroll","keydown","touchstart"].forEach(ev => removeEventListener(ev, startRing3D));
+  const s = document.createElement("script"); s.src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"; s.onload = ring3D; document.head.appendChild(s);
+  Object.values(SCENT_LOOK).forEach(([f]) => { const i = new Image(); i.src = "img/" + f; });
+}
+["pointerdown","pointermove","scroll","keydown","touchstart"].forEach(ev => addEventListener(ev, startRing3D, {passive:true}));
+function ring3D(){
   const canvas = $("stage");
   if (!window.THREE) { $("hint").textContent = "Scroll down to meet the crew"; return; }
   let renderer;
@@ -1063,7 +1070,7 @@ $("musicBtn").onclick = async () => {
   const glow = new THREE.Sprite(new THREE.SpriteMaterial({map:glowTex, color:0xe8c27c, transparent:true, blending:THREE.AdditiveBlending, depthWrite:false}));
   glow.scale.set(9,9,1); scene.add(glow);
 
-  let drawOnce = null;
+  let drawOnce = null, loaded = 0;
   // orbit ring
   const ring = new THREE.Group(); scene.add(ring);
   const R = Math.max(6.2, ORBIT.length * 2.15 / (Math.PI * 2)), panels = [], vids = [];
@@ -1075,7 +1082,7 @@ $("musicBtn").onclick = async () => {
     const a = i/ORBIT.length*Math.PI*2;
     const g = new THREE.Group();
     g.position.set(Math.sin(a)*R, Math.sin(i*1.7)*.35, Math.cos(a)*R);
-    const tex = loader.load(NEWDOLLS.includes(d) ? `img/new-${d.k}.jpg` : `img/doll-${d.k}.jpg`, () => drawOnce && drawOnce());
+    const tex = loader.load(NEWDOLLS.includes(d) ? `img/new-${d.k}.jpg` : `img/doll-${d.k}.jpg`, () => { loaded++; drawOnce && drawOnce(); if (loaded === ORBIT.length) { if (!woke) loop(); canvas.classList.add("live"); } });
     tex.minFilter = THREE.LinearFilter;
     if (d.v || VIDS[d.k]) vids.push({src: d.v || `vid/${d.k}.mp4`, i});
     const w = 1.85, h = w*636/480;
@@ -1180,8 +1187,8 @@ $("musicBtn").onclick = async () => {
     if (woke) requestAnimationFrame(loop);
   }
   drawOnce = () => { if (!woke) loop(); };
-  loop();
-})();
+  loop(); wake();
+}
 </script>
 </body>
 </html>
