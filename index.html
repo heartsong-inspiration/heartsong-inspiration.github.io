@@ -1063,6 +1063,7 @@ $("musicBtn").onclick = async () => {
   const glow = new THREE.Sprite(new THREE.SpriteMaterial({map:glowTex, color:0xe8c27c, transparent:true, blending:THREE.AdditiveBlending, depthWrite:false}));
   glow.scale.set(9,9,1); scene.add(glow);
 
+  let drawOnce = null;
   // orbit ring
   const ring = new THREE.Group(); scene.add(ring);
   const R = Math.max(6.2, ORBIT.length * 2.15 / (Math.PI * 2)), panels = [], vids = [];
@@ -1074,7 +1075,7 @@ $("musicBtn").onclick = async () => {
     const a = i/ORBIT.length*Math.PI*2;
     const g = new THREE.Group();
     g.position.set(Math.sin(a)*R, Math.sin(i*1.7)*.35, Math.cos(a)*R);
-    const tex = loader.load(NEWDOLLS.includes(d) ? `img/new-${d.k}.jpg` : `img/doll-${d.k}.jpg`);
+    const tex = loader.load(NEWDOLLS.includes(d) ? `img/new-${d.k}.jpg` : `img/doll-${d.k}.jpg`, () => drawOnce && drawOnce());
     tex.minFilter = THREE.LinearFilter;
     if (d.v || VIDS[d.k]) vids.push({src: d.v || `vid/${d.k}.mp4`, i});
     const w = 1.85, h = w*636/480;
@@ -1096,12 +1097,12 @@ $("musicBtn").onclick = async () => {
     pic.userData.group = g; frame.userData.group = g;
     ring.add(g); panels.push(g);
   });
-  document.fonts && document.fonts.ready.then(() => panels.forEach(p => p.children[3].userData.redraw && p.children[3].userData.redraw()));
+  document.fonts && document.fonts.ready.then(() => { panels.forEach(p => p.children[3].userData.redraw && p.children[3].userData.redraw()); drawOnce && drawOnce(); });
 
   // the dolls start moving the first time a visitor touches, scrolls or moves the mouse, so the page opens fast
   let woke = false;
   const wake = () => {
-    if (woke) return; woke = true;
+    if (woke) return; woke = true; requestAnimationFrame(loop);
     ["pointerdown","pointermove","scroll","keydown","touchstart"].forEach(ev => removeEventListener(ev, wake));
     vids.forEach(o => {
       const v = document.createElement("video");
@@ -1156,10 +1157,10 @@ $("musicBtn").onclick = async () => {
     // the circle sits centered under the words: pull the camera back until the whole circle fits
     camZ = narrow ? 15.5 * R / 6.2 : Math.max(15.5 * R / 6.2, (R + 2.6) / (Math.tan(21*Math.PI/180) * camera.aspect));
   }
-  addEventListener("resize", size); size();
+  addEventListener("resize", () => { size(); drawOnce && drawOnce(); }); size();
 
   const clock = new THREE.Clock();
-  (function loop(){
+  function loop(){
     const t = clock.getElapsedTime();
     if (focusTarget !== null) {
       let diff = focusTarget - spin; diff = Math.atan2(Math.sin(diff), Math.cos(diff)); spin += diff*0.08;
@@ -1176,8 +1177,10 @@ $("musicBtn").onclick = async () => {
     camera.position.set(mx*1.6, (2.1 - my*1.0) * camZ/15.5, camZ);
     camera.lookAt(ring.position.x*.55, ring.position.y + lookOff, 0);
     if (onScreen && !document.hidden) renderer.render(scene, camera);
-    requestAnimationFrame(loop);
-  })();
+    if (woke) requestAnimationFrame(loop);
+  }
+  drawOnce = () => { if (!woke) loop(); };
+  loop();
 })();
 </script>
 </body>
