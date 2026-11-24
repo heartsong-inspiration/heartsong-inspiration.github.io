@@ -33,7 +33,7 @@
   --gold-soft:#b89659;
   --cream:#f5ecdc;
   --mist:#b9b6c9;
-  --berry:#c9524a;
+  --berry:#b3433c;
   --display:"Cormorant Garamond", "Iowan Old Style", Georgia, serif;
   --body:"Lato", "Segoe UI", system-ui, sans-serif;
   color-scheme:dark;
@@ -42,7 +42,7 @@
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--sky);color:var(--cream);font:400 17px/1.65 var(--body)}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 a{color:var(--gold)}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
 h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.08;text-wrap:balance;margin:0}
@@ -296,7 +296,7 @@ footer .love{color:var(--cream);font-weight:700}
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="img/emblem.png" alt="Heartsong Inspiration emblem"><span>Heartsong Inspiration</span></a>
+    <a class="brand" href="#top"><img src="img/emblem.png" width="34" height="34" alt="Heartsong Inspiration emblem"><span>Heartsong Inspiration</span></a>
     <nav class="menu" aria-label="Main">
       <a href="#holiday">Holiday Stars</a>
       <a href="#today">Star of the day</a>
@@ -349,7 +349,7 @@ footer .love{color:var(--cream);font-weight:700}
 
 <section class="band alt" id="today">
   <div class="wrap today">
-    <div class="orb"><img id="todayImg" src="img/doll-soretha.jpg" alt="Soretha, the Heartsong girl in the starry blue dress"></div>
+    <div class="orb"><img id="todayImg" src="img/doll-soretha.jpg" width="480" height="636" alt="Soretha, the Heartsong girl in the starry blue dress"></div>
     <div>
       <span class="date" id="todayDate"></span>
       <blockquote id="todayText"></blockquote>
@@ -369,7 +369,7 @@ footer .love{color:var(--cream);font-weight:700}
     <p style="color:var(--mist);max-width:56ch;margin:0 auto">Pick how your heart feels right now, and the Heartsong friend who carries that message will step forward.</p>
     <div class="chips" id="needChips" role="group" aria-label="How do you feel today?"></div>
     <article class="needcard" id="needCard" hidden aria-live="polite">
-      <img id="needImg" src="img/doll-soretha.jpg" alt="">
+      <img id="needImg" src="img/doll-soretha.jpg" width="480" height="636" alt="">
       <div><div class="t" id="needFor"></div><h3 id="needName"></h3><blockquote id="needWords"></blockquote>
       <div class="row" style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-gold" type="button" id="needSend">Send this to someone you love</button></div>
       <div class="toast" id="needToast" role="status"></div></div>
@@ -396,7 +396,7 @@ footer .love{color:var(--cream);font-weight:700}
     </div>
     <div class="baby">
       <figure class="memory">
-        <video id="memVid" src="vid/baby-doll-memory.mp4" poster="img/baby-doll-memory.jpg" controls playsinline preload="metadata"></video>
+        <video id="memVid" src="vid/baby-doll-memory.mp4" poster="img/baby-doll-memory.jpg" controls playsinline preload="none"></video>
         <figcaption>The Baby Doll Memory: little Soretha and her sister Theresa.</figcaption>
       </figure>
       <div class="baby-copy">
@@ -404,7 +404,7 @@ footer .love{color:var(--cream);font-weight:700}
         <p class="who">Soretha Eldridge, founder of Heartsong Inspiration</p>
         <p>Today I make dolls so every little girl and boy can hold one that looks like them.</p>
         <div class="first-baby">
-          <video src="vid/amira.mp4" poster="img/new-amira.jpg" autoplay muted loop playsinline aria-label="Amira, the Heartsong baby with soft curls and a pink bow"></video>
+          <video id="amiraVid" data-src="vid/amira.mp4" poster="img/new-amira.jpg" muted loop playsinline preload="none" aria-label="Amira, the Heartsong baby with soft curls and a pink bow"></video>
           <div><span class="eyebrow" style="margin-bottom:6px">The first baby in the family</span><b>Amira</b><p>Every curl is a crown. Wear it proud.</p></div>
         </div>
         <form class="wait" id="waitForm" novalidate>
@@ -421,7 +421,7 @@ footer .love{color:var(--cream);font-weight:700}
 <section class="band" id="coloring">
   <div class="wrap collection">
     <div class="pair" style="grid-template-columns:1fr">
-      <img src="img/coloring-i-am-loved.jpg" alt="Free Heartsong coloring page that reads I am loved" style="aspect-ratio:auto;max-width:360px;margin:0;background:#fff">
+      <img src="img/coloring-i-am-loved.jpg" width="540" height="723" alt="Free Heartsong coloring page that reads I am loved" style="aspect-ratio:auto;max-width:360px;margin:0;background:#fff">
     </div>
     <div>
       <span class="eyebrow">A gift from us</span>
@@ -498,7 +498,7 @@ footer .love{color:var(--cream);font-weight:700}
 <audio id="lullaby" src="audio/twinkle-lullaby.mp3" loop preload="none"></audio>
 <div class="banner">Follow for your daily affirmation 💛 Comment LOVE for a free coloring page</div>
 
-<dialog class="starpop" id="starPop"><img id="spImg" src="img/doll-soretha.jpg" alt=""><div class="in"><small id="spDate"></small><h3 id="spName"></h3><blockquote id="spWords"></blockquote><p>A new star opens here every day. Come back tomorrow to see who it is.</p><div class="row"><button class="btn btn-gold" type="button" id="spSend">Send this to someone you love</button><form method="dialog"><button class="btn btn-line" type="submit">Close</button></form></div><div class="toast" id="spToast" role="status" style="color:#8a6424"></div></div></dialog>
+<dialog class="starpop" id="starPop"><img id="spImg" src="img/doll-soretha.jpg" width="480" height="636" alt=""><div class="in"><small id="spDate"></small><h3 id="spName"></h3><blockquote id="spWords"></blockquote><p>A new star opens here every day. Come back tomorrow to see who it is.</p><div class="row"><button class="btn btn-gold" type="button" id="spSend">Send this to someone you love</button><form method="dialog"><button class="btn btn-line" type="submit">Close</button></form></div><div class="toast" id="spToast" role="status" style="color:#8a6424"></div></div></dialog>
 <div class="welcome" id="welcome" role="status"><button type="button" aria-label="Close" id="welcomeX">&times;</button><div id="welcomeText"></div></div>
 <div class="fullsong" id="fullSong" role="status">Hear the whole song in the full video on <a href="https://www.facebook.com/profile.php?id=61595026280214" target="_blank" rel="noopener">Facebook</a>, <a href="https://www.instagram.com/heartsong_inspiration/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.youtube.com/@heartsong_inspiration" target="_blank" rel="noopener">YouTube</a>.</div>
 <dialog id="storyDlg"><h3 id="sdTitle"></h3><div id="sdBody"></div><form method="dialog"><button class="btn" type="submit">Close story</button></form></dialog>
@@ -742,13 +742,13 @@ const SHOP = [
 ];
 const mailto = t => `mailto:shine@heartsonginspiration.com?subject=${encodeURIComponent("Reserve: "+t)}&body=${encodeURIComponent("Please email me first when "+t+" is ready.")}`;
 const SCENTS = ["Starlight","Golden Morning","Group Hug","Sunflower Field","After the Storm","Sweet Dreams"];
-$("bfShop").innerHTML = BF.map(p => `<article class="item"><img src="img/${p.img}" alt="${p.alt}"><div><h3>${p.t}</h3>${p.p?`<span class="price">${p.p}${p.r?`<s>${p.r}</s>`:""}</span>`:""}<p>${p.d}</p><a class="btn btn-gold" href="${mailto(p.t)}">Reserve yours</a></div></article>`).join("");
-$("giftShop").innerHTML = GIFTS.map(p => `<article class="item"><img src="img/${p.img}" alt="${p.alt}"${p.t.includes("Candle")?' id="candleImg"':""}><div><h3>${p.t}</h3><p>${p.d}</p>${p.t.includes("Candle")?`<p class="scentnow" id="scentNow">Showing: Group Hug, warm vanilla and brown sugar</p><div class="scents" id="scentPick" role="group" aria-label="Choose a scent to see it">${SCENTS.map(x=>`<button type="button" aria-pressed="${x==="Group Hug"}">${x}</button>`).join("")}</div>`:""}<a class="btn btn-gold" href="${mailto(p.t)}">Reserve yours</a></div></article>`).join("");
+$("bfShop").innerHTML = BF.map(p => `<article class="item"><img src="img/${p.img}" width="600" height="600" loading="lazy" alt="${p.alt}"><div><h3>${p.t}</h3>${p.p?`<span class="price">${p.p}${p.r?`<s>${p.r}</s>`:""}</span>`:""}<p>${p.d}</p><a class="btn btn-gold" href="${mailto(p.t)}">Reserve yours</a></div></article>`).join("");
+$("giftShop").innerHTML = GIFTS.map(p => `<article class="item"><img src="img/${p.img}" width="600" height="600" loading="lazy" alt="${p.alt}"${p.t.includes("Candle")?' id="candleImg"':""}><div><h3>${p.t}</h3><p>${p.d}</p>${p.t.includes("Candle")?`<p class="scentnow" id="scentNow">Showing: Group Hug, warm vanilla and brown sugar</p><div class="scents" id="scentPick" role="group" aria-label="Choose a scent to see it">${SCENTS.map(x=>`<button type="button" aria-pressed="${x==="Group Hug"}">${x}</button>`).join("")}</div>`:""}<a class="btn btn-gold" href="${mailto(p.t)}">Reserve yours</a></div></article>`).join("");
 $("soonShop").innerHTML = SHOP.map(p => `<article><i>${p.s}</i><b>${p.t}</b><p>${p.d}</p></article>`).join("");
 
 /* Holiday shelf with 3D tilt */
 const HVID = ['https://cdn.creativeclaw.co/u/4c68c1c5/videos/e220addc-068a-4f86-9e34-0fb497ba0351.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/21689c2c-dedf-4371-8c72-77ba2dac58e6.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/339ee6a6-153e-44fa-99f7-c5ca432207d9.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/f339ee5b-a452-46d0-9f83-ba8af6171333.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/ba94d3bb-fb57-413a-8492-55a6dcc34c14.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/cf507274-3117-4e85-8f3d-6d8a76fc1d01.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/de4ee8e5-fe6c-48c1-94d1-510b2a5dbd84.mp4', 'https://cdn.creativeclaw.co/u/4c68c1c5/videos/bd0401f4-fb9b-465b-8d55-56370786b6df.mp4'];
-$("shelf").innerHTML = HOLIDAY.map((h,i) => `<figure class="star-card"><div class="vwrap hvid"><img src="img/holiday-0${i+1}.jpg" alt="Holiday Star ${i+1}, ${h.n}: ${h.a}"><video data-src="${HVID[i]}" muted loop playsinline preload="none" aria-label="${h.n} moving"></video><button class="playbtn" type="button" aria-label="Play ${h.n}'s video"><span aria-hidden="true">&#9654;</span> Play</button></div><figcaption><b>${h.n}</b><span>Star ${String(i+1).padStart(2,"0")} · ${h.v}</span></figcaption></figure>`).join("");
+$("shelf").innerHTML = HOLIDAY.map((h,i) => `<figure class="star-card"><div class="vwrap hvid"><img src="img/holiday-0${i+1}.jpg" width="480" height="600" loading="lazy" alt="Holiday Star ${i+1}, ${h.n}: ${h.a}"><video data-src="${HVID[i]}" muted loop playsinline preload="none" aria-label="${h.n} moving"></video><button class="playbtn" type="button" aria-label="Play ${h.n}'s video"><span aria-hidden="true">&#9654;</span> Play</button></div><figcaption><b>${h.n}</b><span>Star ${String(i+1).padStart(2,"0")} · ${h.v}</span></figcaption></figure>`).join("");
 if (!reduce && matchMedia("(hover: hover)").matches) {
   document.querySelectorAll(".star-card").forEach(c => {
     c.addEventListener("pointermove", e => {
@@ -792,13 +792,14 @@ $("copyAff").onclick = async () => {
 $("crewGrid").innerHTML = DOLLS.concat(NEWDOLLS).map(d => {
   const nw = NEWDOLLS.includes(d), src = nw ? `img/new-${d.k}.jpg` : `img/doll-${d.k}.jpg`;
   const vsrc = d.v || d.cv || (VIDS[d.k] ? `vid/${d.k}.mp4` : "");
-  const media = vsrc ? `<div class="vwrap"><video src="${vsrc}" poster="${src}" muted loop playsinline preload="metadata" aria-label="${d.n}, ${d.tag}"></video><button class="playbtn" type="button" aria-label="Play ${d.n}'s video"><span aria-hidden="true">&#9654;</span> Play</button></div>` : `<img src="${src}" alt="${d.n}, ${d.tag}">`;
+  const media = vsrc ? `<div class="vwrap"><video data-src="${vsrc}" poster="${src}" muted loop playsinline preload="none" aria-label="${d.n}, ${d.tag}"></video><button class="playbtn" type="button" aria-label="Play ${d.n}'s video"><span aria-hidden="true">&#9654;</span> Play</button></div>` : `<img src="${src}" width="480" height="636" loading="lazy" alt="${d.n}, ${d.tag}">`;
   return `<article class="mate${nw?" new":""}">${media}<div><h3>${d.n}</h3><div class="t">${nw?"Just arrived · ":""}${d.tag}</div><p>${d.d}</p></div></article>`;
 }).join("");
 /* Play buttons: videos wait for a tap, and only one card plays at a time */
 $("crewGrid").addEventListener("click", e => {
   const w = e.target.closest(".vwrap"); if (!w) return;
   const v = w.querySelector("video"), b = w.querySelector(".playbtn"), name = b.getAttribute("aria-label").replace(/^(Play|Pause) /,"");
+  if (!v.src) v.src = v.dataset.src;
   if (!w.classList.contains("playing")) {
     document.querySelectorAll("#crewGrid .vwrap.playing").forEach(o => { if (o !== w) { o.querySelector("video").pause(); o.classList.remove("playing"); const ob = o.querySelector(".playbtn"); ob.innerHTML = '<span aria-hidden="true">&#9654;</span> Play'; ob.setAttribute("aria-label", ob.getAttribute("aria-label").replace(/^Pause/,"Play")); } });
     v.muted = true; v.play().catch(()=>{}); w.classList.add("playing"); b.innerHTML = '<span aria-hidden="true">&#10074;&#10074;</span> Pause'; b.setAttribute("aria-label", "Pause " + name);
@@ -1001,7 +1002,7 @@ $("needSend").onclick = () => needNow && sendLove(`"${needNow.n.w}" ${needNow.d.
   if (mid < from || left < 0) { $("countdown").remove(); return; }
   const i = Math.round((mid - from)/864e5), h = HOLIDAY[i % HOLIDAY.length], line = HOLIDAY_STORY.body[i % HOLIDAY_STORY.body.length];
   const top = left === 0 ? `<strong>Merry Christmas</strong>from the whole Heartsong crew` : `<strong>${left} ${left === 1 ? "day" : "days"}</strong>until Christmas`;
-  $("countdown").innerHTML = `<img src="img/holiday-0${(i % HOLIDAY.length)+1}.jpg" alt="Today's Holiday Star, ${h.n}"><div><div class="days">${top}</div><h3>Today's Holiday Star: ${h.n}</h3><blockquote>${h.a}</blockquote><p class="luna"><b>From Luna's story:</b> ${line}</p><div class="row"><button class="btn btn-gold" type="button" id="cdSend">Send this to someone you love</button><button class="btn btn-line" type="button" id="cdStory">Read the whole story</button></div><div class="toast" id="cdToast" role="status"></div></div>`;
+  $("countdown").innerHTML = `<img src="img/holiday-0${(i % HOLIDAY.length)+1}.jpg" width="480" height="600" alt="Today's Holiday Star, ${h.n}"><div><div class="days">${top}</div><h3>Today's Holiday Star: ${h.n}</h3><blockquote>${h.a}</blockquote><p class="luna"><b>From Luna's story:</b> ${line}</p><div class="row"><button class="btn btn-gold" type="button" id="cdSend">Send this to someone you love</button><button class="btn btn-line" type="button" id="cdStory">Read the whole story</button></div><div class="toast" id="cdToast" role="status"></div></div>`;
   $("cdSend").onclick = () => sendLove(`"${h.a}" ${h.n}, Holiday Star (${h.v})`, $("cdToast"));
   $("cdStory").onclick = () => $("holidayStoryBtn").click();
 })();
@@ -1024,13 +1025,18 @@ $("musicBtn").onclick = async () => {
   catch { b.textContent = "Music unavailable"; }
 };
 
+/* Amira moves when she scrolls into view */
+(function(){ const v = $("amiraVid"); if (!v) return;
+  new IntersectionObserver(es => { if (es[0].isIntersecting) { if (!v.src) v.src = v.dataset.src; v.play().catch(()=>{}); } else if (v.src) v.pause(); }, {rootMargin:"200px"}).observe(v);
+})();
+
 /* 3D crew orbit */
 (function(){
   const canvas = $("stage");
   if (!window.THREE) { $("hint").textContent = "Scroll down to meet the crew"; return; }
   let renderer;
   try { renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true}); } catch(e) { $("hint").textContent = "Scroll down to meet the crew"; return; }
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.setPixelRatio(Math.min(devicePixelRatio, innerWidth < 760 ? 1.5 : 2));
   const scene = new THREE.Scene();
   scene.fog = new THREE.FogExp2(0x0a1029, 0.035);
   const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 200);
@@ -1068,14 +1074,9 @@ $("musicBtn").onclick = async () => {
     const a = i/ORBIT.length*Math.PI*2;
     const g = new THREE.Group();
     g.position.set(Math.sin(a)*R, Math.sin(i*1.7)*.35, Math.cos(a)*R);
-    let tex;
-    if (d.v || VIDS[d.k]) {
-      const v = document.createElement("video");
-      v.src = d.v || `vid/${d.k}.mp4`; v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute("playsinline",""); v.crossOrigin = "anonymous"; v.preload = "auto";
-      v.play().catch(()=>{}); vids.push(v);
-      tex = new THREE.VideoTexture(v);
-    } else tex = loader.load(NEWDOLLS.includes(d) ? `img/new-${d.k}.jpg` : `img/doll-${d.k}.jpg`);
+    const tex = loader.load(NEWDOLLS.includes(d) ? `img/new-${d.k}.jpg` : `img/doll-${d.k}.jpg`);
     tex.minFilter = THREE.LinearFilter;
+    if (d.v || VIDS[d.k]) vids.push({src: d.v || `vid/${d.k}.mp4`, i});
     const w = 1.85, h = w*636/480;
     const frame = new THREE.Mesh(new THREE.PlaneGeometry(w+.14, h+.14), new THREE.MeshBasicMaterial({color:0xe8c27c, side:THREE.DoubleSide}));
     const pic = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({map:tex, side:THREE.FrontSide}));
@@ -1097,9 +1098,22 @@ $("musicBtn").onclick = async () => {
   });
   document.fonts && document.fonts.ready.then(() => panels.forEach(p => p.children[3].userData.redraw && p.children[3].userData.redraw()));
 
-  // start videos on first touch for browsers that block autoplay
-  const kick = () => vids.forEach(v => v.play().catch(()=>{}));
-  addEventListener("pointerdown", kick, {once:true});
+  // the dolls start moving the first time a visitor touches, scrolls or moves the mouse, so the page opens fast
+  let woke = false;
+  const wake = () => {
+    if (woke) return; woke = true;
+    ["pointerdown","pointermove","scroll","keydown","touchstart"].forEach(ev => removeEventListener(ev, wake));
+    vids.forEach(o => {
+      const v = document.createElement("video");
+      v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute("playsinline",""); v.crossOrigin = "anonymous"; v.preload = "auto"; v.src = o.src;
+      v.addEventListener("playing", () => { const pic = panels[o.i].userData.pic, vt = new THREE.VideoTexture(v); vt.minFilter = THREE.LinearFilter; pic.material.map = vt; pic.material.needsUpdate = true; }, {once:true});
+      o.v = v; v.play().catch(()=>{});
+    });
+  };
+  ["pointerdown","pointermove","scroll","keydown","touchstart"].forEach(ev => addEventListener(ev, wake, {passive:true}));
+  // rest the 3D scene while it is off screen or the tab is hidden
+  let onScreen = true;
+  new IntersectionObserver(es => { onScreen = es[0].isIntersecting; vids.forEach(o => o.v && (onScreen ? o.v.play().catch(()=>{}) : o.v.pause())); }).observe(canvas);
 
   // interaction
   let spin = 0, vel = reduce ? 0 : 0.0018, dragging = false, lastX = 0, moved = 0, focusTarget = null;
@@ -1161,7 +1175,7 @@ $("musicBtn").onclick = async () => {
     if (!reduce) { stars.rotation.y = t*0.006; glow.material.opacity = .75 + Math.sin(t*1.6)*.15; }
     camera.position.set(mx*1.6, (2.1 - my*1.0) * camZ/15.5, camZ);
     camera.lookAt(ring.position.x*.55, ring.position.y + lookOff, 0);
-    renderer.render(scene, camera);
+    if (onScreen && !document.hidden) renderer.render(scene, camera);
     requestAnimationFrame(loop);
   })();
 })();
