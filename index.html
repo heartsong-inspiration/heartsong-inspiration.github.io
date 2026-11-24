@@ -175,6 +175,14 @@ form.wait input{flex:1 1 220px;min-width:0;padding:13px 16px;border-radius:999px
 .first-baby b{font-family:var(--display);font-size:30px;font-weight:600;display:block}
 .first-baby p{margin:4px 0 0;color:#ddd7e6;font-style:italic}
 @media (max-width:760px){.baby{grid-template-columns:1fr;gap:30px}.memory video{max-width:100%}}
+.firstlook{margin-top:64px}.firstlook h3{font-size:clamp(26px,3vw,34px);margin:6px 0 0}
+.babygrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:22px}
+.babycard{background:var(--sky-3);border-radius:14px;overflow:hidden;border:1px solid rgba(232,194,124,.15);display:flex;flex-direction:column}
+.babycard img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.babycard>div{padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px;flex:1}.babycard h3{font-size:22px;margin:0}.babycard p{margin:0;font-size:14px;flex:1}.babycard .btn{align-self:flex-start}
+@media (max-width:980px){.babygrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.babygrid{grid-template-columns:1fr}}
+
 /* Stories */
 .stories{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
 .story{background:transparent;border:0;border-top:1px solid rgba(232,194,124,.3);padding:20px 0 6px;text-align:left;color:var(--cream);cursor:pointer;font:inherit}
@@ -417,6 +425,11 @@ footer .love{color:var(--cream);font-weight:700}
         </form>
         <div class="toast" id="waitMsg" role="status"></div>
       </div>
+    </div>
+
+    <div class="firstlook">
+      <div class="head"><div><span class="eyebrow">Coming soon · First look</span><h3>Meet the first Heartsong babies</h3></div><p>These pictures show the babies we are designing now. Each finished doll is made by hand, so yours will be one of a kind. Tap "Reserve yours" to be first in line.</p></div>
+      <div class="babygrid"><article class="babycard"><img src="https://cdn.creativeclaw.co/cdn-cgi/image/width=600,quality=80,format=auto/u/4c68c1c5/images/c8460694-99cf-4c4b-bf40-8ea0285f1ecf.png" width="600" height="800" loading="lazy" alt="A sleeping brown-skinned newborn baby doll in a cream knit outfit and hat with a Heartsong tag"><div><h3>The Theresa Baby</h3><p>Our signature newborn, sleeping in a cream hand-knit outfit and pom-pom hat. Named for the baby doll that started it all.</p><a class="btn btn-gold" href="mailto:shine@heartsonginspiration.com?subject=Reserve%3A%20The%20Theresa%20Baby%20baby%20doll&body=Please%20email%20me%20first%20when%20The%20Theresa%20Baby%20is%20ready.">Reserve yours</a></div></article><article class="babycard"><img src="https://cdn.creativeclaw.co/cdn-cgi/image/width=600,quality=80,format=auto/u/4c68c1c5/images/fcc5f3da-4bfa-442c-acf9-703806a2cef0.png" width="600" height="800" loading="lazy" alt="A smiling brown-skinned baby doll with curly hair, a pink bow and a pink dress"><div><h3>Amira</h3><p>Awake and smiling, with soft curls, a pink bow and her own card: Every curl is a crown.</p><a class="btn btn-gold" href="mailto:shine@heartsonginspiration.com?subject=Reserve%3A%20Amira%20baby%20doll&body=Please%20email%20me%20first%20when%20Amira%20is%20ready.">Reserve yours</a></div></article><article class="babycard"><img src="https://cdn.creativeclaw.co/cdn-cgi/image/width=600,quality=80,format=auto/u/4c68c1c5/images/54f14a6f-e89f-4edb-80b9-c87a1ce6b6e6.png" width="600" height="800" loading="lazy" alt="A sleeping brown-skinned newborn baby boy doll in a green sleeper holding a knit teddy bear"><div><h3>Baby Christopher</h3><p>Sound asleep in his sage green sleeper, holding his little knit teddy bear.</p><a class="btn btn-gold" href="mailto:shine@heartsonginspiration.com?subject=Reserve%3A%20Baby%20Christopher%20baby%20doll&body=Please%20email%20me%20first%20when%20Baby%20Christopher%20is%20ready.">Reserve yours</a></div></article><article class="babycard"><img src="https://cdn.creativeclaw.co/cdn-cgi/image/width=600,quality=80,format=auto/u/4c68c1c5/images/90797bf0-189c-44f1-be07-b4df83c7c5b9.png" width="600" height="800" loading="lazy" alt="Two sleeping brown-skinned newborn twin dolls in lavender and blue knits with birth certificates"><div><h3>The Twin Set</h3><p>A sister and brother, born in our hearts, with matching birth certificates and bracelets.</p><a class="btn btn-gold" href="mailto:shine@heartsonginspiration.com?subject=Reserve%3A%20The%20Twin%20Set%20baby%20doll&body=Please%20email%20me%20first%20when%20The%20Twin%20Set%20is%20ready.">Reserve yours</a></div></article></div>
     </div>
   </div>
 </section>
